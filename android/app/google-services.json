@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "667866438548",
+    "project_id": "afro-app-ee968",
+    "storage_bucket": "afro-app-ee968.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667866438548:android:4669f7b5b47ded30becd81",
+        "android_client_info": {
+          "package_name": "com.example.afro_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR2VxL-46AVXvauMOLmbmdxBkVny59OFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
