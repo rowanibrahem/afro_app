@@ -72,15 +72,13 @@ class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateM
             ),
           ),
         ),
-        const SizedBox(),
+      
         AnimatedOpacity(
           opacity: _secondImageOpacity.value,
           duration: const Duration(milliseconds: 420),
           child: Center(
-            child:  ClipRRect(
-              borderRadius: const BorderRadius.all(
-                Radius.circular(8.0),
-              ),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
               child: Image.asset(Images.logo),
             ),
           ),
