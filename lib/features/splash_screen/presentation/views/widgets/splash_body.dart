@@ -1,5 +1,6 @@
 import 'package:afro_app/core/constants/assets_images.dart';
 import 'package:afro_app/core/theme/colors.dart';
+import 'package:afro_app/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 
 
@@ -51,10 +52,10 @@ class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateM
   // Function to navigate to the next screen
   void navigateToNextScreen() {
     Future.delayed(const Duration(seconds: 6), () {
-      // Navigator.pushReplacement(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const OnboardingView()), 
-      // );
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const OnboardingView()), 
+      );
     });
   }
   @override
@@ -68,7 +69,7 @@ class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateM
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Container(
-              color: ColorApp.primaryColor,
+              color: ColorApp.splashColor,
             ),
           ),
         ),

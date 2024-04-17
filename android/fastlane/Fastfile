@@ -16,23 +16,28 @@
 default_platform(:android)
 
 platform :android do
-  desc "Runs all the tests"
-  lane :test do
-    print "fastlane runs successfully"
+  desc "Lane for android app firebase distribution"
+  lane :firebase_distribution do
+    sh "flutter clean"
+    sh "flutter build apk --release --target lib/main.dart --no-tree-shake-icons" 
+    firebase_app_distribution(
+      app: "1:667866438548:android:4669f7b5b47ded30becd81",
+      firebase_cli_token:"1//03ALShqd_ZZNOCgYIARAAGAMSNwF-L9IrxBLAC6qNlDNUmF8V0xsmlmJCr0AMRrouiK93StIEvVguyWEqjm4H5WHxsA4aePVbrM8",
+      android_artifact_type: "APK",
+      android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
+      testers: "rahmaosama2804@gmail.com",
+      release_notes: "first fastlane firebase distribution",
+      # groups: "qa-team, trusted-testers",
+      
+  )
+
+    # sh "your_script.sh"
+    # You can also use other beta testing services here
   end
 
-  # desc "Submit a new Beta Build to Crashlytics Beta"
-  # lane :beta do
-  #   gradle(task: "clean assembleRelease")
-  #   crashlytics
-  
-  #   # sh "your_script.sh"
-  #   # You can also use other beta testing services here
-  # end
-
-  # desc "Deploy a new version to the Google Play"
-  # lane :deploy do
-  #   gradle(task: "clean assembleRelease")
-  #   upload_to_play_store
-  # end
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+    gradle(task: "clean assembleRelease")
+    upload_to_play_store
+  end
 end

@@ -2,11 +2,15 @@ import "package:afro_app/features/splash_screen/presentation/views/splash_view.d
 import "package:device_preview/device_preview.dart";
 import "package:flutter/material.dart";
 
-void main() => runApp(
-  DevicePreview(
-    builder: (BuildContext context) => const MyApp(), // Wrap your app
-  ),
-);
+void main() {
+  runApp(const MyApp());
+}
+// void main() => runApp(
+  
+//   DevicePreview(
+//     builder: (BuildContext context) => const MyApp(), // Wrap your app
+//   ),
+// );
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       useInheritedMediaQuery: true,
       locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
+      // builder: DevicePreview.appBuilder,
       theme: ThemeData(
         // This is the theme of your application.
         //
