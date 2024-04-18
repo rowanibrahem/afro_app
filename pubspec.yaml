@@ -40,6 +40,7 @@ dependencies:
   firebase_core: ^2.29.0
   flutter_svg: ^2.0.10+1
   google_fonts: ^6.2.1
+  persistent_bottom_nav_bar: ^5.0.2
 
 dev_dependencies:
   flutter_test:
