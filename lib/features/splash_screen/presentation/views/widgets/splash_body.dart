@@ -3,7 +3,6 @@ import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 
-
 class SplashBody extends StatefulWidget {
   const SplashBody({super.key});
 
@@ -11,7 +10,8 @@ class SplashBody extends StatefulWidget {
   State<SplashBody> createState() => _SplashBodyState();
 }
 
-class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateMixin{
+class _SplashBodyState extends State<SplashBody>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _backgroundOpacity;
   late Animation<double> _secondImageOpacity;
@@ -34,7 +34,7 @@ class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateM
       curve: const Interval(0.2, 0.4, curve: Curves.easeInOut),
     );
 
-     _controller.forward(); // Start the animations
+    _controller.forward(); // Start the animations
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         setState(() {
@@ -49,15 +49,17 @@ class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateM
     _controller.dispose();
     super.dispose();
   }
+
   // Function to navigate to the next screen
   void navigateToNextScreen() {
     Future.delayed(const Duration(seconds: 6), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const OnboardingView()), 
+        MaterialPageRoute(builder: (context) => const OnboardingView()),
       );
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -73,14 +75,13 @@ class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateM
             ),
           ),
         ),
-      
         AnimatedOpacity(
           opacity: _secondImageOpacity.value,
           duration: const Duration(milliseconds: 420),
           child: Center(
             child: Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Image.asset(Images.logo),
+              child: Image.asset(AssetImages.logo),
             ),
           ),
         ),
