@@ -1,6 +1,8 @@
 import 'package:afro_app/core/constants/assets_icons.dart';
+import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/shared_widget/default_text.dart';
 import 'package:afro_app/core/theme/styles.dart';
+import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -34,7 +36,7 @@ class _LoginBodyState extends State<LoginBody> {
                 fit: BoxFit.fill,
                 ),
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 1.6,
+                  height: MediaQuery.of(context).size.height / 1.1,
                   decoration: const BoxDecoration(
                     color: Colors.white,
                   ),
@@ -61,7 +63,7 @@ class _LoginBodyState extends State<LoginBody> {
               alignment: Alignment.center,
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 2.666,
+                height: MediaQuery.of(context).size.height / 2.8,
                 padding: const EdgeInsets.only(top: 30, bottom: 20),
                 decoration: const BoxDecoration(
                   color: Colors.white,
@@ -69,55 +71,69 @@ class _LoginBodyState extends State<LoginBody> {
                     topLeft: Radius.circular(70),
                   ),
                 ),
-                child: Column(
-                  children: [
-                    Text(
-                'Login',
-                style: Styles.textStyle24.copyWith(fontWeight: FontWeight.w400),
-                ),
-                defaultText(
-                          type: TextInputType.emailAddress,
-                          controller: emailController,
-                          label: 'enter your email',
-                          hint: 'your email',
-                          prefix: Icons.email,
-                          // validate: (value){
-                          //   if (value!.isEmpty){
-                          //     return 'Email must not be empty';
-                          //   }
-                          //   return null;
-                          // },
-                          // onChange: (value) {
-                          //   print(value);
-                          // },
-                        ),
-                        const SizedBox(
-                          height: 15.0,
-                        ),
-                   defaultText(
-                            type: TextInputType.visiblePassword,
-                          // validate: (  value){
-                          //   if (value!.isEmpty){
-                          //     return 'password is too short';
-                          //   }
-                          //   return null;
-                          // },
-                          controller: passwordController,
-                          hint: 'Password',
-                          label: 'enter your password',
-                          prefix: Icons.lock,
-                          suffix: isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                            pressed: (){
-                              setState(() {
-                                isPasswordVisible = !isPasswordVisible;
-                              });
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Text(
+                  'Login',
+                  style: Styles.textStyle24.copyWith(fontWeight: FontWeight.w400),
+                  ),
+                  defaultText(
+                            type: TextInputType.emailAddress,
+                            controller: emailController,
+                            label: 'enter your email',
+                            hint: 'your email',
+                            prefix: Icons.email,
+                            // validate: (value){
+                            //   if (value!.isEmpty){
+                            //     return 'Email must not be empty';
+                            //   }
+                            //   return null;
+                            // },
+                            // onChange: (value) {
+                            //   print(value);
+                            // },
+                          ),
+                          const SizedBox(
+                            height: 15.0,
+                          ),
+                     defaultText(
+                              type: TextInputType.visiblePassword,
+                            // validate: (  value){
+                            //   if (value!.isEmpty){
+                            //     return 'password is too short';
+                            //   }
+                            //   return null;
+                            // },
+                            controller: passwordController,
+                            hint: 'Password',
+                            label: 'enter your password',
+                            prefix: Icons.lock,
+                            suffix: isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                              pressed: (){
+                                setState(() {
+                                  isPasswordVisible = !isPasswordVisible;
+                                });
+                              },
+                            onChange: (value) {
+                              print(value);
                             },
-                          onChange: (value) {
-                            print(value);
-                          },
-                          isObscure: !isPasswordVisible,
-                        ),
-                  ],
+                            isObscure: !isPasswordVisible,
+                          ),
+                          CustomButton(
+                            text: 'Login', 
+                            func: (){
+                              Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomeView(),
+                              ),
+                            );
+                            }
+                            ),
+                    ],
+                  ),
                 ),
               ),
             ),
