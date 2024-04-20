@@ -2,6 +2,7 @@ import 'package:afro_app/core/constants/assets_icons.dart';
 import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/shared_widget/default_text.dart';
 import 'package:afro_app/core/theme/styles.dart';
+import 'package:afro_app/features/authuntcation/presentation/views/sign_up_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -31,21 +32,17 @@ class _LoginBodyState extends State<LoginBody> {
           Stack(
             children: [
               Container(
+                width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 1.3,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                  ),
                 child: SvgPicture.asset(
                 AssetIcons.loginCurve,
                 fit: BoxFit.fill,
                 ),
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 1.1,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                  ),
                 ),
-                
-              // Image taking the first part of the screen
-         
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+          const Column(
             children: [
               Text(
                   "Welcome!",
@@ -60,10 +57,9 @@ class _LoginBodyState extends State<LoginBody> {
           ],
           ),
             Align(
-              alignment: Alignment.center,
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 2.8,
+                height: MediaQuery.of(context).size.height / 2.5555,
                 padding: const EdgeInsets.only(top: 30, bottom: 20),
                 decoration: const BoxDecoration(
                   color: Colors.white,
@@ -130,8 +126,31 @@ class _LoginBodyState extends State<LoginBody> {
                                 builder: (context) => const HomeView(),
                               ),
                             );
-                            }
+                            },
                             ),
+                            Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children:  [
+                            const Text("Don 't have an account ?",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const SignupView(),
+                                  ),
+                                );
+                              },
+                              child: const Text(
+                                'Sign Up',
+                              ),
+                            ),
+                          ],
+                        ),
                     ],
                   ),
                 ),
