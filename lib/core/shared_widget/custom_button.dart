@@ -1,10 +1,11 @@
+import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
     Key? key,
-    required this.backgroundColor,
+   this.backgroundColor,
     this.textColor = Colors.black,
     this.borderRadius,
     required this.text,
@@ -15,7 +16,7 @@ class CustomButton extends StatelessWidget {
   }) : super(key: key);
   final double? width;
   final double? height;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final Color? textColor;
   final BorderRadius? borderRadius;
   final double? fontSized;
@@ -31,8 +32,8 @@ class CustomButton extends StatelessWidget {
         child: ElevatedButton(
           onPressed: func,
           style: ElevatedButton.styleFrom(
-            // minimumSize: const Size(double.infinity, 0),
-            backgroundColor: backgroundColor,
+            minimumSize: const Size(double.infinity, 0),
+            backgroundColor: ColorApp.primaryColor,
             padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 12),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(

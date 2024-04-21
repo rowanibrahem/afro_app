@@ -15,28 +15,30 @@ class HomeBody extends StatefulWidget {
 class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-     padding: const EdgeInsets.only(top: 45),
-      child: Column(
-        children: [
-          Padding(
-             padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              children: [
-                SvgPicture.asset(AssetIcons.profile),
-                Text("Hi, Jhon Smith "),
-                SvgPicture.asset(AssetIcons.emoji),
-                Icon(Icons.search),
-              ],
+    return Scaffold(
+      body: Padding(
+       padding: const EdgeInsets.only(top: 45),
+        child: Column(
+          children: [
+            Padding(
+               padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                children: [
+                  SvgPicture.asset(AssetIcons.profile),
+                  Text("Hi, Jhon Smith "),
+                  SvgPicture.asset(AssetIcons.emoji),
+                  Icon(Icons.search),
+                ],
+              ),
             ),
-          ),
-          Image.asset(AssetImages.home),
-          const Text(
-            "Courses",
-            style: Styles.textStyleNoto16 ,
-          ),
-          CategoryListView(),
-        ],
+            Image.asset(AssetImages.home),
+            const Text(
+              "Courses",
+              style: Styles.textStyleNoto16 ,
+            ),
+            CategoryListView(),
+          ],
+        ),
       ),
     );
   }
