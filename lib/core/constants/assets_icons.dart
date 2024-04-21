@@ -3,4 +3,5 @@ class AssetIcons {
   static const loginCurve = "assets/icons/curve.svg";
   static const profile = "assets/icons/profile_icon.svg";
   static const emoji = "assets/icons/emoji _hand.svg";
+  static const google = "assets/icons/google.svg";
 }
