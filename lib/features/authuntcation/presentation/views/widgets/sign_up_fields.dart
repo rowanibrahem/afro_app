@@ -1,28 +1,31 @@
 import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/shared_widget/default_text.dart';
 import 'package:afro_app/core/theme/styles.dart';
-import 'package:afro_app/features/authuntcation/presentation/views/sign_up_view.dart';
+import 'package:afro_app/features/authuntcation/presentation/views/log_in_view.dart';
 import 'package:afro_app/features/authuntcation/presentation/views/widgets/continue_with_google.dart';
 import 'package:afro_app/features/authuntcation/presentation/views/widgets/last_part.dart';
 import 'package:afro_app/features/authuntcation/presentation/views/widgets/or_widget.dart';
 import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 
-class LoginFields extends StatefulWidget {
-  const LoginFields({super.key});
+class SignUpFields extends StatefulWidget {
+  const SignUpFields({super.key});
 
   @override
-  State<LoginFields> createState() => _LoginFieldsState();
+  State<SignUpFields> createState() => _SignUpFields();
 }
 TextEditingController emailController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
+TextEditingController nameController = TextEditingController();
+TextEditingController phoneController = TextEditingController();
+TextEditingController confirmController = TextEditingController();
 
 bool isPasswordVisible = false;
 bool? currentValue;
 
 GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-class _LoginFieldsState extends State<LoginFields> {
+class _SignUpFields extends State<SignUpFields> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,10 +45,25 @@ class _LoginFieldsState extends State<LoginFields> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Login',
+                'Sign up',
                 style: Styles.textStyle24.copyWith(fontWeight: FontWeight.w400),
               ),
               const SizedBox(height: 20,),
+               defaultText(
+                  type: TextInputType.text,
+                  controller: nameController,
+                  label: 'enter your name',
+                  hint: 'your name',
+                  prefix: Icons.person,
+                  // validate: ( value){
+                  //   // ignore: avoid_dynamic_calls
+                  //   if (value!.isEmpty){
+                  //     return 'name must not be empty';
+                  //   }
+                  //   return null;
+                  // },
+                ),
+                const SizedBox(height: 15.0),
               defaultText(
                 type: TextInputType.emailAddress,
                 controller: emailController,
@@ -54,6 +72,25 @@ class _LoginFieldsState extends State<LoginFields> {
                 prefix: Icons.email,
               ),
               const SizedBox(height: 15.0),
+               defaultText(
+                  type: TextInputType.phone,
+                  controller: phoneController,
+                  label: 'enter your phone',
+                  hint: 'your phone',
+                  prefix: Icons.phone_android_rounded,
+                  // validate: ( value){
+                  //   if (value!.isEmpty){
+                  //     return 'phone must not be empty';
+                  //   }
+                  //   return null;
+                  // },
+                  // onChange: (value) {
+                  //   print(value);
+                  // },
+                ),
+                const SizedBox(
+                  height: 15.0,
+                ),
               defaultText(
                 type: TextInputType.visiblePassword,
                 controller: passwordController,
@@ -66,15 +103,29 @@ class _LoginFieldsState extends State<LoginFields> {
                     isPasswordVisible = !isPasswordVisible;
                   });
                 },
-                onChange: (value) {
-                  print(value);
+                isObscure: !isPasswordVisible,
+              ),
+              const SizedBox(
+                  height: 15.0,
+                ),
+               defaultText(
+                type: TextInputType.visiblePassword,
+                controller: confirmController,
+                hint: 'Confirm Password',
+                label: 'confirm password',
+                prefix: Icons.lock,
+                suffix: isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                pressed: () {
+                  setState(() {
+                    isPasswordVisible = !isPasswordVisible;
+                  });
                 },
                 isObscure: !isPasswordVisible,
               ),
               Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: CustomButton(
-                  text: 'Login',
+                  text: 'SignUp',
                   func: () {
                     Navigator.pushReplacement(
                       context,
@@ -90,13 +141,13 @@ class _LoginFieldsState extends State<LoginFields> {
               const ContinueWithGoogle(),
               const SizedBox(height: 20,),
                LastPart(
-                buttonText: 'Sign Up',
-                text1: "Don't have an account ?",
+                buttonText: 'Login',
+                text1: "Already have an account?",
                 onPressed: (){
                       Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const SignupView(),
+                                builder: (context) => const LoginView(),
                               ),
                             );
                 },

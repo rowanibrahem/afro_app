@@ -55,16 +55,16 @@ class _SplashBodyState extends State<SplashBody>
   // Function to navigate to the next screen
   void navigateToNextScreen() {
     Future.delayed(const Duration(seconds: 6), () {
-      // Navigator.pushReplacement(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const OnboardingView()),
-      // );
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const OnboardingView()),
+      );
     });
   }
 
   @override
   Widget build(BuildContext context) {
-   return ColoredBox(
+   return Container(
     color: ColorApp.splashColor,
      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

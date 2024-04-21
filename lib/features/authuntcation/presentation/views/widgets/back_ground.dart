@@ -7,7 +7,7 @@ class BackgroundContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height / 1.3,
+      height: MediaQuery.of(context).size.height / 1.4,
       decoration: const BoxDecoration(
         color: Colors.white,
       ),
