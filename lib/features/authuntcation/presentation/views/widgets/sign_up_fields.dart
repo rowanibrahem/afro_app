@@ -124,7 +124,7 @@ class _SignUpFields extends State<SignUpFields> {
               ),
               Padding(
                 padding: const EdgeInsets.all(25.0),
-                child: CustomButton(
+                child: CustomButtonold(
                   text: 'SignUp',
                   func: () {
                     Navigator.pushReplacement(

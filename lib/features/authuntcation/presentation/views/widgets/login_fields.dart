@@ -73,7 +73,7 @@ class _LoginFieldsState extends State<LoginFields> {
               ),
               Padding(
                 padding: const EdgeInsets.all(25.0),
-                child: CustomButton(
+                child: CustomButtonold(
                   text: 'Login',
                   func: () {
                     Navigator.pushReplacement(
