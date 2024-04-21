@@ -1,20 +1,18 @@
-import "package:afro_app/features/authuntcation/presentation/views/log_in_view.dart";
-import "package:afro_app/features/home_screen/presentation/views/home_view.dart";
-import "package:afro_app/features/on_boarding/presentation/views/on_boarding_view.dart";
+import "package:afro_app/core/utilies/api_keys.dart";
 import "package:afro_app/features/splash_screen/presentation/views/splash_view.dart";
 import "package:device_preview/device_preview.dart";
 import "package:flutter/material.dart";
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() { 
+  Stripe.publishableKey = ApiKeys.publishableKey;
+  runApp(
+  DevicePreview(
+    builder: (BuildContext context) => const MyApp(), 
+  ),
+);
 }
-// void main() => runApp(
-  
-//   DevicePreview(
-//     builder: (BuildContext context) => const MyApp(), // Wrap your app
-//   ),
-// );
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -24,6 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // ignore: deprecated_member_use
       useInheritedMediaQuery: true,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,

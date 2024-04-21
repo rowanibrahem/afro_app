@@ -1,4 +1,4 @@
-import 'package:afro_app/core/shared_widget/custom_button.dart';
+import 'package:afro_app/core/shared_widget/custom_button_mine.dart';
 import 'package:afro_app/core/shared_widget/default_text.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/authuntcation/presentation/views/sign_up_view.dart';
