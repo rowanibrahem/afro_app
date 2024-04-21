@@ -18,12 +18,13 @@ class WelcomeText extends StatelessWidget {
 
     double leftPosition = screenWidth >= 600 ? 50 : 20;
 
-    double topPosition = screenWidth >= 600 ? 100 : 80;
+    double topPosition = screenWidth >= 600 ? 100 : 70;
 
     return Positioned(
       top: topPosition ,// 20% from the top
       left: leftPosition,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
            Text(
            welcomeText,

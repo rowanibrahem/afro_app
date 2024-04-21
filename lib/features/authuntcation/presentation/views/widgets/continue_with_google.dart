@@ -15,29 +15,28 @@ class ContinueWithGoogle extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(8.0),
           decoration: BoxDecoration(
+            border: Border.all(
+              color: ColorApp.continueGoogle, // Color of the border
+                
+            ),
             color: Colors.white,
             borderRadius: BorderRadius.circular(8.0),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 2,
-                blurRadius: 5,
-                offset: const Offset(0, 3), // changes position of shadow
-              ),
-            ],
           ),
-          child: Row(
-            children: [
-              SvgPicture.asset(AssetIcons.google),
-              const SizedBox(width: 8.0),
-              Text(
-                "Continue with Google",
-                style: Styles.textStyle12.copyWith(
-                  fontSize: 16,
-                  color: ColorApp.continueGoogle,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Row(
+              children: [
+                SvgPicture.asset(AssetIcons.google),
+                const SizedBox(width: 8.0),
+                Text(
+                  "Continue with Google",
+                  style: Styles.textStyle12.copyWith(
+                    fontSize: 16,
+                    color: ColorApp.continueGoogle,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],
