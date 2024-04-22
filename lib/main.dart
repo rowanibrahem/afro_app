@@ -1,5 +1,7 @@
 import "package:afro_app/features/authuntcation/presentation/views/log_in_view.dart";
+import "package:afro_app/features/home_screen/presentation/views/bottom_nav_view.dart";
 import "package:afro_app/features/home_screen/presentation/views/home_view.dart";
+import "package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart";
 import "package:afro_app/features/on_boarding/presentation/views/on_boarding_view.dart";
 import "package:afro_app/features/splash_screen/presentation/views/splash_view.dart";
 import "package:device_preview/device_preview.dart";
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.josefinSansTextTheme(),
         useMaterial3: true,
       ),
-      home: const HomeView(),
+      home: const BottomNavBody(),
     );
   }
 }

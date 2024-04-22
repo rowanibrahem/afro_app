@@ -3,4 +3,5 @@ class AssetImages {
   static const book = "assets/images/books.png";
   static const home = "assets/images/home_photo.png";
   static const animation = "assets/animation/animation.json";
+  static const bookDetails = "assets/images/details_course.png";
 }
