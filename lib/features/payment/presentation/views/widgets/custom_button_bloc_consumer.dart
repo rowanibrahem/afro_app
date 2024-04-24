@@ -65,9 +65,11 @@ class CustomButtonBlocConsumer extends StatelessWidget {
         .makePayment(paymentIntentInputModel: paymentIntentInputModel);
   }
 
-  void exceutePaypalPayment(BuildContext context,
+  void exceutePaypalPayment(
+    BuildContext context,
       ({AmountModel amount, ItemListModel itemList}) transctionsData) {
-    Navigator.of(context).push(MaterialPageRoute(
+    Navigator.of(context).push(
+      MaterialPageRoute(
       builder: (BuildContext context) => PaypalCheckoutView(
         sandboxMode: true,
         clientId: ApiKeys.clientId,

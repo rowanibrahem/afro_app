@@ -1,6 +1,6 @@
 class ApiKeys{
   static String secretKey = 'sk_test_51OSm0eGUWjEGfnoYJEqg7AhUCVD0Uu9YQyFXuh7L1xmPzjo8pOxnT5uMa9j9xn7bLX4J8U6A2XVPNusaIMZLVBZz001NuD1xBk';
   static String publishableKey = 'pk_test_51OSm0eGUWjEGfnoYKjaEuiKItN1hAtYnHass3Z1HJ38MGEHPFz4eUcE0tIUakuH2w8l2gADzBG5oPZ8qvvXh4Vpx00B5MaYKcA';
-  static String clientId = 'AWsaaFNxdAWLLDYeI3GKuvA6poItudZWmIyRFQoSGwVm1HdjjcPNe7VS-JhpVCRc9wSJ_1N7BEbj3PI2';
-  static String paybalSecretKey = 'AWsaaFNxdAWLLDYeI3GKuvA6poItudZWmIyRFQoSGwVm1HdjjcPNe7VS-JhpVCRc9wSJ_1N7BEbj3PI2';
+  static String clientId = 'Adldt1zpkWrr2hmXyzyb5e4VlcqqRqfBqg4ZJuwjVD9VwDg8THobe2Tw5XO8PkqbtyeI9kUbDEaRetnN';
+  static String paybalSecretKey = 'EA-vXmuXRfhoR6bLAL_rTiSUbq2LGPm0awlN8G1vtqtO1HpUy3PtSyKY9-z75n_Ilr06hnK2EMGAczRj';
 }
