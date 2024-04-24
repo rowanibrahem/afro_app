@@ -1,5 +1,4 @@
 import 'package:afro_app/core/shared_widget/custom_button.dart';
-import 'package:afro_app/core/shared_widget/custom_button_mine.dart';
 import 'package:afro_app/features/payment/data/repos/checkout_repo_impl.dart';
 import 'package:afro_app/features/payment/presentation/manager/cubit/payment_cubit.dart';
 import 'package:afro_app/features/payment/presentation/views/widgets/order_info_item.dart';

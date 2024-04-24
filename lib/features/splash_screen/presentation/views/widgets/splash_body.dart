@@ -15,8 +15,6 @@ class SplashBody extends StatefulWidget {
 class _SplashBodyState extends State<SplashBody>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<double> _backgroundOpacity;
-  late Animation<double> _secondImageOpacity;
   @override
   void initState() {
     super.initState();
@@ -26,15 +24,7 @@ class _SplashBodyState extends State<SplashBody>
       duration: const Duration(seconds: 3), // Adjust the duration as needed
     );
 
-    _backgroundOpacity = CurvedAnimation(
-      parent: _controller,
-      curve: const Interval(0.0, 0.2, curve: Curves.easeInOut),
-    );
 
-    _secondImageOpacity = CurvedAnimation(
-      parent: _controller,
-      curve: const Interval(0.2, 0.4, curve: Curves.easeInOut),
-    );
 
     _controller.forward(); // Start the animations
     _controller.addStatusListener((status) {
@@ -54,7 +44,7 @@ class _SplashBodyState extends State<SplashBody>
 
   // Function to navigate to the next screen
   void navigateToNextScreen() {
-    Future.delayed(const Duration(seconds: 6), () {
+    Future.delayed(const Duration(seconds: 10), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const OnboardingView()),

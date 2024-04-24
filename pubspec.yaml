@@ -55,6 +55,15 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   animated_notch_bottom_bar: ^1.0.2
 
+  # flutter_stripe: 
+  dio: ^5.4.0
+  dartz: ^0.10.1
+  flutter_bloc: ^8.1.3
+  flutter_paypal_payment: ^1.0.6
+  flutter_credit_card: ^4.0.1
+  font_awesome_flutter: ^10.7.0
+  animated_notch_bottom_bar: ^1.0.2
+
 
 dev_dependencies:
   flutter_test:
