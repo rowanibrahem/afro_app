@@ -19,15 +19,7 @@ class _RatingState extends State<Rating> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ListView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: 3,
-              itemBuilder: (context,index)=>Container(
-            padding: const EdgeInsets.all(8),
-            margin:  const EdgeInsets.symmetric(vertical: 8),
-            color: Colors.white,
-            child: Column(
+           Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
@@ -51,14 +43,7 @@ class _RatingState extends State<Rating> {
                               const Text(
                                 "Samantha Payne",
                                 style: Styles.textStyle14,
-                                ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical:4),
-                                child: Text(
-                                  "@Sam.Payne90",
-                                  style: Styles.textStyle12.copyWith(color: ColorApp.greyCart),
-                                  ),
-                              ),
+                                ),           
                             ],
                           ),
                         ],
@@ -80,7 +65,6 @@ class _RatingState extends State<Rating> {
                 ),
               ],
             ),
-          ))
         ],
       ),
     );

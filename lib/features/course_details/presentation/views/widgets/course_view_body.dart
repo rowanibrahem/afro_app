@@ -1,8 +1,8 @@
 import 'package:afro_app/core/constants/assets_images.dart';
-import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/shared_widget/custom_button_mine.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/pop_up.dart';
+import 'package:afro_app/features/course_details/presentation/views/widgets/reviews.dart';
 import 'package:afro_app/features/payment/presentation/views/cart_view.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class CourseBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: const EdgeInsets.all(25),
         child: Column(
           children: [
             Image.asset(
@@ -25,6 +25,7 @@ class CourseBody extends StatelessWidget {
                 'Learn web development',
                 style: Styles.textStyleNoto16.copyWith(fontSize: 20),
                 ),
+                Rating(),
                 Text(
                   'OverView',
                   style: Styles.textStyleNoto16.copyWith(fontSize: 20),

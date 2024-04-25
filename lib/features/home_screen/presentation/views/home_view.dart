@@ -1,3 +1,4 @@
+import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/features/home_screen/presentation/views/widgets/home_body.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +7,10 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomeBody();
+    return ColoredBox(
+      color: ColorApp.backgroundScaffold,
+      child: const HomeBody(),
+      );
       
   }
 }
