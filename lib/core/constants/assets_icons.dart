@@ -1,7 +1,7 @@
 class AssetIcons {
-  static const bottonStart = "assets/icons/start_button.svg";
-  static const loginCurve = "assets/icons/curve.svg";
-  static const profile = "assets/icons/profile.svg";
-  static const emoji = "assets/icons/emoji _hand.svg";
-  static const google = "assets/icons/google.svg";
+  static const bottonStart = "assets/icons*on_boarding/start_button.svg";
+  static const loginCurve = "assets/icons/log_in/curve.svg";
+  static const profile = "assets/icons/profile/profile.svg";
+  static const emoji = "assets/icons/home/emoji _hand.svg";
+  static const google = "assets/icons/log_in/google.svg";
 }

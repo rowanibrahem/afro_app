@@ -12,7 +12,7 @@ class CustomCoursesImage extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          image: DecorationImage(
+          image: const DecorationImage(
         fit: BoxFit.fill, 
          image: AssetImage(
           AssetImages.bookDetails,
@@ -28,7 +28,7 @@ class CustomCoursesImage extends StatelessWidget {
         // ,
         ),
         ), 
-      )
+      ),
     );
   }
 }

@@ -1,8 +1,4 @@
 class Card {
-  dynamic installments;
-  dynamic mandateOptions;
-  dynamic network;
-  String? requestThreeDSecure;
 
   Card({
     this.installments,
@@ -17,6 +13,10 @@ class Card {
         network: json['network'] as dynamic,
         requestThreeDSecure: json['request_three_d_secure'] as String?,
       );
+  dynamic installments;
+  dynamic mandateOptions;
+  dynamic network;
+  String? requestThreeDSecure;
 
   Map<String, dynamic> toJson() => {
         'installments': installments,

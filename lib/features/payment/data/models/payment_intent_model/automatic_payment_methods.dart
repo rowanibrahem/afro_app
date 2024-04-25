@@ -1,5 +1,4 @@
 class AutomaticPaymentMethods {
-  bool? enabled;
 
   AutomaticPaymentMethods({this.enabled});
 
@@ -8,6 +7,7 @@ class AutomaticPaymentMethods {
       enabled: json['enabled'] as bool?,
     );
   }
+  bool? enabled;
 
   Map<String, dynamic> toJson() => {
         'enabled': enabled,

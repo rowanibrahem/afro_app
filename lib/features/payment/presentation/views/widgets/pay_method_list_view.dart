@@ -12,7 +12,7 @@ class PaymentMethodsListView extends StatefulWidget {
 class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
   final List<String> paymentMethodsItems = const [
     'assets/images/card.svg',
-    'assets/images/paypal.svg'
+    'assets/images/paypal.svg',
   ];
 
   int activeIndex = 0;
@@ -38,7 +38,7 @@ class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
                 ),
               ),
             );
-          }),
+          },),
     );
   }
 }

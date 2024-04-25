@@ -1,7 +1,7 @@
 import 'package:afro_app/features/payment/presentation/views/widgets/pay_method_item.dart';
 import 'package:flutter/material.dart';
 class PayMethodListView extends StatefulWidget {
-   PayMethodListView({super.key, required this.updatePaymentMethod});
+   const PayMethodListView({super.key, required this.updatePaymentMethod});
    final Function({required int index}) updatePaymentMethod;
   @override
   State<PayMethodListView> createState() => _PayMethodListViewState();
@@ -10,7 +10,7 @@ class PayMethodListView extends StatefulWidget {
 class _PayMethodListViewState extends State<PayMethodListView> {
   final List<String> paymentMethodsItems = const [
     'assets/icons/card.svg',
-    'assets/icons/paypal.svg'
+    'assets/icons/paypal.svg',
   ];
 
   int activeIndex = 0;
@@ -38,7 +38,7 @@ class _PayMethodListViewState extends State<PayMethodListView> {
                 ),
               ),
             );
-          }
+          },
       ),
     );
   }

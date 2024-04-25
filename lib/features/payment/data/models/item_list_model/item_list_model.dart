@@ -1,7 +1,6 @@
-import 'item.dart';
+import 'package:afro_app/features/payment/data/models/item_list_model/item.dart';
 
 class ItemListModel {
-  List<OrderItemModel>? orders;
 
   ItemListModel({this.orders});
 
@@ -10,6 +9,7 @@ class ItemListModel {
         ?.map((e) => OrderItemModel.fromJson(e as Map<String, dynamic>))
         .toList(),
   );
+  List<OrderItemModel>? orders;
 
   Map<String, dynamic> toJson() => {
     'items': orders?.map((e) => e.toJson()).toList(),

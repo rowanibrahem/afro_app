@@ -1,7 +1,4 @@
 class Details {
-  String? subtotal;
-  String? shipping;
-  int? shippingDiscount;
 
   Details({this.subtotal, this.shipping, this.shippingDiscount});
 
@@ -10,6 +7,9 @@ class Details {
     shipping: json['shipping'] as String?,
     shippingDiscount: json['shipping_discount'] as int?,
   );
+  String? subtotal;
+  String? shipping;
+  int? shippingDiscount;
 
   Map<String, dynamic> toJson() => {
     'subtotal': subtotal,

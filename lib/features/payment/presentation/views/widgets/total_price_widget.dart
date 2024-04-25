@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 class TotalPrice extends StatelessWidget {
   const TotalPrice({super.key, required this.title, required this.value});
 
-  final String title, value;
+  final String title;
+  final String value;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -22,7 +23,7 @@ class TotalPrice extends StatelessWidget {
           value,
           textAlign: TextAlign.center,
           style: Styles.textStyle24,
-        )
+        ),
       ],
     );
   }

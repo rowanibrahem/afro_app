@@ -1,6 +1,8 @@
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+// ignore: avoid_classes_with_only_static_members
 abstract class Styles{
   static const TextStyle textStyle24 = TextStyle(
       color: Colors.black,
@@ -22,10 +24,9 @@ abstract class Styles{
       fontSize: 36,
       fontWeight: FontWeight.w700,
   );
-    static const TextStyle textStyleNoto16 = TextStyle(
-      color: Colors.black,
+    static  TextStyle textStyleNoto16 = GoogleFonts.notoSansJavanese(
+    color: Colors.black,
       fontSize: 16,
-      fontFamily: 'Noto Sans Javanese',
       fontWeight: FontWeight.w700,//bold
   );
   static const TextStyle textStyle12 = TextStyle(
@@ -38,5 +39,15 @@ abstract class Styles{
       fontSize: 12,
       fontWeight: FontWeight.w300, //light
   );
+  static const textStyle28 = TextStyle(
+      fontSize:28,
+      fontWeight: FontWeight.w700,
+      color: ColorApp.primaryColor,
+  );
+  static const textStyle18 = TextStyle(
+    fontSize:18,
+    fontWeight: FontWeight.w600,
+  );
+  
   
 }

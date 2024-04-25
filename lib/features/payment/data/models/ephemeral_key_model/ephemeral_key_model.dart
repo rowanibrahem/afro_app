@@ -1,13 +1,6 @@
-import 'assosiative_objects.dart';
+import 'package:afro_app/features/payment/data/models/ephemeral_key_model/assosiative_objects.dart';
 
 class EphemeralKeyModel {
-  String? id;
-  String? object;
-  List<AssociatedObject>? associatedObjects;
-  int? created;
-  int? expires;
-  bool? livemode;
-  String? secret;
 
   EphemeralKeyModel({
     this.id,
@@ -32,6 +25,13 @@ class EphemeralKeyModel {
       secret: json['secret'] as String?,
     );
   }
+  String? id;
+  String? object;
+  List<AssociatedObject>? associatedObjects;
+  int? created;
+  int? expires;
+  bool? livemode;
+  String? secret;
 
   Map<String, dynamic> toJson() => {
     'id': id,

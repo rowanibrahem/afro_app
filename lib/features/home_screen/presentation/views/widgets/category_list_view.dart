@@ -13,7 +13,7 @@ class CategoryListView extends StatelessWidget {
           itemCount: 3, // Number of items in the ListView
           itemBuilder: (BuildContext context, int index) {
             // List of categories
-            List<String> categories = ["All", "Design", "Programming"];
+            final List<String> categories = ["All", "Design", "Programming"];
         
             return Padding(
               padding: const EdgeInsets.only(right: 10), // Add spacing between items

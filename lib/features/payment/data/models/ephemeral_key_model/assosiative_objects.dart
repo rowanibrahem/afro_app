@@ -1,6 +1,4 @@
 class AssociatedObject {
-  String? id;
-  String? type;
 
   AssociatedObject({this.id, this.type});
 
@@ -10,6 +8,8 @@ class AssociatedObject {
       type: json['type'] as String?,
     );
   }
+  String? id;
+  String? type;
 
   Map<String, dynamic> toJson() => {
     'id': id,

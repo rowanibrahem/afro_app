@@ -1,7 +1,7 @@
+import 'package:afro_app/features/payment/presentation/views/widgets/Custom_check_icon.dart';
+import 'package:afro_app/features/payment/presentation/views/widgets/Custom_dashed_line.dart';
 import 'package:afro_app/features/payment/presentation/views/widgets/thankyou_card.dart';
 import 'package:flutter/material.dart';
-import 'Custom_check_icon.dart';
-import 'Custom_dashed_line.dart';
 
 class ThankYouBody extends StatefulWidget {
   const ThankYouBody({super.key});

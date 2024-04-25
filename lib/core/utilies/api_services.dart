@@ -12,13 +12,13 @@ class ApiService{
     String? contentType,
     Map<String , String>? headers,
 }) async {
-    var response = await dio.post(
+    final response = await dio.post(
       url ,
       data: body,
       options: Options(
         contentType: contentType,
         headers: headers ?? {'Authorization': "Bearer $token"},
-      ));
+      ),);
     return response;
   }
 }

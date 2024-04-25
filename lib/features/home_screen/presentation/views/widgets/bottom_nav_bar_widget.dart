@@ -2,9 +2,9 @@ import 'package:afro_app/features/home_screen/presentation/views/widgets/bottom_
 import 'package:flutter/material.dart';
 
 class BottomNavigationBarWidget extends StatelessWidget {
-  final List<BottomNavigationItem> items;
 
   const BottomNavigationBarWidget({required this.items});
+  final List<BottomNavigationItem> items;
 
   @override
   Widget build(BuildContext context) {

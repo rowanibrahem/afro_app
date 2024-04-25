@@ -11,6 +11,7 @@ abstract class ColorApp {
   static const primaryColor = Color(0xFFBD902F);
   static const secondryColor3 = Color(0xFF018134);
   static const secondryColor4 = Color(0xFFF1E9B5);
+   static const greyCart = Color(0xFF9B9B9B);
   
   
 }

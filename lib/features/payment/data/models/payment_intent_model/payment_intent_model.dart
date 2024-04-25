@@ -1,48 +1,9 @@
-import 'amount_details.dart';
-import 'automatic_payment_methods.dart';
-import 'metadata.dart';
-import 'payment_method_options.dart';
+import 'package:afro_app/features/payment/data/models/payment_intent_model/amount_details.dart';
+import 'package:afro_app/features/payment/data/models/payment_intent_model/automatic_payment_methods.dart';
+import 'package:afro_app/features/payment/data/models/payment_intent_model/metadata.dart';
+import 'package:afro_app/features/payment/data/models/payment_intent_model/payment_method_options.dart';
 
 class PaymentIntentModel {
-  String? id;
-  String? object;
-  int? amount;
-  int? amountCapturable;
-  AmountDetails? amountDetails;
-  int? amountReceived;
-  dynamic application;
-  dynamic applicationFeeAmount;
-  AutomaticPaymentMethods? automaticPaymentMethods;
-  dynamic canceledAt;
-  dynamic cancellationReason;
-  String? captureMethod;
-  String? clientSecret;
-  String? confirmationMethod;
-  int? created;
-  String? currency;
-  dynamic customer;
-  String? description;
-  dynamic invoice;
-  dynamic lastPaymentError;
-  dynamic latestCharge;
-  bool? livemode;
-  Metadata? metadata;
-  dynamic nextAction;
-  dynamic onBehalfOf;
-  dynamic paymentMethod;
-  dynamic paymentMethodConfigurationDetails;
-  PaymentMethodOptions? paymentMethodOptions;
-  List<dynamic>? paymentMethodTypes;
-  dynamic processing;
-  dynamic receiptEmail;
-  dynamic review;
-  dynamic setupFutureUsage;
-  dynamic shipping;
-  dynamic statementDescriptor;
-  dynamic statementDescriptorSuffix;
-  String? status;
-  dynamic transferData;
-  dynamic transferGroup;
 
   PaymentIntentModel({
     this.id,
@@ -126,6 +87,45 @@ class PaymentIntentModel {
       transferGroup: json['transfer_group'] as dynamic,
     );
   }
+  String? id;
+  String? object;
+  int? amount;
+  int? amountCapturable;
+  AmountDetails? amountDetails;
+  int? amountReceived;
+  dynamic application;
+  dynamic applicationFeeAmount;
+  AutomaticPaymentMethods? automaticPaymentMethods;
+  dynamic canceledAt;
+  dynamic cancellationReason;
+  String? captureMethod;
+  String? clientSecret;
+  String? confirmationMethod;
+  int? created;
+  String? currency;
+  dynamic customer;
+  String? description;
+  dynamic invoice;
+  dynamic lastPaymentError;
+  dynamic latestCharge;
+  bool? livemode;
+  Metadata? metadata;
+  dynamic nextAction;
+  dynamic onBehalfOf;
+  dynamic paymentMethod;
+  dynamic paymentMethodConfigurationDetails;
+  PaymentMethodOptions? paymentMethodOptions;
+  List<dynamic>? paymentMethodTypes;
+  dynamic processing;
+  dynamic receiptEmail;
+  dynamic review;
+  dynamic setupFutureUsage;
+  dynamic shipping;
+  dynamic statementDescriptor;
+  dynamic statementDescriptorSuffix;
+  String? status;
+  dynamic transferData;
+  dynamic transferGroup;
 
   Map<String, dynamic> toJson() => {
         'id': id,

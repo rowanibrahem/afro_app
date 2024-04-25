@@ -10,15 +10,15 @@ class CheckoutRepoImpl extends CheckoutRepo {
   final StripeService stripeService = StripeService();
   @override
   Future<Either<Failure, void>> makePayment(
-      {required PaymentIntentInputModel paymentIntentInputModel}) async {
+      {required PaymentIntentInputModel paymentIntentInputModel,}) async {
     try {
       await stripeService.makePayment(
-          paymentIntentInputModel: paymentIntentInputModel);
+          paymentIntentInputModel: paymentIntentInputModel,);
 
       return right(null);
     } on StripeException catch (e) {
       return left(ServerFailure(
-          errMessage: e.error.message ?? 'Oops there was an error'));
+          errMessage: e.error.message ?? 'Oops there was an error',),);
     } catch (e) {
       return left(ServerFailure(errMessage: e.toString()));
     }

@@ -12,7 +12,7 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 class StripeService {
   final ApiService apiService = ApiService();
   Future<PaymentIntentModel> createPaymentIntent(
-      PaymentIntentInputModel paymentIntentInputModel) async {
+      PaymentIntentInputModel paymentIntentInputModel,) async {
     final response = await apiService.post(
       body: paymentIntentInputModel.toJson(),
       contentType: Headers.formUrlEncodedContentType,
@@ -33,7 +33,7 @@ class StripeService {
 
   Future initPaymentSheet(
       {required InitiPaymentSheetInputModel
-          initiPaymentSheetInputModel}) async {
+          initiPaymentSheetInputModel,}) async {
     await Stripe.instance.initPaymentSheet(
       paymentSheetParameters: SetupPaymentSheetParameters(
         paymentIntentClientSecret: initiPaymentSheetInputModel.clientSecret,
@@ -50,21 +50,21 @@ class StripeService {
   }
 
   Future makePayment(
-      {required PaymentIntentInputModel paymentIntentInputModel}) async {
+      {required PaymentIntentInputModel paymentIntentInputModel,}) async {
     final paymentIntentModel = await createPaymentIntent(paymentIntentInputModel);
     final ephemeralKeyModel = await createEphemeralKey(
-        customerId: paymentIntentInputModel.cusomerId!);
+        customerId: paymentIntentInputModel.cusomerId!,);
     final initPaymentSheetInputModel = InitiPaymentSheetInputModel(
         clientSecret: paymentIntentModel.clientSecret!,
         customerId: paymentIntentInputModel.cusomerId!,
-        ephemeralKeySecret: ephemeralKeyModel.secret!);
+        ephemeralKeySecret: ephemeralKeyModel.secret!,);
     await initPaymentSheet(
-        initiPaymentSheetInputModel: initPaymentSheetInputModel);
+        initiPaymentSheetInputModel: initPaymentSheetInputModel,);
     await displayPaymentSheet();
   }
 
   Future<EphemeralKeyModel> createEphemeralKey(
-      {required String customerId}) async {
+      {required String customerId,}) async {
     final response = await apiService.post(
       body: {'customer': customerId},
       contentType: Headers.formUrlEncodedContentType,

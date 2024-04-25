@@ -27,21 +27,21 @@ class CartBody extends StatelessWidget {
           ),
           const OrderInfoItem(
               title: 'Order Subtotal',
-              value: '40.9'
+              value: '40.9',
           ),
           const SizedBox(
             height: 3,
           ),
           const OrderInfoItem(
               title: 'Order Subtotal',
-              value: '40.9'
+              value: '40.9',
           ),
           const SizedBox(
             height: 3,
           ),
           const OrderInfoItem(
               title: 'Order Subtotal',
-              value: '40.9'
+              value: '40.9',
           ),
           const Divider(
             thickness: 2,
@@ -66,15 +66,15 @@ class CartBody extends StatelessWidget {
             showModalBottomSheet(
                     context: context,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16)),
+                        borderRadius: BorderRadius.circular(16),),
                     builder: (context) {
                       print('Building bottom sheet');
                       return BlocProvider(
                         create: (context) => PaymentCubit(CheckoutRepoImpl()),
                         child: const PaymentMethodsBottomSheet(),
                       );
-                    });
-              }),
+                    },);
+              },),
           const SizedBox(
             height: 12,
           ),

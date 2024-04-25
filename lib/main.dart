@@ -1,4 +1,7 @@
 import "package:afro_app/core/utilies/api_keys.dart";
+import "package:afro_app/features/course_details/presentation/views/course_view.dart";
+import "package:afro_app/features/home_screen/presentation/views/bottom_nav_view.dart";
+import "package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart";
 import "package:afro_app/features/payment/presentation/views/cart_view.dart";
 import "package:device_preview/device_preview.dart";
 import "package:flutter/material.dart";
@@ -17,7 +20,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.josefinSansTextTheme(),
         useMaterial3: true,
       ),
-      home: const CartView(),
+      home: const BottomNavBody(),
     );
   }
 }

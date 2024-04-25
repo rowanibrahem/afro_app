@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 
 class OrderInfoItem extends StatelessWidget {
-  final String title , value;
   const OrderInfoItem({required this.title , required this.value ,super.key});
+  final String title ;
+  final String value;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class OrderInfoItem extends StatelessWidget {
           textAlign: TextAlign.center,
           style: Styles.textStyle16,
         ),
-        Spacer(),
+        const Spacer(),
         Text(
             value,
           textAlign: TextAlign.center,

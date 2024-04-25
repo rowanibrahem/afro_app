@@ -4,15 +4,13 @@ import 'package:afro_app/core/constants/assets_icons.dart';
 import 'package:afro_app/core/constants/assets_images.dart';
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/core/theme/styles.dart';
-import 'package:afro_app/features/authuntcation/presentation/views/log_in_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/bottom_nav_view.dart';
-import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
 class OnboardingBody extends StatefulWidget {
-  const OnboardingBody({Key? key}) : super(key: key);
+  const OnboardingBody({super.key});
 
   @override
   State<OnboardingBody> createState() => _OnboardingBodyState();
@@ -68,7 +66,7 @@ class _OnboardingBodyState extends State<OnboardingBody>
                     ),  
     
                   borderRadius:
-                      BorderRadius.only(bottomRight: Radius.circular(50))),
+                      BorderRadius.only(bottomRight: Radius.circular(50)),),
               child: Column(
                 children: [
                   Expanded(
@@ -90,7 +88,7 @@ class _OnboardingBodyState extends State<OnboardingBody>
                     ),
                   ],
               ),
-            )),
+            ),),
         Expanded(
             flex: 2,
             child: Container(
@@ -101,7 +99,7 @@ class _OnboardingBodyState extends State<OnboardingBody>
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(50),
-                    )),
+                    ),),
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Column(
@@ -140,12 +138,12 @@ class _OnboardingBodyState extends State<OnboardingBody>
                                 ),
                            ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
               ),
-            ))
+            ),),
       ],
     );
   }

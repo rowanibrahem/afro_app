@@ -21,14 +21,12 @@ class PayListItem extends StatelessWidget {
           BoxShadow(
             color: isActive ? const Color(0xFF34A853) : Colors.grey,
             blurRadius: 4,
-            offset: Offset(0, 0),
-            spreadRadius: 0,
-          )
+          ),
         ],
       ),
      child : Container(
        decoration: BoxDecoration(
-           borderRadius: BorderRadius.circular(15), color: Colors.white
+           borderRadius: BorderRadius.circular(15), color: Colors.white,
        ),
        child : Center(
          child : SvgPicture.asset(

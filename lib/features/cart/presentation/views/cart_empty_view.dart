@@ -1,3 +1,4 @@
+import 'package:afro_app/features/cart/presentation/views/widgets/cart_empty_body.dart';
 import 'package:flutter/material.dart';
 
 class CardView extends StatelessWidget {
@@ -5,8 +6,6 @@ class CardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-       color: Colors.blue, child: const Center(child: Text('Page 3')));
-    
+    return CartEmptyBody();
   }
 }

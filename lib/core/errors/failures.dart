@@ -1,6 +1,6 @@
 abstract class Failure {
-  final String errMessage;
   Failure ({required this.errMessage});
+  final String errMessage;
 }
 
 class ServerFailure extends Failure {

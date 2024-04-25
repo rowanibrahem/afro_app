@@ -1,4 +1,4 @@
-import 'package:afro_app/core/constants/assets_images.dart';
+import 'package:afro_app/core/constants/asset_animation.dart';
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -59,7 +59,7 @@ class _SplashBodyState extends State<SplashBody>
      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Lottie.asset(AssetImages.animation),
+          Lottie.asset(AssetAnimations.animation),
           Flexible(
             child: DefaultTextStyle(
               style: const TextStyle(

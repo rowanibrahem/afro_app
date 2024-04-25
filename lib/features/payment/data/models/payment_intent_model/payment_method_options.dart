@@ -1,7 +1,6 @@
-import 'card.dart';
+import 'package:afro_app/features/payment/data/models/payment_intent_model/card.dart';
 
 class PaymentMethodOptions {
-  Card? card;
 
   PaymentMethodOptions({this.card});
 
@@ -12,6 +11,7 @@ class PaymentMethodOptions {
           : Card.fromJson(json['card'] as Map<String, dynamic>),
     );
   }
+  Card? card;
 
   Map<String, dynamic> toJson() => {
         'card': card?.toJson(),

@@ -1,24 +1,24 @@
 import 'dart:developer';
 
 import 'package:afro_app/core/theme/colors.dart';
-import 'package:afro_app/features/Favourite/presentation/views/favourite_view.dart';
-import 'package:afro_app/features/card/presentation/views/card_view.dart';
+import 'package:afro_app/features/Favourite/presentation/views/favourite_empty_view.dart';
+import 'package:afro_app/features/cart/presentation/views/cart_empty_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
 import 'package:afro_app/features/profile/presentation/views/profile_view.dart';
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBody extends StatefulWidget {
-  const BottomNavBody({Key? key}) : super(key: key);
+  const BottomNavBody({super.key});
 
   @override
   State<BottomNavBody> createState() => _BottomNavBodyState();
 }
 
 class _BottomNavBodyState extends State<BottomNavBody> {
-  final _pageController = PageController(initialPage: 0);
+  final _pageController = PageController();
 
-  final _controller = NotchBottomBarController(index: 0);
+  final _controller = NotchBottomBarController();
 
   int maxCount = 4;
 
@@ -44,14 +44,13 @@ class _BottomNavBodyState extends State<BottomNavBody> {
             controller: _pageController,
             physics: const NeverScrollableScrollPhysics(),
             children: List.generate(
-            _widgetOptions.length, (index) => _widgetOptions[index]),
+            _widgetOptions.length, (index) => _widgetOptions[index],),
                 ),
                 extendBody: true,
           bottomNavigationBar: (_widgetOptions.length <= maxCount)
             ? AnimatedNotchBottomBar(
                 /// Provide NotchBottomBarController
                 notchBottomBarController: _controller,
-                color: Colors.white,
                 showLabel: false,
                 shadowElevation: 5,
                 kBottomRadius: 28.0,
@@ -62,12 +61,7 @@ class _BottomNavBodyState extends State<BottomNavBody> {
                 //   tileMode: TileMode.mirror,
                 // ).createShader(Rect.fromCircle(center: Offset.zero, radius: 8.0)),
                 notchColor: Colors.black87,
-      
-                /// restart app if you change removeMargins
-                removeMargins: false,
-                bottomBarWidth: 500,
                 showShadow: false,
-                durationInMilliSeconds: 300,
                 elevation: 1,
                 bottomBarItems: const [
                   BottomBarItem(
@@ -122,7 +116,7 @@ class _BottomNavBodyState extends State<BottomNavBody> {
                 },
                 kIconSize: 24.0,
               )
-            : null
+            : null,
     );
   }
 }

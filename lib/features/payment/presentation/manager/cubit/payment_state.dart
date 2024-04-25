@@ -12,7 +12,7 @@ final class PaymentLoading extends PaymentState {}
 final class PaymentSuccess extends PaymentState {}
 
 final class PaymentFailure extends PaymentState {
-  final String errMessage;
 
   PaymentFailure(this.errMessage);
+  final String errMessage;
 }

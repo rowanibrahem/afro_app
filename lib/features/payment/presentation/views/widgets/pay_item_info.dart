@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 class PaymentItemInfo extends StatelessWidget {
   const PaymentItemInfo({super.key, required this.title, required this.value});
-  final String title, value;
+  final String title;
+  final String value;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +19,7 @@ class PaymentItemInfo extends StatelessWidget {
         Text(
           value,
           style: Styles.textStyle24,
-        )
+        ),
       ],
     );
   }

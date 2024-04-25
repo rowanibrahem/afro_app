@@ -48,7 +48,7 @@ class CardInfoWidget extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

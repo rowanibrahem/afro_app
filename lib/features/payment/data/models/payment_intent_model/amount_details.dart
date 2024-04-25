@@ -1,7 +1,6 @@
-import 'tip.dart';
+import 'package:afro_app/features/payment/data/models/payment_intent_model/tip.dart';
 
 class AmountDetails {
-  Tip? tip;
 
   AmountDetails({this.tip});
 
@@ -10,6 +9,7 @@ class AmountDetails {
             ? null
             : Tip.fromJson(json['tip'] as Map<String, dynamic>),
       );
+  Tip? tip;
 
   Map<String, dynamic> toJson() => {
         'tip': tip?.toJson(),

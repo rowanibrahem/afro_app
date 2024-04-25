@@ -26,7 +26,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
           return CustomButton(
             onTap: (){
               if (isPaypal) {
-                var transctionsData = getTransctionsData();
+                final transctionsData = getTransctionsData();
                 exceutePaypalPayment(context, transctionsData);
               } else {
                 excuteStripePayment(context);
@@ -43,20 +43,20 @@ class CustomButtonBlocConsumer extends StatelessWidget {
           if(state is PaymentSuccess){
             Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context){
               return const ThankYouView();
-            }
+            },
             ),
             );
           }
           if (state is PaymentFailure){
             Navigator.of(context).pop(context);
-            SnackBar snackBar = SnackBar(content: Text(state.errMessage));
+            final SnackBar snackBar = SnackBar(content: Text(state.errMessage));
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
           }
-        }
+        },
     );
   }
   void excuteStripePayment(BuildContext context) {
-    PaymentIntentInputModel paymentIntentInputModel = PaymentIntentInputModel(
+    final PaymentIntentInputModel paymentIntentInputModel = PaymentIntentInputModel(
       amount: '100',
       currency: 'USD',
       cusomerId: 'cus_Onu3Wcrzhehlez',
@@ -67,7 +67,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
 
   void exceutePaypalPayment(
     BuildContext context,
-      ({AmountModel amount, ItemListModel itemList}) transctionsData) {
+      ({AmountModel amount, ItemListModel itemList}) transctionsData,) {
     Navigator.of(context).push(
       MaterialPageRoute(
       builder: (BuildContext context) => PaypalCheckoutView(
@@ -88,7 +88,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
             context,
             MaterialPageRoute(builder: (context) {
               return const ThankYouView();
-            }),
+            },),
                 (route) {
               if (route.settings.name == '/') {
                 return true;
@@ -99,13 +99,13 @@ class CustomButtonBlocConsumer extends StatelessWidget {
           );
         },
         onError: (error) {
-          SnackBar snackBar = SnackBar(content: Text(error.toString()));
+          final SnackBar snackBar = SnackBar(content: Text(error.toString()));
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
           Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(builder: (context) {
               return const CartView();
-            }),
+            },),
                 (route) {
               return false;
             },
@@ -116,6 +116,6 @@ class CustomButtonBlocConsumer extends StatelessWidget {
           Navigator.pop(context);
         },
       ),
-    ));
+    ),);
   }
 }

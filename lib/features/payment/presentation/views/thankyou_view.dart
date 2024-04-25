@@ -11,7 +11,7 @@ class ThankYouView extends StatelessWidget {
       appBar: buildAppBar(),
       body: Transform.translate(
           offset: const Offset(0, -16),
-          child: const ThankYouBody()
+          child: const ThankYouBody(),
       ),
     );
   }

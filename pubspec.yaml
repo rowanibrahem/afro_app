@@ -54,6 +54,8 @@ dependencies:
   flutter_credit_card: ^4.0.1
   font_awesome_flutter: ^10.7.0
   animated_notch_bottom_bar: ^1.0.2 
+  flutter_screenutil: ^5.9.0
+  flutter_rating_bar: ^4.0.1
 
 
 
@@ -84,6 +86,10 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/images/card&favourites/
+    - assets/images/course/
+    - assets/images/home/
+    - assets/images/onboarding/
     - assets/animation/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

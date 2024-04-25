@@ -29,7 +29,7 @@ class Thankyou_card extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Styles.textStyle24,
             ),
-            Text(
+            const Text(
               'Your transaction was successful',
               textAlign: TextAlign.center,
               style: Styles.textStyle24,
@@ -78,7 +78,7 @@ class Thankyou_card extends StatelessWidget {
                   decoration: ShapeDecoration(
                     shape: RoundedRectangleBorder(
                       side: const BorderSide(
-                          width: 1.50, color: Color(0xFF34A853)),
+                          width: 1.50, color: Color(0xFF34A853),),
                       borderRadius: BorderRadius.circular(15),
                     ),
                   ),
@@ -90,7 +90,7 @@ class Thankyou_card extends StatelessWidget {
                           .copyWith(color: const Color(0xff34A853)),
                     ),
                   ),
-                )
+                ),
               ],
             ),
             SizedBox(

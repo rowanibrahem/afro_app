@@ -1,3 +1,4 @@
+import 'package:afro_app/features/profile/presentation/views/widgets/profile_body.dart';
 import 'package:flutter/material.dart';
 
 class ProfileView extends StatelessWidget {
@@ -5,8 +6,6 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-     color: Colors.yellow, child: const Center(child: Text('Page 1')));
-    
+    return ProfileBody();
   }
 }

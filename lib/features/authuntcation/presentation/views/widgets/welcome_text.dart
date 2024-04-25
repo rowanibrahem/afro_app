@@ -14,11 +14,11 @@ class WelcomeText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-     double screenWidth = MediaQuery.of(context).size.width;
+     final double screenWidth = MediaQuery.of(context).size.width;
 
-    double leftPosition = screenWidth >= 600 ? 50 : 20;
+    final double leftPosition = screenWidth >= 600 ? 50 : 20;
 
-    double topPosition = screenWidth >= 600 ? 100 : 70;
+    final double topPosition = screenWidth >= 600 ? 100 : 70;
 
     return Positioned(
       top: topPosition ,// 20% from the top

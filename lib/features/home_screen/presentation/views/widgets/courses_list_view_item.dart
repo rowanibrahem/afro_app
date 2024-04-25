@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class CoursesListViewItem extends StatelessWidget {
 
-  const CoursesListViewItem({Key? key}) : super(key: key);
+  const CoursesListViewItem({super.key});
  
   @override
   Widget build(BuildContext context) {
@@ -27,11 +27,11 @@ class CoursesListViewItem extends StatelessWidget {
                 children:  [
                   const Row(
                     children: [
-                      const Text(
+                      Text(
                      '24 lesson',
                     style: Styles.textStyle12,
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 3,
                   ),
                       Text(

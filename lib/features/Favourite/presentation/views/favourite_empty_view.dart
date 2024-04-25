@@ -1,3 +1,4 @@
+import 'package:afro_app/features/Favourite/presentation/views/widgets/fav_empty_body.dart';
 import 'package:flutter/material.dart';
 
 class FavouriteView extends StatelessWidget {
@@ -5,8 +6,6 @@ class FavouriteView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-       color: Colors.orange, child: const Center(child: Text('Page 2')));
-    
+    return FavEmptyBody();
   }
 }
