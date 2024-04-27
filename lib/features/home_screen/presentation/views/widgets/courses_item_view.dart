@@ -18,7 +18,7 @@ class _CoursesItemViewState extends State<CoursesItemView> {
             itemCount: 5,
             itemBuilder: (context, index) {
               return  const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10),
+                padding: EdgeInsets.symmetric(vertical: 10 ),
                 child: CoursesListViewItem(),
               );
             },

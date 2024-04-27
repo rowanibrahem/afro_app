@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/features/Favourite/presentation/views/favourite_empty_view.dart';
-import 'package:afro_app/features/Favourite/presentation/views/widgets/fav_empty_body.dart';
 import 'package:afro_app/features/cart/presentation/views/cart_empty_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
 import 'package:afro_app/features/profile/presentation/views/profile_view.dart';
@@ -55,13 +54,6 @@ class _BottomNavBodyState extends State<BottomNavBody> {
                 showLabel: false,
                 shadowElevation: 5,
                 kBottomRadius: 28.0,
-                // notchShader: const SweepGradient(
-                //   startAngle: 0,
-                //   endAngle: pi / 2,
-                //   colors: [Colors.red, Colors.green, Colors.orange],
-                //   tileMode: TileMode.mirror,
-                // ).createShader(Rect.fromCircle(center: Offset.zero, radius: 8.0)),
-                notchColor: Colors.black87,
                 showShadow: false,
                 elevation: 1,
                 bottomBarItems: const [
@@ -78,23 +70,23 @@ class _BottomNavBodyState extends State<BottomNavBody> {
                   ),
                   BottomBarItem(
                     inActiveItem: Icon(
-                      Icons.star,
+                      Icons.favorite_outline_outlined,
                       color: Colors.blueGrey,
                     ),
                     activeItem: Icon(
-                      Icons.star,
-                      color: Colors.blueAccent,
+                      Icons.favorite_outline_outlined,
+                      color: ColorApp.primaryColor,
                     ),
                     itemLabel: 'FavouriteView',
                   ),
                   BottomBarItem(
                     inActiveItem: Icon(
-                      Icons.settings,
+                      Icons.shopping_basket,
                       color: Colors.blueGrey,
                     ),
                     activeItem: Icon(
-                      Icons.settings,
-                      color: Colors.pink,
+                      Icons.shopping_basket,
+                      color: ColorApp.primaryColor,
                     ),
                     itemLabel: 'CardView',
                   ),
@@ -105,7 +97,7 @@ class _BottomNavBodyState extends State<BottomNavBody> {
                     ),
                     activeItem: Icon(
                       Icons.person,
-                      color: Colors.yellow,
+                      color: ColorApp.primaryColor,
                     ),
                     itemLabel: 'ProfileView',
                   ),

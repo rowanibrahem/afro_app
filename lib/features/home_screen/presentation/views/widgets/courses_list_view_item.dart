@@ -24,6 +24,7 @@ class CoursesListViewItem extends StatelessWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children:  [
                   const Row(
                     children: [
@@ -35,7 +36,7 @@ class CoursesListViewItem extends StatelessWidget {
                     width: 3,
                   ),
                       Text(
-                        'F2 hours',
+                        '2H 30Min',
                       style: Styles.textStyle12,
                       ),
                       Spacer(),
