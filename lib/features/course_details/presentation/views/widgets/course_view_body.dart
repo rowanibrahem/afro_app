@@ -60,6 +60,7 @@ class CourseBody extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               child: CustomButtonold(
                 text: 'Add to cart', 
+                textColor: Colors.white,
                 func: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> const PopUp()
                   ),
@@ -71,8 +72,9 @@ class CourseBody extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8),
               child: CustomButtonold(
+                borderRadius: BorderRadius.circular(15),
                 backgroundColor: Colors.white,
-                text: 'Buy now ', 
+                text: 'Buy now ' ,  
                 func: (){
                   Navigator.push(
                     context,
