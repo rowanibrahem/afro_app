@@ -1,9 +1,5 @@
 import "package:afro_app/core/utilies/api_keys.dart";
-import "package:afro_app/features/course_details/presentation/views/course_view.dart";
-import "package:afro_app/features/home_screen/presentation/views/bottom_nav_view.dart";
 import "package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart";
-import "package:afro_app/features/payment/presentation/views/cart_view.dart";
-import "package:afro_app/features/splash_screen/presentation/views/splash_view.dart";
 import "package:device_preview/device_preview.dart";
 import "package:flutter/material.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
@@ -16,6 +12,7 @@ void main() {
   const MyApp(),
 );
 }
+
 // void main() { 
 //   Stripe.publishableKey = ApiKeys.publishableKey;
 //   runApp(

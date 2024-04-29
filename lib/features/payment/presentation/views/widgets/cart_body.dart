@@ -73,8 +73,10 @@ class CartBody extends StatelessWidget {
                         create: (context) => PaymentCubit(CheckoutRepoImpl()),
                         child: const PaymentMethodsBottomSheet(),
                       );
-                    },);
-              },),
+                    },
+                    );
+              },
+              ),
           const SizedBox(
             height: 12,
           ),

@@ -3,8 +3,11 @@ import 'package:afro_app/core/shared_widget/custom_button_mine.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/pop_up.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/rating.dart';
-import 'package:afro_app/features/payment/presentation/views/cart_view.dart';
+import 'package:afro_app/features/payment/data/repos/checkout_repo_impl.dart';
+import 'package:afro_app/features/payment/presentation/manager/cubit/payment_cubit.dart';
+import 'package:afro_app/features/payment/presentation/views/widgets/pay_method_bottomsheet.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CourseBody extends StatelessWidget {
   const CourseBody({super.key});
@@ -54,8 +57,7 @@ class CourseBody extends StatelessWidget {
                 Text(
                   'EGP 1,999.99',
                   style: Styles.textStyle16.copyWith(fontSize: 20),
-                  ),
-                  
+                  ), 
                  Padding(
               padding: const EdgeInsets.all(8),
               child: CustomButtonold(
@@ -76,12 +78,19 @@ class CourseBody extends StatelessWidget {
                 backgroundColor: Colors.white,
                 text: 'Buy now ' ,  
                 func: (){
-                  Navigator.push(
-                    context,
-                     MaterialPageRoute(
-                      builder: (context)=> const CartView(),
-                  ),
-                  );
+                 print('Button tapped');
+                 showModalBottomSheet(
+                    context: context,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),),
+                    builder: (context) {
+                      print('Building bottom sheet');
+                      return BlocProvider(
+                        create: (context) => PaymentCubit(CheckoutRepoImpl()),
+                        child: const PaymentMethodsBottomSheet(),
+                      );
+                    },
+                    );
                 },
                 width:double.infinity,
               ),

@@ -2,11 +2,11 @@ import 'dart:developer';
 import 'package:afro_app/core/functions/get_transctions.dart';
 import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/utilies/api_keys.dart';
+import 'package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart';
 import 'package:afro_app/features/payment/data/models/amount_model/amount_model.dart';
 import 'package:afro_app/features/payment/data/models/item_list_model/item_list_model.dart';
 import 'package:afro_app/features/payment/data/models/payment_intent_input_model.dart';
 import 'package:afro_app/features/payment/presentation/manager/cubit/payment_cubit.dart';
-import 'package:afro_app/features/payment/presentation/views/cart_view.dart';
 import 'package:afro_app/features/payment/presentation/views/thankyou_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -103,7 +103,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
           Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(builder: (context) {
-              return const CartView();
+              return const BottomNavBody();
             },),
                 (route) {
               return false;

@@ -6,9 +6,6 @@ AppBar buildAppBar({final String? text}){
   return AppBar(
    leading: const Center(
     child: Icon(Icons.arrow_back),
-  //  child: SvgPicture.asset(
-  //    'assets/icons/Arrow 1.svg',
-  //  ),
    ),
     centerTitle: true,
     elevation: 0,
@@ -20,3 +17,14 @@ AppBar buildAppBar({final String? text}){
     ),
   );
 }
+ // appBar: AppBar(
+        //   leading: IconButton(
+        //     icon: const Icon(Icons.arrow_back),
+        //     onPressed: () {
+        //       Navigator.push(
+        //           context,
+        //           MaterialPageRoute(
+        //               builder: (context) => const BottomNavBody()));
+        //     },
+        //   ),
+        
