@@ -6,10 +6,10 @@ class CustomButtonold extends StatelessWidget {
   const CustomButtonold({
     super.key,
    this.backgroundColor,
-    this.textColor = Colors.black,
     this.borderRadius,
     required this.text,
     this.fontSized,
+    this.textColor,
     required this.func,
      this.width,
     this.height = 43,
@@ -36,15 +36,13 @@ class CustomButtonold extends StatelessWidget {
             backgroundColor: ColorApp.primaryColor,
             padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 12),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(
-                24, //40
-              ),
+               borderRadius: borderRadius ?? BorderRadius.circular(24),
             ),
             // minimumSize: Size(150, 50),
           ),
           child: Text(
             text,
-            style: Styles.textStyle16,
+            style: Styles.textStyle16.copyWith(color: textColor ?? Colors.black,),
           ),
         ),
       ),
