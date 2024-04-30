@@ -1,9 +1,5 @@
 import 'package:afro_app/core/constants/assets_images.dart';
-import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/shared_widget/custom_empty_item.dart';
-import 'package:afro_app/core/theme/colors.dart';
-import 'package:afro_app/core/theme/styles.dart';
-import 'package:afro_app/features/home_screen/presentation/views/bottom_nav_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart';
 import 'package:flutter/material.dart';
 
