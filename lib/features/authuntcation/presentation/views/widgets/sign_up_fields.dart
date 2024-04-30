@@ -1,4 +1,4 @@
-import 'package:afro_app/core/shared_widget/custom_button_mine.dart';
+import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/shared_widget/default_text.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/authuntcation/presentation/views/log_in_view.dart';
@@ -125,7 +125,7 @@ class _SignUpFields extends State<SignUpFields> {
               ),
               Padding(
                 padding: const EdgeInsets.all(25.0),
-                child: CustomButtonold(
+                child: CustomButton(
                   text: 'SignUp',
                   func: () {
                     Navigator.pushReplacement(

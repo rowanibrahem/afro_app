@@ -1,4 +1,3 @@
-import 'package:afro_app/core/constants/assets_icons.dart';
 import 'package:afro_app/core/constants/assets_images.dart';
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/core/theme/styles.dart';
@@ -17,7 +16,7 @@ class _RatingState extends State<Rating> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,   
+      // mainAxisAlignment: MainAxisAlignment.spaceBetween,   
       children: [
         const Padding(
           padding: EdgeInsets.only(right: 8.0),
@@ -29,8 +28,16 @@ class _RatingState extends State<Rating> {
               ),
         ),
         const Text(
-          "Samantha Payne",
+          "By Amanda Yakin ",
           style: Styles.textStyle14,
+          ),
+          const Spacer(),
+           Text(
+            '4.5',
+            style: Styles.textStyle12.copyWith(fontSize: 20),
+          ),
+          const SizedBox(
+            width: 10,
           ),
         RatingBarIndicator(
           unratedColor: Colors.grey[300],
@@ -39,8 +46,7 @@ class _RatingState extends State<Rating> {
             Icons.star,
             color: ColorApp.primaryColor,
           ),
-          itemCount: 5,
-          itemSize: MediaQuery.of(context).size.width/15,
+          itemSize: MediaQuery.of(context).size.width/30,
         ),
       ],
     );

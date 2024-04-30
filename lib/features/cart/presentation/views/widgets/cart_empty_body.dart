@@ -1,5 +1,5 @@
 import 'package:afro_app/core/constants/assets_images.dart';
-import 'package:afro_app/core/shared_widget/custom_button_mine.dart';
+import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/shared_widget/custom_empty_item.dart';
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/core/theme/styles.dart';

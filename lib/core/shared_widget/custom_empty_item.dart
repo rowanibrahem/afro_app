@@ -1,4 +1,4 @@
-import 'package:afro_app/core/shared_widget/custom_button_mine.dart';
+import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +55,7 @@ class EmptyPageItem extends StatelessWidget {
           const SizedBox(
             height: 26,
           ),
-          CustomButtonold(
+          CustomButton(
             text: buttonText,
              func: onPressed,
              ),

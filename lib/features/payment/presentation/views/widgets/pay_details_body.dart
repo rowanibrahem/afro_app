@@ -35,7 +35,7 @@ class _DetailsBodyState extends State<DetailsBody> {
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 12, left: 16, right: 16),
                 child: CustomButton(
-                  onTap: () {
+                  func: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
                       log('payment');

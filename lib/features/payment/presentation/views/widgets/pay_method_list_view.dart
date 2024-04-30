@@ -1,3 +1,4 @@
+import 'package:afro_app/core/constants/assets_icons.dart';
 import 'package:afro_app/features/payment/presentation/views/widgets/pay_method_item.dart';
 import 'package:flutter/material.dart';
 
@@ -11,8 +12,9 @@ class PaymentMethodsListView extends StatefulWidget {
 
 class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
   final List<String> paymentMethodsItems = const [
-    'assets/images/card.svg',
-    'assets/images/paypal.svg',
+    AssetIcons.card,
+    AssetIcons.paybal,
+    
   ];
 
   int activeIndex = 0;

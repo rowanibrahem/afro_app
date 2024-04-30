@@ -13,15 +13,14 @@ class CourseBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
          buildCourseImageAndDetails(),
-          const SizedBox(height: 35),
-          Expanded(
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: buildButtons(context),
-            ),
+         const Spacer(),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: buildButtons(context),
           ),
         ],
       ),
+      
     );
   }
 }

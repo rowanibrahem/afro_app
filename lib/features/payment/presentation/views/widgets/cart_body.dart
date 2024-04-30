@@ -61,7 +61,7 @@ class CartBody extends StatelessWidget {
             //   Navigator.of(context).push(MaterialPageRoute(builder: (context){
             //     return PayDetails();
             //   }));
-          onTap: (){
+          func: (){
             print('Button tapped');
             showModalBottomSheet(
                     context: context,
@@ -73,8 +73,10 @@ class CartBody extends StatelessWidget {
                         create: (context) => PaymentCubit(CheckoutRepoImpl()),
                         child: const PaymentMethodsBottomSheet(),
                       );
-                    },);
-              },),
+                    },
+                    );
+              },
+              ),
           const SizedBox(
             height: 12,
           ),
