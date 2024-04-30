@@ -11,12 +11,14 @@ class CourseView extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const BottomNavBody()));
+                      builder: (context) => const BottomNavBody(),
+                      ),
+                      );
             },
           ),
         ),
