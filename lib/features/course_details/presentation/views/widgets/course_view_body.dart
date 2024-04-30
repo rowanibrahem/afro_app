@@ -98,6 +98,7 @@ class CourseBody extends StatelessWidget {
           ],
         ),
       ),
+      
     );
   }
 }

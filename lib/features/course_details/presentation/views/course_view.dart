@@ -12,6 +12,7 @@ class CourseView extends StatelessWidget {
         appBar: buildAppBar(
         ),
         body: const CourseBody(),
+        
       ),
     );
   }
