@@ -10,9 +10,9 @@ abstract class Styles{
       fontSize: 24.sp,
       fontWeight: FontWeight.w600,//semibold
   );
-  static const TextStyle textStyle16 = TextStyle(
+  static  TextStyle textStyle16 = TextStyle(
       color: Colors.black,
-      fontSize: 16,
+      fontSize: 16.sp,
       fontWeight: FontWeight.w700,
   );
   static const TextStyle textStyle14 = TextStyle(
@@ -30,9 +30,9 @@ abstract class Styles{
       fontSize: 16,
       fontWeight: FontWeight.w700,//bold
   );
-  static const TextStyle textStyle12 = TextStyle(
+  static TextStyle textStyle12 = TextStyle(
       color: Colors.black,
-      fontSize: 12,
+      fontSize: 12.sp,
       fontWeight: FontWeight.w400, //regular
   );
   static const TextStyle textStyleLight12 = TextStyle(

@@ -4,7 +4,6 @@ import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/home_screen/presentation/views/widgets/category_list_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/widgets/courses_item_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 
@@ -19,15 +18,19 @@ class HomeBody extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 60),
+            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children:  [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15 , ), //or 30
+                  padding: const EdgeInsets.symmetric(horizontal: 10 , ), //or 30
                   child: Row(
                 children: [
-                  SvgPicture.asset(AssetIcons.profile),
+                  Image.asset( 
+                    AssetImages.profile,
+                     width: 40, 
+                     height: 40,
+                    ),
                   const SizedBox(width: 15,),
                    Text(
                     "Hi, Jhon Smith ",
@@ -49,7 +52,7 @@ class HomeBody extends StatelessWidget {
                     ),
                     ),
              Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15 , vertical: 20),
+              padding: const EdgeInsets.symmetric( vertical: 20),
               child: Text(
                 "Courses",
                 style: Styles.textStyleNoto16,

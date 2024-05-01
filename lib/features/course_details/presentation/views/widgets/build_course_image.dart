@@ -28,7 +28,7 @@ Widget buildCourseImageAndDetails() {
         const SizedBox(
           height: 10,
         ),
-        const Text(
+         Text(
           'Lorem ipsum dolor sit amet consectetur.Purus pulvinar eget in molestie aenean metus tortor. Odio eget urna odio mauris.',
           style: Styles.textStyle12,
         ),

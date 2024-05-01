@@ -1,7 +1,9 @@
 
+import 'package:afro_app/core/constants/assets_icons.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/home_screen/presentation/views/widgets/custom_course_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CoursesListViewItem extends StatelessWidget {
 
@@ -13,7 +15,7 @@ class CoursesListViewItem extends StatelessWidget {
       onTap: (){
         // GoRouter.of(context).push('/BookView' , extra: bookModel);
       },
-      child: SizedBox(
+      child:  SizedBox(
         height: 125,
         child: Row(
           children: [
@@ -22,24 +24,27 @@ class CoursesListViewItem extends StatelessWidget {
               width: 30,
             ),
             Expanded(
-              child: Column(
+              child:  Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children:  [
-                  const Row(
+                  Row(
                     children: [
-                      Text(
+                       SvgPicture.asset(AssetIcons.taskList),
+                       Text(
                      '24 lesson',
                     style: Styles.textStyle12,
                   ),
-                  SizedBox(
-                    width: 3,
-                  ),
-                      Text(
+                 
+                  const Spacer(),
+
+                  SvgPicture.asset(AssetIcons.playVedio),
+                       Text(
                         '2H 30Min',
                       style: Styles.textStyle12,
                       ),
-                      Spacer(),
+                      
+                      
                       // Expanded(
                       //     child: BookRating(
                       //       rating: bookModel.volumeInfo.averageRating ?? 4,

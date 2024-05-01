@@ -8,4 +8,6 @@ class AssetIcons {
   static const card = "assets/icons/payment/credit_card.svg";
   static const checkCard = "assets/icons/home/check_icon.svg";
   static const popUp = "assets/icons/home/pop_up.svg";
+  static const playVedio = "assets/icons/home/play_vedio.svg";
+  static const taskList = "assets/icons/home/task_list.svg";
 }

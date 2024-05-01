@@ -8,9 +8,18 @@ Widget buildListViewCourse() {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: [
-        buildListItem('Learn HTML and Css', SvgPicture.asset(AssetIcons.checkCard)),
-        buildListItem('Java Script', SvgPicture.asset(AssetIcons.checkCard)),
-        buildListItem('BoootStrab', SvgPicture.asset(AssetIcons.checkCard)),
+        buildListItem(
+          'Learn HTML and Css',
+         SvgPicture.asset(AssetIcons.checkCard),
+         ),
+        buildListItem(
+          'Java Script',
+           SvgPicture.asset(AssetIcons.checkCard),
+           ),
+        buildListItem(
+          'BoootStrab',
+           SvgPicture.asset(AssetIcons.checkCard),
+           ),
       ],
     );
   }
