@@ -30,7 +30,7 @@ class CustomButton extends StatelessWidget {
     return Center(
       child: SizedBox(
         width: double.infinity,
-         height: 60,
+         height: 40,
         child: ElevatedButton(
           onPressed: func,
           style: ElevatedButton.styleFrom(

@@ -5,9 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 // ignore: avoid_classes_with_only_static_members
 abstract class Styles{
-  static const TextStyle textStyle24 = TextStyle(
+  static  TextStyle textStyle24 = TextStyle(
       color: Colors.black,
-      fontSize: 24,
+      fontSize: 24.sp,
       fontWeight: FontWeight.w600,//semibold
   );
   static const TextStyle textStyle16 = TextStyle(

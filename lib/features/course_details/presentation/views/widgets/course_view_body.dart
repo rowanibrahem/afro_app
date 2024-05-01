@@ -9,16 +9,18 @@ class CourseBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(25),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-         buildCourseImageAndDetails(),
-         const Spacer(),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: buildButtons(context),
-          ),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+           buildCourseImageAndDetails(),
+          //  const Spacer(),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: buildButtons(context),
+            ),
+          ],
+        ),
       ),
       
     );

@@ -24,12 +24,12 @@ class Thankyou_card extends StatelessWidget {
         padding: const EdgeInsets.only(top: 50 + 16, left: 22, right: 22),
         child: Column(
           children: [
-            const Text(
+             Text(
               'Thank you!',
               textAlign: TextAlign.center,
               style: Styles.textStyle24,
             ),
-            const Text(
+             Text(
               'Your transaction was successful',
               textAlign: TextAlign.center,
               style: Styles.textStyle24,

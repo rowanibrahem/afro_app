@@ -21,9 +21,9 @@ void showAddToCartPopup(BuildContext context) {
                   AssetIcons.popUp,
                 ),
                 const SizedBox(height: 20),
-                const Text(
+                 Text(
                   'Added to cart successfully!! ',
-                  style: Styles.textStyle24,
+                  style: Styles.textStyle24.copyWith(fontSize: 20),
                 ),
               ],
             ),
