@@ -18,7 +18,7 @@ class WelcomeText extends StatelessWidget {
 
     final double leftPosition = screenWidth >= 600 ? 50 : 20;
 
-    final double topPosition = screenWidth >= 600 ? 100 : 70;
+    final double topPosition = screenWidth >= 600 ? 100 : 55;
 
     return Positioned(
       top: topPosition ,// 20% from the top

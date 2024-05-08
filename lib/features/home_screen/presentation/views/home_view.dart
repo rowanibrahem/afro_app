@@ -9,7 +9,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ColoredBox(
       color: ColorApp.backgroundScaffold,
-      child: SafeArea(child: HomeBody()),
+      child: HomeBody(),
       );
       
   }

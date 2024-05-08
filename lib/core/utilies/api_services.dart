@@ -2,10 +2,13 @@
 import 'package:dio/dio.dart';
 
 class ApiService{
+ 
   final Dio dio = Dio();
+  final _baseUrl = 'https://www.googleapis.com/books/v1/';
 
   Future<Response> post (
   {
+    // ignore: type_annotate_public_apis
     required body ,
     required String url ,
     required String token ,
@@ -20,5 +23,10 @@ class ApiService{
         headers: headers ?? {'Authorization': "Bearer $token"},
       ),);
     return response;
+  }
+
+  Future get ({required String endPoint}) async{
+    var response = await dio.get('$_baseUrl$endPoint');
+    return response.data;
   }
 }

@@ -1,13 +1,67 @@
+import 'package:afro_app/core/constants/assets_images.dart';
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/core/theme/styles.dart';
-import 'package:afro_app/features/profile/presentation/views/widgets/profile_items.dart';
+import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
+import 'package:afro_app/features/profile/presentation/views/widgets/profile_item.dart';
+import 'package:afro_app/features/profile/presentation/views/widgets/profile_list_item.dart';
 import 'package:flutter/material.dart';
 
 class ProfileBody extends StatelessWidget {
   const ProfileBody({Key? key}) : super(key: key);
+   List<ProfileItem> profileItems(BuildContext context) => [
+        ProfileItem(
+          text: 'Credits Cards',
+          onTap: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const HomeView(),
+                ),
+                );
+          },
+        ),
+        ProfileItem(
+          text: 'Saved Items',
+          onTap: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const HomeView(),
+                ),
+                );
+          },
+        ),
+        ProfileItem(
+          text: 'My cources',
+          onTap: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const HomeView(),
+                ),
+                );
+          },
+        ),
+        ProfileItem(
+          text: 'About us',
+          onTap: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const HomeView(),
+                ),
+                );
+          },
+        ),
+        ProfileItem(
+          text: 'Help Center',
+          onTap: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const HomeView(),
+                ),
+                );
+          },
+        ),
+      ];
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    double curveHeight = screenHeight / 10; // Set curve height to approximately a quarter of the screen height
+
     double screenWidth = MediaQuery.of(context).size.width;
 
     double leftPosition = screenWidth >= 600 ? 50 : 20;
@@ -18,41 +72,55 @@ class ProfileBody extends StatelessWidget {
       child: Stack(
         children: [
           CustomPaint(
-            painter: ShapesPainter(),
+            painter: ShapesPainter(curveHeight),
             child: ClipPath(
               clipper:
-                  ShapeClipper(), // Use the custom clipper to clip the image
+                  ShapeClipper(curveHeight), // Use the custom clipper to clip the image
               child: Container(
-                height: 400,
+                height: curveHeight + 100, // Adjust container height to accommodate the curve
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/Ellipse 3934.png'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
               ),
             ),
           ),
           Positioned(
             top: topPosition,
             left: leftPosition,
+            // ignore: prefer_const_constructors
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset('assets/images/cap.png', width: 100, height: 100),
-                SizedBox(height: 20),
-                Text('Welcome', style: Styles.textStyle36),
-                SizedBox(height: 20),
-                Text('Log in to Continue', style: Styles.textStyle36),
+                // Image.asset(AssetImages.profile, width: 100, height: 100),
+                // SizedBox(height: 20),
+                // Text('Rowan Ibrahim', style: Styles.textStyle36),
+                
               ],
             ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(height: 400),
-              // ProfileItems(),
+              SizedBox(height: curveHeight + 150), // Adjust the height to accommodate the curve
+              ListView.separated(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: profileItems(context).length,
+              itemBuilder: (context, index) {
+                ProfileItem item = profileItems(context)[index];
+                return ProfileListItem(
+                  text: item.text,
+                  icon: item.icon,
+                  onPressed: () {
+                    item.onTap();
+                    print('Item pressed: ${item.text}');
+                  },
+                );
+              },
+              separatorBuilder: (context, index) => const Divider(
+                indent: 15,
+                endIndent: 15,
+                color: Colors.grey,
+              ),
+            ),
             ],
           ),
         ],
@@ -61,15 +129,17 @@ class ProfileBody extends StatelessWidget {
   }
 }
 
-const double _kCurveHeight = 35;
-
 class ShapesPainter extends CustomPainter {
+
+  ShapesPainter(this.curveHeight);
+  final double curveHeight;
+
   @override
   void paint(Canvas canvas, Size size) {
     final p = Path();
-    p.lineTo(0, size.height - _kCurveHeight);
+    p.lineTo(0, size.height - curveHeight);
     p.relativeQuadraticBezierTo(
-        size.width / 2, 2 * _kCurveHeight, size.width, 0);
+        size.width / 2, 2 * curveHeight, size.width, 0);
     p.lineTo(size.width, 0);
     p.close();
 
@@ -87,12 +157,16 @@ class ShapesPainter extends CustomPainter {
 }
 
 class ShapeClipper extends CustomClipper<Path> {
+  final double curveHeight;
+
+  ShapeClipper(this.curveHeight);
+
   @override
   Path getClip(Size size) {
     final path = Path();
-    path.lineTo(0, size.height - _kCurveHeight);
+    path.lineTo(0, size.height - curveHeight);
     path.relativeQuadraticBezierTo(
-        size.width / 2, 2 * _kCurveHeight, size.width, 0);
+        size.width / 2, 2 * curveHeight, size.width, 0);
     path.lineTo(size.width, 0);
     path.close();
     return path;

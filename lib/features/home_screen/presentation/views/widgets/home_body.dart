@@ -23,7 +23,7 @@ class HomeBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children:  [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10 , ), //or 30
+                 padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
                   child: Row(
                 children: [
                   Image.asset( 
@@ -33,7 +33,7 @@ class HomeBody extends StatelessWidget {
                     ),
                   const SizedBox(width: 15,),
                    Text(
-                    "Hi, Jhon Smith ",
+                    "Hi, Rowan  ",
                     style: Styles.textStyle14.copyWith(color: Colors.black),
                     ),
                   const SizedBox(width: 2,),
@@ -51,17 +51,17 @@ class HomeBody extends StatelessWidget {
                     AssetImages.home,
                     ),
                     ),
-             Padding(
-              padding: const EdgeInsets.symmetric( vertical: 20),
-              child: Text(
-                "Courses",
-                style: Styles.textStyleNoto16,
-              ),
-            ),
+                    const SizedBox(
+                  height: 20,
+                ),
+             Text(
+               "Courses",
+               style: Styles.textStyleNoto16,
+             ),
             CategoryListView(),
-                // const SizedBox(
-                //   height: 20,
-                // ),
+                const SizedBox(
+                  height: 20,
+                ),
               ],
             ),
           ),
