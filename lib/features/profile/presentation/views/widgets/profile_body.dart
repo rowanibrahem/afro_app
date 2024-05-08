@@ -1,13 +1,11 @@
-import 'package:afro_app/core/constants/assets_images.dart';
 import 'package:afro_app/core/theme/colors.dart';
-import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
 import 'package:afro_app/features/profile/presentation/views/widgets/profile_item.dart';
 import 'package:afro_app/features/profile/presentation/views/widgets/profile_list_item.dart';
 import 'package:flutter/material.dart';
 
 class ProfileBody extends StatelessWidget {
-  const ProfileBody({Key? key}) : super(key: key);
+  const ProfileBody({super.key});
    List<ProfileItem> profileItems(BuildContext context) => [
         ProfileItem(
           text: 'Credits Cards',
@@ -58,15 +56,15 @@ class ProfileBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
+    final double screenHeight = MediaQuery.of(context).size.height;
 
-    double curveHeight = screenHeight / 10; // Set curve height to approximately a quarter of the screen height
+    final double curveHeight = screenHeight / 10; // Set curve height to approximately a quarter of the screen height
 
-    double screenWidth = MediaQuery.of(context).size.width;
+    final double screenWidth = MediaQuery.of(context).size.width;
 
-    double leftPosition = screenWidth >= 600 ? 50 : 20;
+    final double leftPosition = screenWidth >= 600 ? 50 : 20;
 
-    double topPosition = screenWidth >= 600 ? 100 : 130;
+    final double topPosition = screenWidth >= 600 ? 100 : 130;
 
     return SingleChildScrollView(
       child: Stack(
@@ -88,7 +86,7 @@ class ProfileBody extends StatelessWidget {
             // ignore: prefer_const_constructors
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 // Image.asset(AssetImages.profile, width: 100, height: 100),
                 // SizedBox(height: 20),
                 // Text('Rowan Ibrahim', style: Styles.textStyle36),
@@ -105,7 +103,7 @@ class ProfileBody extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               itemCount: profileItems(context).length,
               itemBuilder: (context, index) {
-                ProfileItem item = profileItems(context)[index];
+                final ProfileItem item = profileItems(context)[index];
                 return ProfileListItem(
                   text: item.text,
                   icon: item.icon,

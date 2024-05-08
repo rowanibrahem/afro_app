@@ -1,5 +1,4 @@
 import 'package:afro_app/core/theme/colors.dart';
-import 'package:afro_app/core/theme/styles.dart';
 import 'package:flutter/material.dart';
 
 class CategoryListView extends StatefulWidget {

@@ -30,7 +30,7 @@ class _OnboardingBodyState extends State<OnboardingBody>
     );
     _animation = Tween<Offset>(
       begin: const Offset(0, -1), // Start from above
-      end: const Offset(0, 0), // End at the original position
+      end:  Offset(0, 0), // End at the original position
     ).animate(
       CurvedAnimation(
         parent: _controller,
@@ -91,7 +91,7 @@ class _OnboardingBodyState extends State<OnboardingBody>
             ),),
         Expanded(
             flex: 2,
-            child: Container(
+            child: ColoredBox(
               color: ColorApp.primaryColor,
               child: Container(
                 width: double.infinity,

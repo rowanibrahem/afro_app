@@ -1,3 +1,4 @@
+// ignore: avoid_classes_with_only_static_members
 class ApiKeys{
   static String secretKey = 'sk_test_51OSm0eGUWjEGfnoYJEqg7AhUCVD0Uu9YQyFXuh7L1xmPzjo8pOxnT5uMa9j9xn7bLX4J8U6A2XVPNusaIMZLVBZz001NuD1xBk';
   static String publishableKey = 'pk_test_51OSm0eGUWjEGfnoYKjaEuiKItN1hAtYnHass3Z1HJ38MGEHPFz4eUcE0tIUakuH2w8l2gADzBG5oPZ8qvvXh4Vpx00B5MaYKcA';

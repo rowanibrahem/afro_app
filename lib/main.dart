@@ -1,7 +1,7 @@
+import "package:afro_app/bloc_observer.dart";
 import "package:afro_app/constants.dart";
 import "package:afro_app/core/nertwork/cacheNetwork.dart";
 import "package:afro_app/core/utilies/api_keys.dart";
-import "package:afro_app/core/utilies/bloc_observer.dart";
 import "package:afro_app/features/splash_screen/presentation/views/splash_view.dart";
 import "package:device_preview/device_preview.dart";
 import "package:flutter/material.dart";
@@ -14,7 +14,7 @@ Future<void> main() async {
   Stripe.publishableKey = ApiKeys.publishableKey;
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
   await CacheNetwork.cachInstialization();
   remember = prefs.getBool('remember');
 //remove await
