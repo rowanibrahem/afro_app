@@ -19,7 +19,7 @@ class LoginCubit extends Cubit<AuthStates> {
   }) async {
     emit(LogInLoadingState());
     try {
-      var url = Uri.parse('http://localhost:8080/api/v1/auth/login');
+      var url = Uri.parse('https://ac40-156-203-143-135.ngrok-free.app/api/v1/auth/login');
 
       var jsonData = {
         'email': email,
@@ -42,7 +42,7 @@ class LoginCubit extends Cubit<AuthStates> {
       if (response.statusCode == 200) {
         // ignore: avoid_dynamic_calls
         // await CacheNetwork.insertToCashe(
-        //     key: "token", value: data["token"]);
+        // key: "token", value: data["token"]);
         await CacheNetwork.insertToCashe(key: "password", value: password);
         token = await CacheNetwork.getCacheData(key: "token");
         emit(LogInSuccessState());
