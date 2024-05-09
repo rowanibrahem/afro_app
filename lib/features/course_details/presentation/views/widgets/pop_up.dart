@@ -19,11 +19,12 @@ void showAddToCartPopup(BuildContext context) {
               children: [
                 SvgPicture.asset(
                   AssetIcons.popUp,
+                  
                 ),
                 const SizedBox(height: 20),
                  Text(
                   'Added to cart successfully!! ',
-                  style: Styles.textStyle24.copyWith(fontSize: 20),
+                  style: Styles.textStyle24.copyWith(fontSize: 15),
                 ),
               ],
             ),

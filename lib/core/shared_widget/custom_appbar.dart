@@ -19,7 +19,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () {
-          // Navigator.pop(context);
+          Navigator.pop(context);
         },
       ),
       actions: [

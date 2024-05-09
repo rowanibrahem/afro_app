@@ -10,12 +10,10 @@ class CustomCoursesImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-        builder: (context) => const CourseView(),
-      ),
-    );
+        Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const CourseView(),
+                ),
+                );
       },
       child: AspectRatio(
         aspectRatio: 2.3/2.5,

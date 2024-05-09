@@ -34,7 +34,7 @@ class _RatingState extends State<Rating> {
           const Spacer(),
            Text(
             '4.5',
-            style: Styles.textStyle12.copyWith(fontSize: 20),
+            style: Styles.textStyle12.copyWith(fontSize: 10),
           ),
           const SizedBox(
             width: 10,
