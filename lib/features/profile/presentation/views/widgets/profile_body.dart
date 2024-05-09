@@ -1,5 +1,6 @@
 import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/theme/colors.dart';
+import 'package:afro_app/features/Favourite/presentation/views/fav_view.dart';
 import 'package:afro_app/features/authuntcation/presentation/views/log_in_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
 import 'package:afro_app/features/profile/presentation/views/widgets/profile_item.dart';
@@ -13,7 +14,7 @@ class ProfileBody extends StatelessWidget {
           text: 'Saved Items',
           onTap: () {
             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const HomeView(),
+                MaterialPageRoute(builder: (context) => const FavView(),
                 ),
                 );
           },
@@ -87,43 +88,49 @@ class ProfileBody extends StatelessWidget {
               ],
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              SizedBox(height: curveHeight + 150), // Adjust the height to accommodate the curve
-              ListView.separated(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: profileItems(context).length,
-              itemBuilder: (context, index) {
-                final ProfileItem item = profileItems(context)[index];
-                return ProfileListItem(
-                  text: item.text,
-                  icon: item.icon,
-                  onPressed: () {
-                    item.onTap();
-                    print('Item pressed: ${item.text}');
-                  },
-                );
-              },
-              separatorBuilder: (context, index) => const Divider(
-                indent: 15,
-                endIndent: 15,
-                color: Colors.grey,
-              ),
-            ),
-            CustomButton(
-              text: 'Log out', 
-              func: (){
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const LoginView(),
-                    ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(height: curveHeight + 150), // Adjust the height to accommodate the curve
+                ListView.separated(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: profileItems(context).length,
+                itemBuilder: (context, index) {
+                  final ProfileItem item = profileItems(context)[index];
+                  return ProfileListItem(
+                    text: item.text,
+                    icon: item.icon,
+                    onPressed: () {
+                      item.onTap();
+                      print('Item pressed: ${item.text}');
+                    },
                   );
-              }
+                },
+                separatorBuilder: (context, index) => const Divider(
+                  indent: 15,
+                  endIndent: 15,
+                  color: Colors.grey,
+                ),
               ),
-            ],
+              const SizedBox(
+                height: 50,
+              ),
+              CustomButton(
+                text: 'Log out', 
+                func: (){
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginView(),
+                      ),
+                    );
+                }
+                ),
+              ],
+            ),
           ),
         ],
       ),

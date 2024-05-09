@@ -1,6 +1,8 @@
+import 'package:afro_app/core/constants/assets_icons.dart';
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -47,7 +49,9 @@ class CustomButton extends StatelessWidget {
             ? const CircularProgressIndicator()
             :Text(
               text,
-              style: Styles.textStyle16.copyWith(color: textColor ?? Colors.black,),
+              style: Styles.textStyle16.copyWith(
+                color: textColor ?? Colors.black,
+              ),
             ),
           ),
         ),
