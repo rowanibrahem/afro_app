@@ -1,2 +1,1 @@
 String? token;
-bool? remember;

@@ -2,13 +2,14 @@ abstract class AuthStates{}
 
 class IntialState extends AuthStates{}
 class LogInLoadingState extends AuthStates{}
-class LogInSuccessState extends AuthStates{
+class LogInSuccessState extends AuthStates {
   LogInSuccessState(
-      this.idToken,
-      this.accessToken,
-);
-  final String accessToken;
-  final String idToken;
+    // this.accessToken,
+    // this.idToken,
+  );
+
+  // final String accessToken;
+  // final String idToken;
 }
 class LogInFailedState extends AuthStates{
   LogInFailedState({

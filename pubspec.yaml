@@ -58,6 +58,7 @@ dependencies:
   mocktail: ^1.0.3
   flutter_popup_card: ^0.0.5
   shared_preferences: ^2.2.3
+  http: ^1.2.1
 
 
 

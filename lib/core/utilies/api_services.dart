@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 class ApiService{
  
   final Dio dio = Dio();
-  final _baseUrl = 'https://www.googleapis.com/books/v1/';
+  final _baseUrl = 'http://localhost:8080/api/v1/';
 
   Future<Response> post (
   {
