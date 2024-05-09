@@ -1,4 +1,6 @@
+import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/theme/colors.dart';
+import 'package:afro_app/features/authuntcation/presentation/views/log_in_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
 import 'package:afro_app/features/profile/presentation/views/widgets/profile_item.dart';
 import 'package:afro_app/features/profile/presentation/views/widgets/profile_list_item.dart';
@@ -7,15 +9,6 @@ import 'package:flutter/material.dart';
 class ProfileBody extends StatelessWidget {
   const ProfileBody({super.key});
    List<ProfileItem> profileItems(BuildContext context) => [
-        ProfileItem(
-          text: 'Credits Cards',
-          onTap: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const HomeView(),
-                ),
-                );
-          },
-        ),
         ProfileItem(
           text: 'Saved Items',
           onTap: () {
@@ -26,7 +19,7 @@ class ProfileBody extends StatelessWidget {
           },
         ),
         ProfileItem(
-          text: 'My cources',
+          text: 'My Cources',
           onTap: () {
             Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => const HomeView(),
@@ -35,7 +28,7 @@ class ProfileBody extends StatelessWidget {
           },
         ),
         ProfileItem(
-          text: 'About us',
+          text: 'About Us',
           onTap: () {
             Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => const HomeView(),
@@ -119,6 +112,17 @@ class ProfileBody extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
+            CustomButton(
+              text: 'Log out', 
+              func: (){
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginView(),
+                    ),
+                  );
+              }
+              ),
             ],
           ),
         ],
