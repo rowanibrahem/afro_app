@@ -52,12 +52,9 @@ class LoginCubit extends Cubit<AuthStates> {
         // await CacheNetwork.insertToCashe(
         // key: "token", value: data!["token"],);
         
-      } else if (response.statusCode == 401) {
+      } else if (response.statusCode == 404) {
       emit(LogInFailedState(message: "Incorrect Username or Password"));
     }
-      else {
-        emit(LogInFailedState(message: "Incorrect Username or Password "));
-      }
     } catch (e) {
       emit(LogInFailedState(message: "Something went wrong, Try again later"));
     }
