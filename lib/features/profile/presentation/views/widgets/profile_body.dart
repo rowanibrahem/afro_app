@@ -1,11 +1,15 @@
+import 'package:afro_app/core/constants/assets_icons.dart';
+import 'package:afro_app/core/constants/assets_images.dart';
 import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/theme/colors.dart';
-import 'package:afro_app/features/Favourite/presentation/views/fav_view.dart';
+import 'package:afro_app/core/theme/styles.dart';
+import 'package:afro_app/features/Favourite/presentation/views/favourite_empty_view.dart';
 import 'package:afro_app/features/authuntcation/presentation/views/log_in_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
 import 'package:afro_app/features/profile/presentation/views/widgets/profile_item.dart';
 import 'package:afro_app/features/profile/presentation/views/widgets/profile_list_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfileBody extends StatelessWidget {
   const ProfileBody({super.key});
@@ -14,7 +18,7 @@ class ProfileBody extends StatelessWidget {
           text: 'Saved Items',
           onTap: () {
             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const FavView(),
+                MaterialPageRoute(builder: (context) => const FavouriteView(),
                 ),
                 );
           },
@@ -56,9 +60,9 @@ class ProfileBody extends StatelessWidget {
 
     final double screenWidth = MediaQuery.of(context).size.width;
 
-    final double leftPosition = screenWidth >= 600 ? 50 : 20;
+    final double leftPosition = screenWidth >= 600 ? 50 : 130;
 
-    final double topPosition = screenWidth >= 600 ? 100 : 130;
+    final double topPosition = screenWidth >= 600 ? 100 : 90;
 
     return SingleChildScrollView(
       child: Stack(
@@ -80,11 +84,19 @@ class ProfileBody extends StatelessWidget {
             // ignore: prefer_const_constructors
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                // Image.asset(AssetImages.profile, width: 100, height: 100),
-                // SizedBox(height: 20),
-                // Text('Rowan Ibrahim', style: Styles.textStyle36),
-                
+              children:  [
+                // Text(
+                //   'Rowan', 
+                //   style: Styles.textStyle36.copyWith(fontSize: 24),
+                //   ),
+                const SizedBox(height: 20),
+                Center(
+                  child: Image.asset(
+                    AssetImages.profile, 
+                    width: 100,
+                     height: 100
+                     ),
+                ),
               ],
             ),
           ),
@@ -120,6 +132,7 @@ class ProfileBody extends StatelessWidget {
               ),
               CustomButton(
                 text: 'Log out', 
+                svgPicture: SvgPicture.asset(AssetIcons.logout),
                 func: (){
                   Navigator.pushReplacement(
                       context,

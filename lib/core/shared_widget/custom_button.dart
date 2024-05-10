@@ -14,6 +14,7 @@ class CustomButton extends StatelessWidget {
      this.width,
     this.height = 43,
     this.isLoading = false,
+    this.svgPicture, 
   });
   final double? width;
   final double? height;
@@ -24,7 +25,7 @@ class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback func;
   final bool isLoading;
-
+  final Widget? svgPicture;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -42,15 +43,24 @@ class CustomButton extends StatelessWidget {
             ),
             // minimumSize: Size(150, 50),
           ),
-          child: Center(
-            child: isLoading
-            ? const CircularProgressIndicator()
-            :Text(
-              text,
-              style: Styles.textStyle16.copyWith(
-                color: textColor ?? Colors.black,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: isLoading
+                ? const CircularProgressIndicator()
+                :Text(
+                  text,
+                  style: Styles.textStyle16.copyWith(
+                    color: textColor ?? Colors.black,
+                  ),
+                ),
               ),
-            ),
+              const SizedBox(width: 15),
+              if (svgPicture != null) ...[
+                svgPicture!, // Render SVG only if it's provided // Add some spacing between SVG and text
+              ],
+            ],
           ),
         ),
       ),

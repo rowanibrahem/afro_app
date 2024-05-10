@@ -6,5 +6,5 @@ class AssetImages {
   static const courseDetails = "assets/images/course/course_details.png";
   static const cart = "assets/images/card&favourites/cart.png";
   static const favourite = "assets/images/card&favourites/Favorite.png";
-  static const profile = "assets/images/course/profile.png";
+  static const profile = "assets/images/profile (2).png";
 }

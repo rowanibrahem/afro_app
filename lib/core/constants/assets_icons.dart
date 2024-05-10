@@ -10,4 +10,5 @@ class AssetIcons {
   static const popUp = "assets/icons/home/pop_up.svg";
   static const playVedio = "assets/icons/home/play_vedio.svg";
   static const taskList = "assets/icons/home/task_list.svg";
+  static const logout = "assets/icons/profile/logout.svg";
 }
