@@ -2,24 +2,30 @@ import 'dart:convert';
 import 'package:afro_app/constants.dart';
 import 'package:afro_app/core/nertwork/cacheNetwork.dart';
 import 'package:afro_app/features/authuntcation/presentation/view_model/log_in_state.dart';
+import 'package:afro_app/features/authuntcation/presentation/view_model/sign_up/sign_up_states.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 
-class LoginCubit extends Cubit<AuthStates> {
-  LoginCubit() : super(IntialState());
+class SignUpCubit extends Cubit<SignUpStates> {
+  SignUpCubit() : super(SignUpIntialState());
 
-  void LogIn({
-    required String email,
+  // ignore: non_constant_identifier_names
+  Future<void> SignUp({
+    required String name,
+    required String phoneNum,
+   required String email,
     required String password,
   }) async {
-    emit(LogInLoadingState());
+    emit(SignUpLoadingState());
     try {
-      var url = Uri.parse(
-          'https://0b5d-156-203-193-147.ngrok-free.app/api/v1/auth/login');
+      final url = Uri.parse(
+          'https://0b5d-156-203-193-147.ngrok-free.app/api/v1/auth/register',);
 
-      var jsonData = {
+      final jsonData = {
+        'name': name,
+        'phoneNumber': phoneNum,
         'email': email,
         'password': password,
       };
@@ -45,13 +51,13 @@ class LoginCubit extends Cubit<AuthStates> {
         debugPrint('token is :$token');
         await CacheNetwork.insertToCashe(key: "password", value: password);
         token = await CacheNetwork.getCacheData(key: "token");
-        emit(LogInSuccessState());
+        emit(SignUpSuccessState());
         debugPrint("LogIN Succcessfully, token is : $token");
       } else {
-        emit(LogInFailedState(message: "Incorrect Username or Password "));
+        emit(SignUpFailedState(message: "Incorrect Username or Password "));
       }
     } catch (e) {
-      emit(LogInFailedState(message: "Something went wrong, Try again later"));
+      emit(SignUpFailedState(message: "Something went wrong, Try again later"));
     }
   }
 }

@@ -39,7 +39,7 @@ class _LoginFieldsState extends State<LoginFields> {
         if (state is LogInSuccessState) {
           // Save tokens to shared preferences
           final SharedPreferences prefs = await SharedPreferences.getInstance();
-          prefs.setString('token', token!);
+          prefs.setString('token', token as String);
           // prefs.setString('accessToken', state.accessToken);
           // prefs.setString('idToken', state.idToken);
 

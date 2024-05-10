@@ -1,5 +1,6 @@
 
 import 'package:afro_app/core/constants/assets_icons.dart';
+import 'package:afro_app/core/models/couses.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/home_screen/presentation/views/widgets/custom_course_image.dart';
 import 'package:flutter/material.dart';
@@ -7,69 +8,57 @@ import 'package:flutter_svg/svg.dart';
 
 class CoursesListViewItem extends StatelessWidget {
 
-  const CoursesListViewItem({super.key});
+  const CoursesListViewItem({super.key, required this.courseModel});
+  final CoursesModel courseModel;
  
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: (){
-        // GoRouter.of(context).push('/BookView' , extra: bookModel);
-      },
-      child:  SizedBox(
-        height: 125,
-        child: Row(
-          children: [
-            const CustomCoursesImage(),
-            const SizedBox(
-              width: 30,
-            ),
-            Expanded(
-              child:  Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children:  [
-                  Row(
-                    children: [
-                       SvgPicture.asset(AssetIcons.taskList),
-                       Text(
-                     '24 lesson',
+    return SizedBox(
+      height: 125,
+      child: Row(
+        children: [
+          const CustomCoursesImage(),
+          const SizedBox(
+            width: 30,
+          ),
+          Expanded(
+            child:  Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:  [
+                Row(
+                  children: [
+                     SvgPicture.asset(AssetIcons.taskList),
+                     Text(
+                   courseModel.numberOfLessons.toString(),
+                  style: Styles.textStyle12,
+                ),
+               
+                const Spacer(),
+    
+                SvgPicture.asset(AssetIcons.playVedio),
+                     Text(
+                      courseModel.numberOfHours.toString(),
                     style: Styles.textStyle12,
-                  ),
-                 
-                  const Spacer(),
-
-                  SvgPicture.asset(AssetIcons.playVedio),
-                       Text(
-                        '2H 30Min',
-                      style: Styles.textStyle12,
-                      ),
-                      
-                      
-                      // Expanded(
-                      //     child: BookRating(
-                      //       rating: bookModel.volumeInfo.averageRating ?? 4,
-                      //       count: bookModel.volumeInfo.ratingsCount  ?? 2500,
-                      //     )
-                      // ),
-                    ],
-                  ),
-                  const SizedBox(
-                   height: 3,
-                 ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * .5,
-                    child:  Text (
-                    'Learn web development',
-                      style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w400),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
                     ),
-                  ),  
-                ],
-              ),
+                  ],
+                ),
+                const SizedBox(
+                 height: 3,
+               ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .5,
+                  child:  Text (
+                  courseModel.title ?? '',
+                    style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w400),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),  
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -3,8 +3,12 @@ import 'package:dio/dio.dart';
 
 class ApiService{
  
-  final Dio dio = Dio();
-  final _baseUrl = 'http://localhost:8080/api/v1/';
+
+  final _baseUrl = 'http://10.1.1.1:45386/api';
+  
+  final Dio dio;
+
+  ApiService(this.dio);
 
   Future<Response> post (
   {
