@@ -13,7 +13,7 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<CoursesModel>>> fetchCourses() async {
     try {
       final dynamic data = await apiService.get(
-        endPoint: 'https://0b5d-156-203-193-147.ngrok-free.app/api/v1/course',
+        endPoint: 'v1/course',
       );
 
       if (data is List) {

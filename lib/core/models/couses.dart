@@ -1,5 +1,8 @@
+
+
 import 'package:equatable/equatable.dart';
 
+// ignore: must_be_immutable
 class CoursesModel extends Equatable{
 
   CoursesModel(
@@ -12,24 +15,25 @@ class CoursesModel extends Equatable{
       this.whatWillYouLearn,
       this.price,
       this.tag,});
-  int? id;
+  num? id;
   String? title;
-  int? numberOfLessons;
-  int? numberOfHours;
+  num? numberOfLessons;
+  num? numberOfHours;
   String? overview;
   List<String>? whatWillYouLearn;
-  int? price;
+  num? price;
   String? tag;
 
   factory CoursesModel.fromJson(Map<String, dynamic> json) {
+    print('JSON Data before parsing: $json');
   return CoursesModel(
     id: json['id'] as int?,
     title: json['title'] as String?,
     numberOfLessons: json['numberOfLessons'] as int?,
-    numberOfHours: json['numberOfHours'] as int?,
+    numberOfHours: json['numberOfHours'] as double?,
     overview: json['overview'] as String?,
     whatWillYouLearn: (json['whatWillYouLearn'] as List<dynamic>).cast<String>(),
-    price: json['price'] as int?,
+    price: json['price'] as double?,
     tag: json['tag'] as String?,
   );
 }

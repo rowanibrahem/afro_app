@@ -3,7 +3,9 @@ import 'package:afro_app/core/constants/assets_icons.dart';
 import 'package:afro_app/core/models/couses.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/home_screen/presentation/views/widgets/custom_course_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CoursesListViewItem extends StatelessWidget {
@@ -14,7 +16,7 @@ class CoursesListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 125,
+      height: 100,
       child: Row(
         children: [
           const CustomCoursesImage(),
@@ -30,15 +32,15 @@ class CoursesListViewItem extends StatelessWidget {
                   children: [
                      SvgPicture.asset(AssetIcons.taskList),
                      Text(
-                   courseModel.numberOfLessons.toString(),
+                   '${courseModel.numberOfLessons} Lessons',
                   style: Styles.textStyle12,
                 ),
-               
+                               
                 const Spacer(),
-    
+                    
                 SvgPicture.asset(AssetIcons.playVedio),
                      Text(
-                      courseModel.numberOfHours.toString(),
+                     ' ${courseModel.numberOfHours} Hours',
                     style: Styles.textStyle12,
                     ),
                   ],

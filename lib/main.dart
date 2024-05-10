@@ -4,6 +4,8 @@ import "package:afro_app/core/functions/service_locator.dart";
 import "package:afro_app/core/nertwork/cacheNetwork.dart";
 import "package:afro_app/core/utilies/api_keys.dart";
 import "package:afro_app/features/authuntcation/presentation/view_model/log_in_cubit.dart";
+import "package:afro_app/features/authuntcation/presentation/view_model/sign_up/sign_up_cubit.dart";
+import "package:afro_app/features/authuntcation/presentation/views/log_in_view.dart";
 import "package:afro_app/features/home_screen/data/home_repo_impl.dart";
 import "package:afro_app/features/home_screen/presentation/view_model/courses_cubit.dart";
 import "package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart";
@@ -28,6 +30,7 @@ Future<void> main() async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   // Widget homeScreen = (prefs.getBool('watched') ?? false) ? const BottomNavBody() : const SplashView();
   
+  // ignore: cast_nullable_to_non_nullable
   // await prefs.setString('token', token!);
 
 //remove await
@@ -60,6 +63,9 @@ class MyApp extends StatelessWidget {
             create: (ctx) => LoginCubit(),
           ),
           BlocProvider(
+            create: (ctx) => SignUpCubit(),
+          ),
+          BlocProvider(
             create: (context) => CoursesCubit(
               getIt.get<HomeRepoImpl>(),
             )..fetchCourses(),
@@ -76,7 +82,8 @@ class MyApp extends StatelessWidget {
             textTheme: GoogleFonts.josefinSansTextTheme(),
             useMaterial3: true,
           ),
-          home: token != "empty" ? const BottomNavBody(): const  SplashView() ,
+          home: SplashView(),
+          // token != "empty" ? const BottomNavBody(): const  SplashView() ,
         ),
       ),
     );

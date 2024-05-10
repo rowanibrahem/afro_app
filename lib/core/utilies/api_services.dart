@@ -4,8 +4,8 @@ import 'package:dio/dio.dart';
 class ApiService{
  
 
-  final _baseUrl = 'http://10.1.1.1:45386/api';
-  
+  final _baseUrl = 'https://ab23-156-203-150-233.ngrok-free.app/api/';
+  // final _baseUrl = 'http://10.1.1.1:45386/api';
   final Dio dio;
 
   ApiService(this.dio);

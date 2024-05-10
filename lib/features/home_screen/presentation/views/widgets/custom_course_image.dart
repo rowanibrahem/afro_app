@@ -16,7 +16,7 @@ class CustomCoursesImage extends StatelessWidget {
                 );
       },
       child: AspectRatio(
-        aspectRatio: 2.3/2.5,
+        aspectRatio: 2.2/2.5,
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
