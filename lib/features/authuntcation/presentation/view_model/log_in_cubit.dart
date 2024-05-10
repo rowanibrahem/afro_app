@@ -39,15 +39,23 @@ class LoginCubit extends Cubit<AuthStates> {
       final Map<String, dynamic>? data =
           jsonDecode(response.body) as Map<String, dynamic>?;
       if (response.statusCode == 200) {
-        // ignore: avoid_dynamic_calls
-        // await CacheNetwork.insertToCashe(
-        // key: "token", value: data!["token"],);
+        if (token != null){
+          token = token;
         debugPrint('token is :$token');
+        await CacheNetwork.insertToCashe(key: "token", value: token as String);
         await CacheNetwork.insertToCashe(key: "password", value: password);
         token = await CacheNetwork.getCacheData(key: "token");
         emit(LogInSuccessState());
         debugPrint("LogIN Succcessfully, token is : $token");
-      } else {
+        }
+        // ignore: avoid_dynamic_calls
+        // await CacheNetwork.insertToCashe(
+        // key: "token", value: data!["token"],);
+        
+      } else if (response.statusCode == 401) {
+      emit(LogInFailedState(message: "Incorrect Username or Password"));
+    }
+      else {
         emit(LogInFailedState(message: "Incorrect Username or Password "));
       }
     } catch (e) {
