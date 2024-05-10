@@ -18,7 +18,6 @@ class _CategoryListViewState extends State<CategoryListView> with SingleTickerPr
   @override
   Widget build(BuildContext context) {
     return  Column(
-        
         children: [
           TabBar(
             indicatorColor: ColorApp.primaryColor,

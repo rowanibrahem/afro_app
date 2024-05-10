@@ -44,7 +44,7 @@ class _SplashBodyState extends State<SplashBody>
 
   // Function to navigate to the next screen
   void navigateToNextScreen() {
-    Future.delayed(const Duration(seconds: 10), () {
+    Future.delayed(const Duration(seconds: 4), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const OnboardingView()),
@@ -70,7 +70,7 @@ class _SplashBodyState extends State<SplashBody>
               child: AnimatedTextKit(
                 animatedTexts: [
                   WavyAnimatedText('Welcome'),
-                  WavyAnimatedText('Afro Asian Board '),
+                  // WavyAnimatedText('Afro Asian Board '),
                 ],
                 // isRepeatingAnimation: true,
                 onTap: () {

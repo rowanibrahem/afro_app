@@ -1,12 +1,9 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:afro_app/core/constants/assets_icons.dart';
 import 'package:afro_app/core/constants/assets_images.dart';
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/authuntcation/presentation/views/log_in_view.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_svg/flutter_svg.dart';
 
 class OnboardingBody extends StatefulWidget {
@@ -25,12 +22,13 @@ class _OnboardingBodyState extends State<OnboardingBody>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 1),
+      duration: const Duration(seconds: 3),
       vsync: this,
     );
     _animation = Tween<Offset>(
       begin: const Offset(0, -1), // Start from above
-      end:  Offset(0, 0), // End at the original position
+      // ignore: use_named_constants
+      end:   const Offset(0, 0), // End at the original position
     ).animate(
       CurvedAnimation(
         parent: _controller,
@@ -70,14 +68,7 @@ class _OnboardingBodyState extends State<OnboardingBody>
               child: Column(
                 children: [
                   Expanded(
-                    child: 
-                    // AnimatedPositioned(
-                    //    duration: const Duration(seconds: 1),
-                    //     top: 0, // Position from the top
-                    //     left: 0, // Position from the left
-                    //     right: 0,
-    
-                    //   child: 
+                    child:  
                       SlideTransition(
                         position: _animation,
                         child: Image.asset(
@@ -104,18 +95,18 @@ class _OnboardingBodyState extends State<OnboardingBody>
                   padding: const EdgeInsets.all(15.0),
                   child: Column(
                     children: [
-                      Spacer(),
+                      const Spacer(),
                       Text(
                         "Learning everything",
                         style: Styles.textStyle24.copyWith(fontSize: 29),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Text(
                         "Learn with pleasure with\nus,where you are!",
                         textAlign: TextAlign.center,
                         style: Styles.textStyle24.copyWith(fontSize: 20),
                       ),
-                      Spacer(
+                      const Spacer(
                         flex: 3,
                       ),
                       //repleace sizebox with spacer

@@ -1,32 +1,29 @@
+import 'package:afro_app/core/constants/assets_icons.dart';
+import 'package:afro_app/core/constants/assets_images.dart';
+import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/theme/colors.dart';
+import 'package:afro_app/features/Favourite/presentation/views/favourite_empty_view.dart';
+import 'package:afro_app/features/authuntcation/presentation/views/log_in_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
 import 'package:afro_app/features/profile/presentation/views/widgets/profile_item.dart';
 import 'package:afro_app/features/profile/presentation/views/widgets/profile_list_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfileBody extends StatelessWidget {
   const ProfileBody({super.key});
    List<ProfileItem> profileItems(BuildContext context) => [
         ProfileItem(
-          text: 'Credits Cards',
-          onTap: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const HomeView(),
-                ),
-                );
-          },
-        ),
-        ProfileItem(
           text: 'Saved Items',
           onTap: () {
             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const HomeView(),
+                MaterialPageRoute(builder: (context) => const FavouriteView(),
                 ),
                 );
           },
         ),
         ProfileItem(
-          text: 'My cources',
+          text: 'My Cources',
           onTap: () {
             Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => const HomeView(),
@@ -35,7 +32,7 @@ class ProfileBody extends StatelessWidget {
           },
         ),
         ProfileItem(
-          text: 'About us',
+          text: 'About Us',
           onTap: () {
             Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => const HomeView(),
@@ -62,9 +59,9 @@ class ProfileBody extends StatelessWidget {
 
     final double screenWidth = MediaQuery.of(context).size.width;
 
-    final double leftPosition = screenWidth >= 600 ? 50 : 20;
+    final double leftPosition = screenWidth >= 600 ? 50 : 130;
 
-    final double topPosition = screenWidth >= 600 ? 100 : 130;
+    final double topPosition = screenWidth >= 600 ? 100 : 90;
 
     return SingleChildScrollView(
       child: Stack(
@@ -86,40 +83,66 @@ class ProfileBody extends StatelessWidget {
             // ignore: prefer_const_constructors
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                // Image.asset(AssetImages.profile, width: 100, height: 100),
-                // SizedBox(height: 20),
-                // Text('Rowan Ibrahim', style: Styles.textStyle36),
-                
+              children:  [
+                // Text(
+                //   'Rowan', 
+                //   style: Styles.textStyle36.copyWith(fontSize: 24),
+                //   ),
+                const SizedBox(height: 20),
+                Center(
+                  child: Image.asset(
+                    AssetImages.profile, 
+                    width: 100,
+                     height: 100
+                     ),
+                ),
               ],
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              SizedBox(height: curveHeight + 150), // Adjust the height to accommodate the curve
-              ListView.separated(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: profileItems(context).length,
-              itemBuilder: (context, index) {
-                final ProfileItem item = profileItems(context)[index];
-                return ProfileListItem(
-                  text: item.text,
-                  icon: item.icon,
-                  onPressed: () {
-                    item.onTap();
-                    print('Item pressed: ${item.text}');
-                  },
-                );
-              },
-              separatorBuilder: (context, index) => const Divider(
-                indent: 15,
-                endIndent: 15,
-                color: Colors.grey,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(height: curveHeight + 150), // Adjust the height to accommodate the curve
+                ListView.separated(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: profileItems(context).length,
+                itemBuilder: (context, index) {
+                  final ProfileItem item = profileItems(context)[index];
+                  return ProfileListItem(
+                    text: item.text,
+                    icon: item.icon,
+                    onPressed: () {
+                      item.onTap();
+                      print('Item pressed: ${item.text}');
+                    },
+                  );
+                },
+                separatorBuilder: (context, index) => const Divider(
+                  indent: 15,
+                  endIndent: 15,
+                  color: Colors.grey,
+                ),
               ),
+              const SizedBox(
+                height: 50,
+              ),
+              CustomButton(
+                text: 'Log out', 
+                svgPicture: SvgPicture.asset(AssetIcons.logout),
+                func: (){
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginView(),
+                      ),
+                    );
+                }
+                ),
+              ],
             ),
-            ],
           ),
         ],
       ),

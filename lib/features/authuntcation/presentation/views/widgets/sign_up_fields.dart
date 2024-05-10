@@ -5,7 +5,6 @@ import 'package:afro_app/features/authuntcation/presentation/views/log_in_view.d
 import 'package:afro_app/features/authuntcation/presentation/views/widgets/continue_with_google.dart';
 import 'package:afro_app/features/authuntcation/presentation/views/widgets/last_part.dart';
 import 'package:afro_app/features/authuntcation/presentation/views/widgets/or_widget.dart';
-import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart';
 import 'package:flutter/material.dart';
 

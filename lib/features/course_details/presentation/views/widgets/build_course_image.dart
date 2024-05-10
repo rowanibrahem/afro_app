@@ -1,4 +1,5 @@
 import 'package:afro_app/core/constants/assets_images.dart';
+import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/list_view_items_learn.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/rating.dart';
@@ -30,7 +31,7 @@ Widget buildCourseImageAndDetails() {
         ),
          Text(
           'Lorem ipsum dolor sit amet consectetur.Purus pulvinar eget in molestie aenean metus tortor. Odio eget urna odio mauris.',
-          style: Styles.textStyle12,
+          style: Styles.textStyle12.copyWith(color: ColorApp.greyCart),
         ),
         const SizedBox(height: 40),
         Text(
