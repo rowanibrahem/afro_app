@@ -19,6 +19,7 @@ class CheckoutRepoImpl extends CheckoutRepo {
       );
 
       return right(null);
+    // ignore: unused_catch_clause
     } on StripeException catch (e) {
       return left(
         ServerFailure(

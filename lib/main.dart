@@ -93,8 +93,8 @@ class MyApp extends StatelessWidget {
             textTheme: GoogleFonts.josefinSansTextTheme(),
             useMaterial3: true,
           ),
-          home: LoginView(),
-          // home: token != "empty" ? const BottomNavBody(): const  SplashView(),
+          // home: LoginView(),
+          home: token != "empty" ? const BottomNavBody(): const  SplashView(),
         ),
       ),
     );

@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:afro_app/constants.dart';
 import 'package:afro_app/core/nertwork/cacheNetwork.dart';
-import 'package:afro_app/features/authuntcation/presentation/view_model/log_in_state.dart';
 import 'package:afro_app/features/authuntcation/presentation/view_model/sign_up/sign_up_states.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -46,6 +45,7 @@ class SignUpCubit extends Cubit<SignUpStates> {
           jsonDecode(response.body) as Map<String, dynamic>?;
       if (response.statusCode == 200) {
         // ignore: avoid_dynamic_calls
+        token = data!['token'].toString();
         // await CacheNetwork.insertToCashe(
         // key: "token", value: data!["token"],);
         debugPrint('token is :$token');

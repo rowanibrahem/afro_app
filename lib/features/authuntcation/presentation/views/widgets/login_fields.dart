@@ -172,12 +172,12 @@ class _LoginFieldsState extends State<LoginFields> {
                     height: 15,
                   ),
                   ContinueWithGoogle(
-  onTap: () async {
-    try {
-      await AuthService.signInWithGoogle();
-      Navigator.push(
-        context,
-        MaterialPageRoute(
+                 onTap: () async {
+                  try {
+                 await AuthService.signInWithGoogle();
+               Navigator.push(
+                 context,
+                 MaterialPageRoute(
           builder: (context) => const BottomNavBody(),
         ),
       );

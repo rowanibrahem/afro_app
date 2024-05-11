@@ -3,8 +3,9 @@ import 'package:afro_app/core/models/courses.dart';
 import 'package:afro_app/features/course_details/presentation/views/course_view.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomCoursesImage extends StatelessWidget {
-    CustomCoursesImage({super.key , required this.courseModel});
+   CustomCoursesImage({super.key , required this.courseModel});
    final CoursesModel? courseModel;
 
    List<String> list = [
