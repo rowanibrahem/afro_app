@@ -1,5 +1,5 @@
 import 'package:afro_app/core/errors/failures.dart';
-import 'package:afro_app/core/models/couses.dart';
+import 'package:afro_app/core/models/courses.dart';
 import 'package:dartz/dartz.dart';
 
 

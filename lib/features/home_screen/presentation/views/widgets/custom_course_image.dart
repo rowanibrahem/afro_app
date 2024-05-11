@@ -1,5 +1,5 @@
 import 'package:afro_app/core/constants/assets_images.dart';
-import 'package:afro_app/core/models/couses.dart';
+import 'package:afro_app/core/models/courses.dart';
 import 'package:afro_app/features/course_details/presentation/views/course_view.dart';
 import 'package:flutter/material.dart';
 

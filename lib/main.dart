@@ -9,7 +9,6 @@ import "package:afro_app/features/course_details/presentation/view_model/course_
 import "package:afro_app/features/home_screen/data/home_repo_impl.dart";
 import "package:afro_app/features/home_screen/presentation/view_model/courses_cubit.dart";
 import "package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart";
-import "package:afro_app/features/payment/presentation/views/thankyou_view.dart";
 import "package:afro_app/features/splash_screen/presentation/views/splash_view.dart";
 import "package:afro_app/firebase_options.dart";
 import "package:device_preview/device_preview.dart";
@@ -19,7 +18,6 @@ import "package:flutter_bloc/flutter_bloc.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
   setUp();
@@ -33,7 +31,7 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   Bloc.observer = MyBlocObserver();
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  // final SharedPreferences prefs = await SharedPreferences.getInstance();
   // Widget homeScreen = (prefs.getBool('watched') ?? false) ? const BottomNavBody() : const SplashView();
   
   // ignore: cast_nullable_to_non_nullable

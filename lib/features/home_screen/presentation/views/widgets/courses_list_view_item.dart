@@ -1,5 +1,5 @@
 import 'package:afro_app/core/constants/assets_icons.dart';
-import 'package:afro_app/core/models/couses.dart';
+import 'package:afro_app/core/models/courses.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/home_screen/presentation/views/widgets/custom_course_image.dart';
 import 'package:flutter/cupertino.dart';

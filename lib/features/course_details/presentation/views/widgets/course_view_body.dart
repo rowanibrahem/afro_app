@@ -1,4 +1,4 @@
-import 'package:afro_app/core/models/couses.dart';
+import 'package:afro_app/core/models/courses.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/build_button.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/build_course_image.dart';
 import 'package:flutter/material.dart';

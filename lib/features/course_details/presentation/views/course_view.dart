@@ -1,4 +1,4 @@
-import 'package:afro_app/core/models/couses.dart';
+import 'package:afro_app/core/models/courses.dart';
 import 'package:afro_app/core/shared_widget/custom_appbar.dart';
 import 'package:afro_app/features/course_details/presentation/view_model/course_cubit.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/course_view_body.dart';
