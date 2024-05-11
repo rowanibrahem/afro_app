@@ -4,7 +4,7 @@ import 'package:afro_app/features/course_details/presentation/views/course_view.
 import 'package:flutter/material.dart';
 
 class CustomCoursesImage extends StatelessWidget {
-    CustomCoursesImage({super.key ,  this.courseModel});
+    CustomCoursesImage({super.key , required this.courseModel});
    final CoursesModel? courseModel;
 
    List<String> list = [

@@ -39,7 +39,7 @@ class HomeRepoImpl implements HomeRepo {
    @override
   Future<Either<Failure, List<CoursesModel>>> fetchCourseDetails() async {
     try {
-      var data = await apiService.get(
+      final data = await apiService.get(
           endPoint:
           'v1/course'
           );
