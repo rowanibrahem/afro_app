@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_dynamic_calls
 
 import 'package:afro_app/constants.dart';
+import 'package:afro_app/core/services/auth_services.dart';
 import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/shared_widget/default_text.dart';
 import 'package:afro_app/core/shared_widget/snack_bar.dart';
@@ -169,7 +170,9 @@ class _LoginFieldsState extends State<LoginFields> {
                   const SizedBox(
                     height: 15,
                   ),
-                  const ContinueWithGoogle(),
+                   ContinueWithGoogle(
+                    onTap: () => AuthService.signInWithGoogle(),
+                  ),
                   const SizedBox(
                     height: 20,
                   ),

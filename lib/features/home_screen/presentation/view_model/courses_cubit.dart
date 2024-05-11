@@ -19,3 +19,4 @@ class CoursesCubit extends Cubit<CoursesState>{
     });
   }
 }
+

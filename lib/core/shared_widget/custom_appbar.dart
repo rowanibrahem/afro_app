@@ -1,5 +1,8 @@
 import 'package:afro_app/core/theme/styles.dart';
+import 'package:afro_app/features/Favourite/presentation/view_model/fav_state.dart';
+import 'package:afro_app/features/Favourite/presentation/views/widgets/test_fav.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key, this.text});
@@ -23,12 +26,19 @@ class _CustomAppBarState extends State<CustomAppBar> {
         },
       ),
       actions: [
-        IconButton(
-          icon: const Icon(Icons.favorite_border),
-          onPressed: () {
-            // Implement toggle favorite functionality here
-          },
-        ),
+  //       BlocBuilder<FavCubit, FavState>(
+  //    builder: (context, state) {
+  //     final isFavourite = state.isCourseFavorite(courseId);
+  //     return IconButton(
+  //       icon: Icon(
+  //         isFavourite ? Icons.favorite : Icons.favorite_border,
+  //       ),
+  //       onPressed: () {
+  //         BlocProvider.of<FavCubit>(context).toggleFavorite(courseId);
+  //       },
+  //     );
+  //   },
+  // ),
       ],
       centerTitle: true,
       elevation: 0,

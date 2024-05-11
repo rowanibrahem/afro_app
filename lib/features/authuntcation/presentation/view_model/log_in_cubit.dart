@@ -17,7 +17,7 @@ class LoginCubit extends Cubit<AuthStates> {
     emit(LogInLoadingState());
     try {
       var url = Uri.parse(
-          'https://ab23-156-203-150-233.ngrok-free.app/api/v1/auth/login');
+          'https://94f5-156-203-138-9.ngrok-free.app/api/v1/auth/login');
 
       var jsonData = {
         'email': email,
@@ -39,22 +39,22 @@ class LoginCubit extends Cubit<AuthStates> {
       final Map<String, dynamic>? data =
           jsonDecode(response.body) as Map<String, dynamic>?;
       if (response.statusCode == 200) {
-        if (token != null){
-          token = token;
-        debugPrint('token is :$token');
-        await CacheNetwork.insertToCashe(key: "token", value: token as String);
-        await CacheNetwork.insertToCashe(key: "password", value: password);
-        token = await CacheNetwork.getCacheData(key: "token");
-        emit(LogInSuccessState());
-        debugPrint("LogIN Succcessfully, token is : $token");
+        if (token != null) {
+          token = data!['token'].toString();
+          debugPrint('token is :$token');
+          await CacheNetwork.insertToCashe(
+              key: "token", value: token as String);
+          await CacheNetwork.insertToCashe(key: "password", value: password);
+          token = await CacheNetwork.getCacheData(key: "token");
+          emit(LogInSuccessState());
+          debugPrint("LogIN Succcessfully, token is : $token");
         }
         // ignore: avoid_dynamic_calls
         // await CacheNetwork.insertToCashe(
         // key: "token", value: data!["token"],);
-        
       } else if (response.statusCode == 404) {
-      emit(LogInFailedState(message: "Incorrect Username or Password"));
-    }
+        emit(LogInFailedState(message: "Incorrect Username or Password"));
+      }
     } catch (e) {
       emit(LogInFailedState(message: "Something went wrong, Try again later"));
     }

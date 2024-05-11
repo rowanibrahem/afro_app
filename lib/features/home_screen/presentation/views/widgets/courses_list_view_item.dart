@@ -1,4 +1,3 @@
-
 import 'package:afro_app/core/constants/assets_icons.dart';
 import 'package:afro_app/core/models/couses.dart';
 import 'package:afro_app/core/theme/styles.dart';

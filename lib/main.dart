@@ -7,8 +7,12 @@ import "package:afro_app/features/authuntcation/presentation/view_model/log_in_c
 import "package:afro_app/features/authuntcation/presentation/view_model/sign_up/sign_up_cubit.dart";
 import "package:afro_app/features/home_screen/data/home_repo_impl.dart";
 import "package:afro_app/features/home_screen/presentation/view_model/courses_cubit.dart";
+import "package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart";
+import "package:afro_app/features/payment/presentation/views/thankyou_view.dart";
 import "package:afro_app/features/splash_screen/presentation/views/splash_view.dart";
+import "package:afro_app/firebase_options.dart";
 import "package:device_preview/device_preview.dart";
+import "package:firebase_core/firebase_core.dart";
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
@@ -24,6 +28,9 @@ Future<void> main() async {
   
   token = await CacheNetwork.getCacheData(key: "token");
   debugPrint("Token retrieved from cache: $token");
+   await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   Bloc.observer = MyBlocObserver();
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   // Widget homeScreen = (prefs.getBool('watched') ?? false) ? const BottomNavBody() : const SplashView();
@@ -80,8 +87,7 @@ class MyApp extends StatelessWidget {
             textTheme: GoogleFonts.josefinSansTextTheme(),
             useMaterial3: true,
           ),
-          home: SplashView(),
-          // token != "empty" ? const BottomNavBody(): const  SplashView() ,
+          home: token != "empty" ? const BottomNavBody(): const  SplashView(),
         ),
       ),
     );

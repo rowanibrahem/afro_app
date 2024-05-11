@@ -10,7 +10,7 @@ class FavView extends StatelessWidget {
       appBar: AppBar(
         title: Icon(Icons.backpack_outlined),
       ),
-      body: FavBody(),
+      // body: FavBody(),
     );
   }
 }
