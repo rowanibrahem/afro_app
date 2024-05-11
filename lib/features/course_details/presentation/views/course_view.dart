@@ -29,7 +29,7 @@ class _CourseViewState extends State<CourseView> {
         appBar: const CustomAppBar(
         ),
         body: CourseBody(
-          courseModel: widget.courseModel
+          courseModel: widget.courseModel,
         ),
       ),
     );

@@ -16,9 +16,8 @@ class CourseBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-           BuildCourseImageAndDetails(
-            coursedetails: courseModel!,
-           ),
+            if (courseModel != null) // Check if courseModel is not null
+              BuildCourseImageAndDetails(coursedetails: courseModel!),
           //  const Spacer(),
             Align(
               alignment: Alignment.bottomCenter,
