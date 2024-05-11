@@ -7,6 +7,6 @@ import 'package:dartz/dartz.dart';
 
 abstract class HomeRepo{
   Future<Either<Failure,List<CoursesModel>>> fetchCourses();
-  // Future<Either<Failure,List<BookModel>>> fetchFeaturedBooks();
-  // Future<Either<Failure,List<BookModel>>> fetchSimilarBooks({required String category});
+  // ignore: type_annotate_public_apis
+  Future<Either<Failure,List<CoursesModel>>> fetchCourseDetails();
 }

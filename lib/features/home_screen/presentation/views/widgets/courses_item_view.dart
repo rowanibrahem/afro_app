@@ -27,6 +27,7 @@ class _CoursesItemViewState extends State<CoursesItemView> {
               padding: const EdgeInsets.symmetric(vertical: 10),
               child: CoursesListViewItem(
                  courseModel: state.courses[index],
+                 
               ),
             );
           },

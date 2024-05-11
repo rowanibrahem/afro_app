@@ -1,17 +1,22 @@
 import 'package:afro_app/core/constants/assets_images.dart';
+import 'package:afro_app/core/models/couses.dart';
 import 'package:afro_app/features/course_details/presentation/views/course_view.dart';
 import 'package:flutter/material.dart';
 
 class CustomCoursesImage extends StatelessWidget {
-   const CustomCoursesImage({super.key});
-   
+    CustomCoursesImage({super.key ,  this.courseModel});
+   final CoursesModel? courseModel;
+
+   List<String> list = [
+      
+    ];
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
         Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const CourseView(),
+                MaterialPageRoute(builder: (context) =>  CourseView(courseModel: courseModel),
                 ),
                 );
       },

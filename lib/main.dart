@@ -5,6 +5,7 @@ import "package:afro_app/core/nertwork/cacheNetwork.dart";
 import "package:afro_app/core/utilies/api_keys.dart";
 import "package:afro_app/features/authuntcation/presentation/view_model/log_in_cubit.dart";
 import "package:afro_app/features/authuntcation/presentation/view_model/sign_up/sign_up_cubit.dart";
+import "package:afro_app/features/course_details/presentation/view_model/course_cubit.dart";
 import "package:afro_app/features/home_screen/data/home_repo_impl.dart";
 import "package:afro_app/features/home_screen/presentation/view_model/courses_cubit.dart";
 import "package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart";
@@ -74,6 +75,11 @@ class MyApp extends StatelessWidget {
             create: (context) => CoursesCubit(
               getIt.get<HomeRepoImpl>(),
             )..fetchCourses(),
+          ),
+          BlocProvider(
+            create: (context) =>  CoursesDetailsCubit(
+              getIt.get<HomeRepoImpl>(),
+            )..fetchCourseDetails(),
           ),
         ],
         child: MaterialApp(

@@ -1,9 +1,12 @@
+import 'package:afro_app/core/models/couses.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/build_button.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/build_course_image.dart';
 import 'package:flutter/material.dart';
 
 class CourseBody extends StatelessWidget {
-  const CourseBody({super.key});
+  const CourseBody({super.key , required this.courseModel});
+  final CoursesModel? courseModel;
+
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +16,9 @@ class CourseBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-           buildCourseImageAndDetails(),
+           BuildCourseImageAndDetails(
+            coursedetails: courseModel!,
+           ),
           //  const Spacer(),
             Align(
               alignment: Alignment.bottomCenter,

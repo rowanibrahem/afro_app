@@ -35,4 +35,31 @@ class HomeRepoImpl implements HomeRepo {
       return left(ServerFailure(e.toString()));
     }
   }
+  
+   @override
+  Future<Either<Failure, List<CoursesModel>>> fetchCourseDetails() async {
+    try {
+      var data = await apiService.get(
+          endPoint:
+          'v1/course'
+          );
+      if (data is List) {
+        final List<CoursesModel> coursesdetails = [];
+        for (dynamic item in data) {
+          if (item is Map<String, dynamic>) { // Check if item is of expected type
+            coursesdetails.add(CoursesModel.fromJson(item));
+          }
+        }
+        return right(coursesdetails);
+      }
+      else {
+        return left(ServerFailure('Unexpected data format for courses'));
+      }
+    } catch (e) {
+      if (e is DioError) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(e.toString()));
+    }
+  }
 }

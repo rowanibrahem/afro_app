@@ -18,7 +18,7 @@ class CoursesListViewItem extends StatelessWidget {
       height: 100,
       child: Row(
         children: [
-          const CustomCoursesImage(),
+         CustomCoursesImage(),
           const SizedBox(
             width: 30,
           ),
