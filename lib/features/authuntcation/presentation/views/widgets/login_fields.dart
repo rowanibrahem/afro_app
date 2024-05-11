@@ -93,8 +93,8 @@ class _LoginFieldsState extends State<LoginFields> {
                 children: [
                   Text(
                     'Login',
-                    style:
-                        Styles.textStyle24.copyWith(fontWeight: FontWeight.w400),
+                    style: Styles.textStyle24
+                        .copyWith(fontWeight: FontWeight.w400),
                   ),
                   const SizedBox(
                     height: 20,
@@ -105,12 +105,12 @@ class _LoginFieldsState extends State<LoginFields> {
                     label: 'enter your email',
                     hint: 'your email',
                     prefix: Icons.email,
-                  validate: (dynamic value) {
-                  if ((value as String?)?.isEmpty ?? true) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
+                    validate: (dynamic value) {
+                      if ((value as String?)?.isEmpty ?? true) {
+                        return 'Please enter some text';
+                      }
+                      return null;
+                    },
                   ),
                   const SizedBox(height: 15.0),
                   defaultText(
@@ -132,11 +132,11 @@ class _LoginFieldsState extends State<LoginFields> {
                     },
                     isObscure: !isPasswordVisible,
                     validate: (value) {
-                            if ((value as String?)?.isEmpty ?? true) {
-                              return 'Password must not be empty';
-                            }
-                            return null;
-                          },
+                      if ((value as String?)?.isEmpty ?? true) {
+                        return 'Password must not be empty';
+                      }
+                      return null;
+                    },
                   ),
                   Padding(
                     padding: const EdgeInsets.all(25.0),
@@ -144,18 +144,19 @@ class _LoginFieldsState extends State<LoginFields> {
                       text: 'Login',
                       func: () {
                         if (formKey.currentState!.validate()) {
-                          try{
-                  //  final String email = emailController.text;
-                  //  final String password = passwordController.text;
-          
-                   // Call the logIn method from LoginCubit
-                    BlocProvider.of<LoginCubit>(context).LogIn(
-                      email: emailController.text, 
-                    password: passwordController.text,);
-                            } catch(e) {
-                                // Handle authentication error
-                                print('Authentication error: $e');
-                              }
+                          try {
+                            //  final String email = emailController.text;
+                            //  final String password = passwordController.text;
+
+                            // Call the logIn method from LoginCubit
+                            BlocProvider.of<LoginCubit>(context).LogIn(
+                              email: emailController.text,
+                              password: passwordController.text,
+                            );
+                          } catch (e) {
+                            // Handle authentication error
+                            print('Authentication error: $e');
+                          }
                         }
                         // Navigator.pushReplacement(
                         //   context,
@@ -170,9 +171,39 @@ class _LoginFieldsState extends State<LoginFields> {
                   const SizedBox(
                     height: 15,
                   ),
-                   ContinueWithGoogle(
-                    onTap: () => AuthService.signInWithGoogle(),
-                  ),
+                  ContinueWithGoogle(
+  onTap: () async {
+    try {
+      await AuthService.signInWithGoogle();
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const BottomNavBody(),
+        ),
+      );
+    } catch (e) {
+      // Handle sign-in errors
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Sign-In Error'),
+            content: Text('Failed to sign in with Google. Please try again later.'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
+      print('Sign-in error: $e');
+    }
+  },
+),
                   const SizedBox(
                     height: 20,
                   ),
