@@ -9,8 +9,8 @@ class CardInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 305,
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 22),
+      width: 260,
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 28),
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(

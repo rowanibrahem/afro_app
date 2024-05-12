@@ -10,6 +10,7 @@ import "package:afro_app/features/course_details/presentation/view_model/course_
 import "package:afro_app/features/home_screen/data/home_repo_impl.dart";
 import "package:afro_app/features/home_screen/presentation/view_model/courses_cubit.dart";
 import "package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart";
+import "package:afro_app/features/payment/presentation/views/thankyou_view.dart";
 import "package:afro_app/features/splash_screen/presentation/views/splash_view.dart";
 import "package:afro_app/firebase_options.dart";
 import "package:device_preview/device_preview.dart";
@@ -93,7 +94,7 @@ class MyApp extends StatelessWidget {
             textTheme: GoogleFonts.josefinSansTextTheme(),
             useMaterial3: true,
           ),
-          // home: LoginView(),
+          // home: 
           home: token != "empty" ? const BottomNavBody(): const  SplashView(),
         ),
       ),

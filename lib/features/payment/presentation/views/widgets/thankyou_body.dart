@@ -20,7 +20,7 @@ class _ThankYouBodyState extends State<ThankYouBody> {
         children: [
           const Thankyou_card(),
           Positioned(
-            bottom: MediaQuery.sizeOf(context).height * .2 + 20,
+            bottom: MediaQuery.sizeOf(context).height * .2 + 60,
             left: 20+16,
             right: 20+16,
             child: const CustomDashedLine(),
@@ -40,7 +40,7 @@ class _ThankYouBodyState extends State<ThankYouBody> {
             ),
           ),
           const Positioned(
-            top: -50,
+            top: -30,
               left: 0,
               right: 0,
               child: CustomCheckIcon(),

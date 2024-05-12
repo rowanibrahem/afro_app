@@ -1,4 +1,3 @@
-import 'package:afro_app/features/Favourite/presentation/views/widgets/fav_body.dart';
 import 'package:flutter/material.dart';
 
 class FavView extends StatelessWidget {
