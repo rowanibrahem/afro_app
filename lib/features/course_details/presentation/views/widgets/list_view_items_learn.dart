@@ -3,24 +3,18 @@ import 'package:afro_app/features/course_details/presentation/views/widgets/list
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-Widget buildListViewCourse() {
-    return ListView(
+Widget buildListViewCourse(List<String> learnItems) {
+    return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      children: [
-        buildListItem(
-          'Learn HTML and Css',
-         SvgPicture.asset(AssetIcons.checkCard),
-         ),
-        buildListItem(
-          'Java Script',
-           SvgPicture.asset(AssetIcons.checkCard),
-           ),
-        buildListItem(
-          'BoootStrab',
-           SvgPicture.asset(AssetIcons.checkCard),
-           ),
-      ],
+     itemCount: learnItems.length,
+    itemBuilder: (context, index) {
+      return buildListItem(
+        learnItems[index], // Pass each learning item
+        SvgPicture.asset(AssetIcons.checkCard),
+      );
+    },
+
     );
   }
 

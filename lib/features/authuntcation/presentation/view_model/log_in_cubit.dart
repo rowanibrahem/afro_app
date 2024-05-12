@@ -17,7 +17,7 @@ class LoginCubit extends Cubit<AuthStates> {
     emit(LogInLoadingState());
     try {
       var url = Uri.parse(
-          'https://94f5-156-203-138-9.ngrok-free.app/api/v1/auth/login');
+          'https://9a84-156-203-238-225.ngrok-free.app/api/v1/auth/login');
 
       var jsonData = {
         'email': email,
@@ -46,6 +46,14 @@ class LoginCubit extends Cubit<AuthStates> {
               key: "token", value: token as String);
           await CacheNetwork.insertToCashe(key: "password", value: password);
           token = await CacheNetwork.getCacheData(key: "token");
+          
+          if (data.containsKey('name')) {
+           name = data['name'].toString();
+          await CacheNetwork.insertToCashe(
+            key: "name",
+            value: name as String,
+          );
+        }
           emit(LogInSuccessState());
           debugPrint("LogIN Succcessfully, token is : $token");
         }

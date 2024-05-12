@@ -9,8 +9,8 @@ import 'package:flutter_svg/svg.dart';
 
 
 class HomeBody extends StatelessWidget {
-  const HomeBody({super.key});
-
+  const HomeBody({super.key, this.userName = "Rowan"});
+  final String userName;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -33,7 +33,7 @@ class HomeBody extends StatelessWidget {
                     ),
                   const SizedBox(width: 15,),
                    Text(
-                    "Hi, Rowan  ",
+                    "Hi, $userName",
                     style: Styles.textStyle14.copyWith(color: Colors.black),
                     ),
                   const SizedBox(width: 2,),

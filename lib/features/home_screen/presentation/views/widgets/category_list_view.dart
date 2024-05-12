@@ -31,7 +31,7 @@ class _CategoryListViewState extends State<CategoryListView> with SingleTickerPr
                 text: 'Programing',
               ),
               Tab(
-                text: 'Medical',
+                text: 'IT',
               ),
             ],
             controller: tabController,

@@ -53,12 +53,12 @@ class BuildCourseImageAndDetails extends StatelessWidget {
               style: Styles.textStyleNoto16.copyWith(fontSize: 20),
             ),
             const SizedBox(height: 10),
-            buildListViewCourse(),
+            buildListViewCourse(coursedetails.whatWillYouLearn ?? []),
             const SizedBox(
               height: 30,
             ),
             Text(
-              coursedetails.price.toString(),
+              ' EGP ${coursedetails.price} ',
               style: Styles.textStyle16.copyWith(fontSize: 20),
             ),
           ],

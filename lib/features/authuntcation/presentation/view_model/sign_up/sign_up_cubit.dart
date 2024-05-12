@@ -20,7 +20,7 @@ class SignUpCubit extends Cubit<SignUpStates> {
     emit(SignUpLoadingState());
     try {
       final url = Uri.parse(
-          'https://ab23-156-203-150-233.ngrok-free.app/api/v1/auth/register',);
+          'https://9a84-156-203-238-225.ngrok-free.app/api/v1/auth/register',);
 
       final jsonData = {
         'name': name,
@@ -51,6 +51,13 @@ class SignUpCubit extends Cubit<SignUpStates> {
         debugPrint('token is :$token');
         await CacheNetwork.insertToCashe(key: "password", value: password);
         token = await CacheNetwork.getCacheData(key: "token");
+        if (data.containsKey('name')) {
+           name = data['name'].toString();
+          await CacheNetwork.insertToCashe(
+            key: "name",
+            value: name as String,
+          );
+        }
         emit(SignUpSuccessState());
         debugPrint("LogIN Succcessfully, token is : $token");
       } else {
