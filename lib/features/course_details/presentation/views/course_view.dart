@@ -1,5 +1,5 @@
 import 'package:afro_app/core/models/courses.dart';
-import 'package:afro_app/core/shared_widget/custom_appbar.dart';
+import 'package:afro_app/core/shared_widget/customization_appbar.dart';
 import 'package:afro_app/features/course_details/presentation/view_model/course_cubit.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/course_view_body.dart';
 import 'package:flutter/material.dart';
@@ -26,8 +26,7 @@ class _CourseViewState extends State<CourseView> {
   Widget build(BuildContext context) {
     return  SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(
-        ),
+        appBar: const CustomAppBar(),
         body: CourseBody(
           courseModel: widget.courseModel,
         ),

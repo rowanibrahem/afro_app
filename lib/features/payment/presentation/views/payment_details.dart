@@ -1,4 +1,4 @@
-import 'package:afro_app/core/shared_widget/custom_appbar.dart';
+import 'package:afro_app/core/shared_widget/customization_appbar.dart';
 import 'package:afro_app/features/payment/presentation/views/widgets/pay_details_body.dart';
 import 'package:flutter/material.dart';
 

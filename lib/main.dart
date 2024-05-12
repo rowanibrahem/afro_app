@@ -3,6 +3,7 @@ import "package:afro_app/constants.dart";
 import "package:afro_app/core/functions/service_locator.dart";
 import "package:afro_app/core/nertwork/cacheNetwork.dart";
 import "package:afro_app/core/utilies/api_keys.dart";
+import "package:afro_app/features/Favourite/presentation/view_model/fav_cubit.dart";
 import "package:afro_app/features/authuntcation/presentation/view_model/log_in_cubit.dart";
 import "package:afro_app/features/authuntcation/presentation/view_model/sign_up/sign_up_cubit.dart";
 import "package:afro_app/features/course_details/presentation/view_model/course_cubit.dart";
@@ -81,6 +82,7 @@ class MyApp extends StatelessWidget {
               getIt.get<HomeRepoImpl>(),
             )..fetchCourseDetails(),
           ),
+        
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

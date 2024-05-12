@@ -1,21 +1,22 @@
 import 'package:afro_app/core/theme/styles.dart';
-import 'package:afro_app/features/Favourite/presentation/view_model/fav_state.dart';
-import 'package:afro_app/features/Favourite/presentation/views/widgets/test_fav.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, this.text});
+
+class CustomAppBarTitle extends StatefulWidget implements PreferredSizeWidget {
+  const CustomAppBarTitle({super.key, this.text });
   final String? text;
 
+
   @override
-  State<CustomAppBar> createState() => _CustomAppBarState();
+  State<CustomAppBarTitle> createState() => _CustomAppBarTitleState();
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
-class _CustomAppBarState extends State<CustomAppBar> {
+class _CustomAppBarTitleState extends State<CustomAppBarTitle> {
+
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -25,21 +26,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
           Navigator.pop(context);
         },
       ),
-      actions: [
-  //       BlocBuilder<FavCubit, FavState>(
-  //    builder: (context, state) {
-  //     final isFavourite = state.isCourseFavorite(courseId);
-  //     return IconButton(
-  //       icon: Icon(
-  //         isFavourite ? Icons.favorite : Icons.favorite_border,
-  //       ),
-  //       onPressed: () {
-  //         BlocProvider.of<FavCubit>(context).toggleFavorite(courseId);
-  //       },
-  //     );
-  //   },
-  // ),
-      ],
       centerTitle: true,
       elevation: 0,
       backgroundColor: Colors.transparent,
@@ -55,40 +41,3 @@ class _CustomAppBarState extends State<CustomAppBar> {
 
 
 
-// AppBar buildAppBar({final String? text}){
-//   return AppBar(
-//    leading: IconButton(
-//           icon: const Icon(Icons.arrow_back),
-//           onPressed: () {
-//             // Navigator.pop(context);
-//           },
-//         ),
-//         actions: [
-//           IconButton(
-//             icon: const Icon(Icons.favorite_border),
-//             onPressed: () {
-//               // Implement toggle favorite functionality here
-//             },
-//           ),
-//         ],
-//     centerTitle: true,
-//     elevation: 0,
-//     backgroundColor: Colors.transparent,
-//     title: Text(
-//       text??'',
-//       textAlign: TextAlign.center,
-//       style: Styles.textStyle24,
-//     ),
-//   );
-// }
-//  // appBar: AppBar(
-//         //   leading: IconButton(
-//         //     icon: const Icon(Icons.arrow_back),
-//         //     onPressed: () {
-//         //       Navigator.push(
-//         //           context,
-//         //           MaterialPageRoute(
-//         //               builder: (context) => const BottomNavBody()));
-//         //     },
-//         //   ),
-        

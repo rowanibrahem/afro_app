@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:afro_app/core/theme/colors.dart';
-import 'package:afro_app/features/Favourite/presentation/views/favourite_empty_view.dart';
+import 'package:afro_app/features/Favourite/presentation/views/fav_view.dart';
 import 'package:afro_app/features/cart/presentation/views/cart_empty_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
 import 'package:afro_app/features/profile/presentation/views/profile_view.dart';
@@ -30,7 +30,7 @@ class _BottomNavBodyState extends State<BottomNavBody> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     HomeView(),
-    FavouriteView(),
+    FavView(),
     CardView(),
     ProfileView(),
   ];

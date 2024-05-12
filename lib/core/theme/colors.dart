@@ -13,4 +13,5 @@ abstract class ColorApp {
   static const secondryColor4 = Color(0xFFF1E9B5);
   static const greyCart = Color(0xFF9B9B9B);
   static const backgroundScaffold = Color(0xFFDFDFDF);
+  static const helpColor = Color(0xFF30475E);
 }
