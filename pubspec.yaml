@@ -63,6 +63,13 @@ dependencies:
   get_it: ^7.7.0
   provider: 
   firebase_auth: ^4.19.5
+  flutter_launcher_icons: ^0.13.1
+
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/icon.png"
 
 
 

@@ -5,9 +5,9 @@ package="com.example.afro_app"
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:label="afro_app"
+        android:label="Afro Asian Board"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/launcher_icon"
         android:usesCleartextTraffic="true"
         >
         <activity
