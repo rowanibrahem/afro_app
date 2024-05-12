@@ -13,7 +13,10 @@ class FavView extends StatefulWidget {
 
 class _FavViewState extends State<FavView> {
 
-
+void initState(){
+    BlocProvider.of<FavCubit>(context).toggleFavorite();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

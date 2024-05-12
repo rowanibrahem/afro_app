@@ -19,8 +19,6 @@ class _CourseViewState extends State<CourseView> {
   void initState(){
     BlocProvider.of<CoursesDetailsCubit>(context).fetchCourseDetails();
     super.initState();
-
-
   }
   @override
   Widget build(BuildContext context) {

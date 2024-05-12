@@ -15,7 +15,7 @@ class FavCubit extends Cubit<FavState> {
           
         ));
 
-  Future<void> toggleFavorite(String courseId) async {
+  Future<void> toggleFavorite({String courseId = '1'}) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
     final isFavorite = state.favoriteCourses.any((course) => course.id == courseId);

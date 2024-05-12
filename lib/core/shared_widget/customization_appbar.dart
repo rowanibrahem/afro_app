@@ -38,7 +38,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   isFavourite ? Icons.favorite : Icons.favorite_border,
                 ),
                 onPressed: () {
-                  BlocProvider.of<FavCubit>(context).toggleFavorite(widget.courseId!);
+                  BlocProvider.of<FavCubit>(context).toggleFavorite(courseId: widget.courseId!);
                 },
               );
             },
