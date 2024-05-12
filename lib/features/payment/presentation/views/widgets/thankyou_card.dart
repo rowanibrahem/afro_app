@@ -54,7 +54,7 @@ class Thankyou_card extends StatelessWidget {
               ),
               const PaymentItemInfo(
                 title: 'To',
-                value: 'Sam Louis',
+                value: 'Rowan Ibrahem',
               ),
               const Divider(
                 height: 60,
