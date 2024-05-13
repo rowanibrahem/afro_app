@@ -47,5 +47,8 @@ package="com.example.afro_app"
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
         </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+       </intent>
     </queries>
 </manifest>
