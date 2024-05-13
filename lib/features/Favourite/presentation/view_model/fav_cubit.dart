@@ -15,52 +15,46 @@ class FavCubit extends Cubit<FavState> {
           
         ));
 
-  Future<void> toggleFavorite({String courseId = '1'}) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
+Future<void> toggleFavorite(String courseId) async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    final isFavorite = state.favoriteCourses.any((course) => course.id == courseId);
-    final newFavoriteCourses = List.of(state.favoriteCourses);
-    final newPrefId = List.of(state.prefId);
+  final isFavorite = state.favoriteCourses.any((course) => course.id == int.parse(courseId));
+  final newFavoriteCourses = List.of(state.favoriteCourses);
+  final newPrefId = List.of(state.prefId);
 
-    if (isFavorite) {
-      newFavoriteCourses.removeWhere((course) => course.id == courseId);
-      newPrefId.remove(courseId);
-    } else {
-      final eitherCoursesOrFailure = await homeRepo.fetchCourses();
-      eitherCoursesOrFailure.fold(
-        (failure) {
-          // Handle failure
-          print('Failed to fetch courses: $failure');
-        },
-        (courses) {
-          // Find the course with the matching ID
-          final newCourse = courses.firstWhere(
-            (course) => course.id == courseId,
-            orElse: () => CoursesModel(
-              id: 1, 
-              title: 'Unknown Course',
-              numberOfLessons: 0,
-              numberOfHours: 0,
-              overview: '',
-              whatWillYouLearn: [],
-              price: 0,
-              tag: '',
-            ),
-          );
-          newFavoriteCourses.add(newCourse);
-          newPrefId.add(courseId);
-        },
+  if (isFavorite) {
+    newFavoriteCourses.removeWhere((course) => course.id == int.parse(courseId));
+    newPrefId.remove(courseId);
+  } else {
+    // Check if course already exists in favorites
+    if (!newFavoriteCourses.any((course) => course.id == int.parse(courseId))) {
+      // Don't fetch courses again, directly add courseId to prefId
+      newPrefId.add(courseId);
+
+      // Optionally create a new CoursesModel with default values
+      final newCourse = CoursesModel(
+        id: int.parse(courseId),
+        title: 'Unknown Course',
+        numberOfLessons: 0,
+        numberOfHours: 0.0,
+        overview: '',
+        whatWillYouLearn: const [],
+        price: 0.0,
+        tag: '',
       );
+      newFavoriteCourses.add(newCourse);
     }
-
-    emit(state.copyWith(
-      favoriteCourses: newFavoriteCourses,
-      prefId: newPrefId,
-    ));
-    prefs.setStringList("prefId", newPrefId);
   }
 
-  bool isCourseFavorite(String id) {
+  emit(state.copyWith(
+    favoriteCourses: newFavoriteCourses,
+    prefId: newPrefId,
+  ));
+  prefs.setStringList("prefId", newPrefId);
+}
+
+
+ bool isCourseFavorite(String id) {
     return state.favoriteCourses.any((course) => course.id == id);
   }
 }

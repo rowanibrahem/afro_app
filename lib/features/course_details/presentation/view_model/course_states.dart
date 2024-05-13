@@ -19,5 +19,6 @@ class CoursesDetailsSuccess extends CoursesDetailsState{
   final List<CoursesModel> books;
 
   CoursesDetailsSuccess(this.books);
+  
 
 }
