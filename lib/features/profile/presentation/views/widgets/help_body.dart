@@ -1,3 +1,4 @@
+import 'package:afro_app/core/constants/assets_images.dart';
 import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/core/theme/styles.dart';
@@ -10,14 +11,18 @@ class HelpBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.symmetric(vertical: 30 , horizontal: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Center(child: Image.asset(AssetImages.logo , width: 150,height: 150,)),
+          SizedBox(height: 10,),
         Text(
           'Thank you for your interest in Afro Asian Board. ',
           style: Styles.textStyle16,
         ),
+        const SizedBox(height: 20,),
         RichText(
                 text: TextSpan(
                   style: Styles.textStyle16,
@@ -39,9 +44,9 @@ class HelpBody extends StatelessWidget {
                   ],
                 ),
               ),
-          const Spacer(),
+         const  SizedBox(height: 90,),
           CustomButton(
-            text: 'Thank You For Getting In Touch!', 
+            text: 'Thank You For Getting US!', 
             func: (){
               Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => const BottomNavBody(),

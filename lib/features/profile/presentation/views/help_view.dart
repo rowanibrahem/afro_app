@@ -7,11 +7,13 @@ class HelpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-       appBar: CustomAppBarTitle(
-        text: 'Help',
-       ),
-      body:  HelpBody(),
+    return const SafeArea(
+      child:  Scaffold(
+         appBar: CustomAppBarTitle(
+          text: 'Help',
+         ),
+        body:  HelpBody(),
+      ),
     );
   }
 }
