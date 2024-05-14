@@ -2,13 +2,13 @@
 import 'package:dio/dio.dart';
 
 class ApiService{
+
+  ApiService(this.dio);
  
 
   final _baseUrl = 'https://1258-156-203-131-1.ngrok-free.app/api/';
   // final _baseUrl = 'http://10.1.1.1:45386/api';
   final Dio dio;
-
-  ApiService(this.dio);
 
   Future<Response> post (
   {
@@ -30,7 +30,7 @@ class ApiService{
   }
 
   Future get ({required String endPoint}) async{
-    var response = await dio.get('$_baseUrl$endPoint');
+    final response = await dio.get('$_baseUrl$endPoint');
     return response.data;
   }
 }

@@ -52,12 +52,7 @@
 //   }
 // }
 
-import 'package:afro_app/core/functions/service_locator.dart';
-import 'package:afro_app/features/Favourite/presentation/view_model/fav_cubit.dart';
-import 'package:afro_app/features/Favourite/presentation/view_model/fav_state.dart';
-import 'package:afro_app/features/home_screen/data/home_repo_impl.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key, this.text, this.courseId});
@@ -83,7 +78,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
       ),
       actions: [
         IconButton(
-          icon: Icon(Icons.favorite_border_outlined),
+          icon: const Icon(Icons.favorite_border_outlined),
           onPressed: () {},
         ),
       ],

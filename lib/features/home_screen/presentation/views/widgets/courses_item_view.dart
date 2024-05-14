@@ -35,7 +35,7 @@ class _CoursesItemViewState extends State<CoursesItemView> {
         }else if (state is CoursesFailure) {
           return CustomErrorWidget(errMessage: state.errMessage);
         } else {
-          return LoadingIndicator();
+          return const LoadingIndicator();
         }
       },
     );

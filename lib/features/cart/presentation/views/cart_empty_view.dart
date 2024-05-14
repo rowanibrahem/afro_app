@@ -9,7 +9,7 @@ class CardView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: ColorApp.backgroundScaffold,
-      child: CartEmptyBody()
+      child: const CartEmptyBody(),
       );
   }
 }

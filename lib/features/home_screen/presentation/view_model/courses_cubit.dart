@@ -11,7 +11,7 @@ class CoursesCubit extends Cubit<CoursesState>{
   final HomeRepo homeRepo;
   Future<void> fetchCourses() async {
     emit(CoursesLoading());
-    var result = await homeRepo.fetchCourses();
+    final result = await homeRepo.fetchCourses();
     result.fold((failure) {
       emit(CoursesFailure(failure.errMessage));
     }, (books) {

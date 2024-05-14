@@ -2,9 +2,6 @@ import 'package:afro_app/core/theme/styles.dart';
 import 'package:flutter/material.dart';
 
 class ProfileListItem extends StatelessWidget {
-  final String text;
-  final IconData? icon;
-  final VoidCallback onPressed;
 
   const ProfileListItem({
     required this.text,
@@ -12,6 +9,9 @@ class ProfileListItem extends StatelessWidget {
     required this.onPressed,
     super.key,
   });
+  final String text;
+  final IconData? icon;
+  final VoidCallback onPressed;
    @override
   Widget build(BuildContext context) {
     return ListTile(

@@ -40,14 +40,14 @@ class _LoginFieldsState extends State<LoginFields> {
         if (state is LogInSuccessState) {
           // Save tokens to shared preferences
           final SharedPreferences prefs = await SharedPreferences.getInstance();
-          prefs.setString('token', token as String);
+          prefs.setString('token', token!);
           // prefs.setString('accessToken', state.accessToken);
           // prefs.setString('idToken', state.idToken);
 
           Navigator.pop(context);
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => BottomNavBody()),
+            MaterialPageRoute(builder: (context) => const BottomNavBody()),
           );
         } else if (state is LogInFailedState) {
           Navigator.pop(context);
@@ -66,7 +66,7 @@ class _LoginFieldsState extends State<LoginFields> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text("Loading..")
+                  Text("Loading.."),
                 ],
               ),
             ),
@@ -187,14 +187,14 @@ class _LoginFieldsState extends State<LoginFields> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('Sign-In Error'),
-            content: Text('Failed to sign in with Google. Please try again later.'),
+            title: const Text('Sign-In Error'),
+            content: const Text('Failed to sign in with Google. Please try again later.'),
             actions: [
               TextButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: Text('OK'),
+                child: const Text('OK'),
               ),
             ],
           );

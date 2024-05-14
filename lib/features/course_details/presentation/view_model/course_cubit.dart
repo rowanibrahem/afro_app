@@ -12,13 +12,13 @@ class CoursesDetailsCubit extends Cubit<CoursesDetailsState>{
   // ignore: type_annotate_public_apis
   Future<void> fetchCourseDetails() async {
   emit(CoursesDetailsLoading());
-  final String specificCourseId = '123';
+  const String specificCourseId = '123';
   final result = await homeRepo.fetchCourseDetails();
   result.fold((failure) {
     emit(CoursesDetailsFailure(failure.errMessage));
   }, (courseDetail) {
     // Access course details directly from courseDetail object
-    emit(CoursesDetailsSuccess(courseDetail as List<CoursesModel>));
+    emit(CoursesDetailsSuccess(courseDetail));
   });
 }
 }

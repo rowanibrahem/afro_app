@@ -10,16 +10,16 @@ import 'package:http/http.dart';
 class LoginCubit extends Cubit<AuthStates> {
   LoginCubit() : super(IntialState());
 
-  void LogIn({
+  Future<void> LogIn({
     required String email,
     required String password,
   }) async {
     emit(LogInLoadingState());
     try {
-      var url = Uri.parse(
-          '$baseUrl/api/v1/auth/login');
+      final url = Uri.parse(
+          '$baseUrl/api/v1/auth/login',);
 
-      var jsonData = {
+      final jsonData = {
         'email': email,
         'password': password,
       };
@@ -43,7 +43,7 @@ class LoginCubit extends Cubit<AuthStates> {
           token = data!['token'].toString();
           debugPrint('token is :$token');
           await CacheNetwork.insertToCashe(
-              key: "token", value: token as String);
+              key: "token", value: token!,);
           await CacheNetwork.insertToCashe(key: "password", value: password);
           token = await CacheNetwork.getCacheData(key: "token");
           
@@ -51,7 +51,7 @@ class LoginCubit extends Cubit<AuthStates> {
            name = data['name'].toString();
           await CacheNetwork.insertToCashe(
             key: "name",
-            value: name as String,
+            value: name!,
           );
         }
           emit(LogInSuccessState());

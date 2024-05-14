@@ -2,7 +2,6 @@ import 'package:afro_app/core/constants/assets_icons.dart';
 import 'package:afro_app/core/constants/assets_images.dart';
 import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/theme/colors.dart';
-import 'package:afro_app/features/Favourite/presentation/views/fav_view.dart';
 import 'package:afro_app/features/Favourite/presentation/views/favourite_empty_view.dart';
 import 'package:afro_app/features/authuntcation/presentation/views/log_in_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart';
@@ -74,7 +73,7 @@ class ProfileBody extends StatelessWidget {
             child: ClipPath(
               clipper:
                   ShapeClipper(curveHeight), // Use the custom clipper to clip the image
-              child: Container(
+              child: SizedBox(
                 height: curveHeight + 100, // Adjust container height to accommodate the curve
                 width: double.infinity,
               ),
@@ -96,7 +95,7 @@ class ProfileBody extends StatelessWidget {
                   child: Image.asset(
                     AssetImages.profile, 
                     width: 100,
-                     height: 100
+                     height: 100,
                      ),
                 ),
               ],
@@ -142,7 +141,7 @@ class ProfileBody extends StatelessWidget {
                         builder: (context) => const LoginView(),
                       ),
                     );
-                }
+                },
                 ),
               ],
             ),
@@ -163,7 +162,7 @@ class ShapesPainter extends CustomPainter {
     final p = Path();
     p.lineTo(0, size.height - curveHeight);
     p.relativeQuadraticBezierTo(
-        size.width / 2, 2 * curveHeight, size.width, 0);
+        size.width / 2, 2 * curveHeight, size.width, 0,);
     p.lineTo(size.width, 0);
     p.close();
 
@@ -171,7 +170,7 @@ class ShapesPainter extends CustomPainter {
         p,
         Paint()
           ..color = ColorApp.primaryColor
-              .withOpacity(0.6)); // Use opacity to make it transparent
+              .withOpacity(0.6),); // Use opacity to make it transparent
   }
 
   @override
@@ -181,16 +180,16 @@ class ShapesPainter extends CustomPainter {
 }
 
 class ShapeClipper extends CustomClipper<Path> {
-  final double curveHeight;
 
   ShapeClipper(this.curveHeight);
+  final double curveHeight;
 
   @override
   Path getClip(Size size) {
     final path = Path();
     path.lineTo(0, size.height - curveHeight);
     path.relativeQuadraticBezierTo(
-        size.width / 2, 2 * curveHeight, size.width, 0);
+        size.width / 2, 2 * curveHeight, size.width, 0,);
     path.lineTo(size.width, 0);
     path.close();
     return path;

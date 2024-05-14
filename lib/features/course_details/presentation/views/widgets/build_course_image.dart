@@ -11,8 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shimmer/shimmer.dart';
 
 class BuildCourseImageAndDetails extends StatelessWidget {
-  const BuildCourseImageAndDetails({Key? key, required this.coursedetails})
-      : super(key: key);
+  const BuildCourseImageAndDetails({super.key, required this.coursedetails});
 
   final CoursesModel coursedetails;
 

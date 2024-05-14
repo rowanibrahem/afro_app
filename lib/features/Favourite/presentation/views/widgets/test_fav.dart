@@ -1,12 +1,12 @@
 
 import "package:flutter/material.dart";
 class Course {
+
+  Course({required this.id, required this.title, required this.description, this.isFavorite = false});
   final int id;
   final String title;
   final String description;
   bool isFavorite;
-
-  Course({required this.id, required this.title, required this.description, this.isFavorite = false});
 }
 
 class CourseListPage extends StatefulWidget {
@@ -37,7 +37,7 @@ class _CourseListPageState extends State<CourseListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Courses'),
+        title: const Text('Courses'),
       ),
       body: ListView.builder(
         itemCount: courses.length,
