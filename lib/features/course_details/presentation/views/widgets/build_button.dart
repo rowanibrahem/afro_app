@@ -31,13 +31,8 @@ Widget buildButtons(BuildContext context) {
             print('Button tapped');
             // final loggedIn = await showLoginPopup(context);
             print(token);
-            print(token != null);
-            if (token!.isEmpty) {
-              final loggedIn = await showLoginPopup(context);
-              if (loggedIn!) {
-                await showLoginPopup(context);
-              }
-            } else {
+            print(token?.isEmpty);
+            if (token != null && token!.isNotEmpty) {
               showModalBottomSheet(
                 context: context,
                 shape: RoundedRectangleBorder(
@@ -51,6 +46,11 @@ Widget buildButtons(BuildContext context) {
                   );
                 },
               );
+            } else {
+              final loggedIn = await showLoginPopup(context);
+              if (loggedIn!) {
+                 showLoginPopup(context);
+              }
             }
           },
           width: double.infinity,
