@@ -31,7 +31,7 @@ class _BottomNavBodyState extends State<BottomNavBody> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     HomeView(),
-    FavouriteView(),
+    FavView(),
     CardView(),
     ProfileView(),
   ];
