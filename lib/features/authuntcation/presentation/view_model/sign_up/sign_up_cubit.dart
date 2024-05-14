@@ -20,7 +20,7 @@ class SignUpCubit extends Cubit<SignUpStates> {
     emit(SignUpLoadingState());
     try {
       final url = Uri.parse(
-          'https://9a84-156-203-238-225.ngrok-free.app/api/v1/auth/register',);
+          '$base64Url/api/v1/auth/register',);
 
       final jsonData = {
         'name': name,

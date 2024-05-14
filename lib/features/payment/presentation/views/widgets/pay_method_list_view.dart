@@ -12,7 +12,7 @@ class PaymentMethodsListView extends StatefulWidget {
 
 class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
   final List<String> paymentMethodsItems = const [
-    // AssetIcons.card,
+    AssetIcons.card,
     AssetIcons.paybal,
     
   ];

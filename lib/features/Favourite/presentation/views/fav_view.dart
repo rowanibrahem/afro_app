@@ -20,7 +20,7 @@ class _FavViewState extends State<FavView> {
       // appBar: AppBar(
       //   title: const Icon(Icons.backpack_outlined),
       // ),
-      body: FavBody(),
+      // body: FavBody(),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:afro_app/core/errors/failures.dart';
 import 'package:afro_app/core/models/courses.dart';
 import 'package:afro_app/core/services/api_services.dart';
+import 'package:afro_app/features/Favourite/presentation/view_model/cashed.dart';
 import 'package:afro_app/features/home_screen/data/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
@@ -18,9 +19,10 @@ class HomeRepoImpl implements HomeRepo {
 
       if (data is List) {
         final List<CoursesModel> courses = [];
-        for (dynamic item in data) {
-          if (item is Map<String, dynamic>) { // Check if item is of expected type
+        for ( dynamic item in data) {
+          if (item is Map<String, dynamic>) { 
             courses.add(CoursesModel.fromJson(item));
+            CourseCache.cachedCourseData.addAll(courses);
           }
         }
         return right(courses);
@@ -48,6 +50,7 @@ class HomeRepoImpl implements HomeRepo {
         for (dynamic item in data) {
           if (item is Map<String, dynamic>) { // Check if item is of expected type
             coursesdetails.add(CoursesModel.fromJson(item));
+             
           }
         }
         return right(coursesdetails);

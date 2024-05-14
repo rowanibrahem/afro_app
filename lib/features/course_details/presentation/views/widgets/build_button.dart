@@ -1,5 +1,7 @@
+import 'package:afro_app/constants.dart';
 import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/pop_up.dart';
+import 'package:afro_app/features/course_details/presentation/views/widgets/pop_up_log_in.dart';
 import 'package:afro_app/features/payment/data/repos/checkout_repo_impl.dart';
 import 'package:afro_app/features/payment/presentation/manager/cubit/payment_cubit.dart';
 import 'package:afro_app/features/payment/presentation/views/widgets/pay_method_bottomsheet.dart';
@@ -18,7 +20,6 @@ Widget buildButtons(BuildContext context) {
           borderRadius: BorderRadius.circular(0),
           func: () {
             showAddToCartPopup(context);
-            
           },
         ),
         const SizedBox(height: 8),
@@ -26,21 +27,30 @@ Widget buildButtons(BuildContext context) {
           borderRadius: BorderRadius.circular(0),
           backgroundColor: Colors.white,
           text: 'Buy now',
-          func: () {
+          func: () async {
             print('Button tapped');
-            showModalBottomSheet(
-              context: context,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              builder: (context) {
-                print('Building bottom sheet');
-                return BlocProvider(
-                  create: (context) => PaymentCubit(CheckoutRepoImpl()),
-                  child: const PaymentMethodsBottomSheet(),
-                );
-              },
-            );
+            // final loggedIn = await showLoginPopup(context);
+            print(token);
+            if (token != null) {
+              showModalBottomSheet(
+                context: context,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                builder: (context) {
+                  print('Building bottom sheet');
+                  return BlocProvider(
+                    create: (context) => PaymentCubit(CheckoutRepoImpl()),
+                    child: const PaymentMethodsBottomSheet(),
+                  );
+                },
+              );
+            } else {
+              final loggedIn = await showLoginPopup(context);
+              if (loggedIn == true) {
+               await showLoginPopup(context);
+              }
+            }
           },
           width: double.infinity,
         ),

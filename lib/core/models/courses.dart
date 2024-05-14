@@ -1,20 +1,18 @@
-
-
 import 'package:equatable/equatable.dart';
 
 // ignore: must_be_immutable
-class CoursesModel extends Equatable{
-
-  CoursesModel(
-      {
-      this.id,
-      this.title,
-      this.numberOfLessons,
-      this.numberOfHours,
-      this.overview,
-      this.whatWillYouLearn,
-      this.price,
-      this.tag,});
+class CoursesModel extends Equatable {
+  CoursesModel({
+    this.id,
+    this.title,
+    this.numberOfLessons,
+    this.numberOfHours,
+    this.overview,
+    this.whatWillYouLearn,
+    this.price,
+    this.tag,
+    this.imagePath,
+  });
   num? id;
   String? title;
   num? numberOfLessons;
@@ -23,20 +21,23 @@ class CoursesModel extends Equatable{
   List<String>? whatWillYouLearn;
   num? price;
   String? tag;
+  String? imagePath;
 
   factory CoursesModel.fromJson(Map<String, dynamic> json) {
     print('JSON Data before parsing: $json');
-  return CoursesModel(
-    id: json['id'] as int?,
-    title: json['title'] as String?,
-    numberOfLessons: json['numberOfLessons'] as int?,
-    numberOfHours: json['numberOfHours'] as double?,
-    overview: json['overview'] as String?,
-    whatWillYouLearn: (json['whatWillYouLearn'] as List<dynamic>).cast<String>(),
-    price: json['price'] as double?,
-    tag: json['tag'] as String?,
-  );
-}
+    return CoursesModel(
+      id: json['id'] as int?,
+      title: json['title'] as String?,
+      numberOfLessons: json['numberOfLessons'] as int?,
+      numberOfHours: json['numberOfHours'] as double?,
+      overview: json['overview'] as String?,
+      whatWillYouLearn:
+          (json['whatWillYouLearn'] as List<dynamic>).cast<String>(),
+      price: json['price'] as double?,
+      tag: json['tag'] as String?,
+      imagePath: json['imagePath'] as String?,
+    );
+  }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
@@ -48,9 +49,10 @@ class CoursesModel extends Equatable{
     data['whatWillYouLearn'] = this.whatWillYouLearn;
     data['price'] = this.price;
     data['tag'] = this.tag;
+    data['imagePath'] = this.imagePath;
     return data;
   }
-  
+
   @override
   // TODO: implement props
   List<Object?> get props {
@@ -63,6 +65,7 @@ class CoursesModel extends Equatable{
       whatWillYouLearn,
       price,
       tag,
+      imagePath,
     ];
   }
 }

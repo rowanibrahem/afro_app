@@ -83,9 +83,9 @@ class MyApp extends StatelessWidget {
               getIt.get<HomeRepoImpl>(),
             )..fetchCourseDetails(),
           ),
-         BlocProvider(
-            create: (context) => FavCubit(getIt.get<HomeRepoImpl>()),
-          ),
+        //  BlocProvider(
+        //     create: (context) => FavCubit(getIt.get<HomeRepoImpl>()),
+        //   ),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

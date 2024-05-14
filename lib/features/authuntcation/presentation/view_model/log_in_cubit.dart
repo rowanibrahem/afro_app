@@ -17,7 +17,7 @@ class LoginCubit extends Cubit<AuthStates> {
     emit(LogInLoadingState());
     try {
       var url = Uri.parse(
-          'https://8e97-156-203-244-254.ngrok-free.app/api/v1/auth/login');
+          '$baseUrl/api/v1/auth/login');
 
       var jsonData = {
         'email': email,

@@ -39,7 +39,11 @@ class HomeBody extends StatelessWidget {
                   const SizedBox(width: 2,),
                   SvgPicture.asset(AssetIcons.emoji),
                   const Spacer(),
-                  const Icon(Icons.search),
+                  Image.asset(
+                    AssetImages.logo,
+                    width: 50,
+                    height: 50,
+                  ),
                 ],
               ),
                 ),

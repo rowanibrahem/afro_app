@@ -7,6 +7,7 @@ import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/course_details/presentation/view_model/course_cubit.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/list_view_items_learn.dart';
 import 'package:afro_app/features/course_details/presentation/views/widgets/rating.dart';
+import 'package:afro_app/features/home_screen/presentation/views/widgets/custom_course_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,11 +24,12 @@ class BuildCourseImageAndDetails extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(
-              AssetImages.courseDetails,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
+            CustomCoursesImage(courseModel: coursedetails,),
+            // Image.asset(
+            //   AssetImages.courseDetails,
+            //   width: double.infinity,
+            //   fit: BoxFit.cover,
+            // ),
             const SizedBox(height: 25),
             Text(
               coursedetails.title.toString(),

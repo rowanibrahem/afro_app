@@ -3,6 +3,7 @@ import 'package:afro_app/core/constants/assets_images.dart';
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:afro_app/features/authuntcation/presentation/views/log_in_view.dart';
+import 'package:afro_app/features/authuntcation/presentation/views/widgets/log_in_body.dart';
 import 'package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -120,7 +121,7 @@ class _OnboardingBodyState extends State<OnboardingBody>
                                 Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const BottomNavBody(),
+                                    builder: (context) => const LoginView(),
                                   ),
                                 );
                               },
