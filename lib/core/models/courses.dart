@@ -13,15 +13,6 @@ class CoursesModel extends Equatable {
     this.tag,
     this.imagePath,
   });
-  num? id;
-  String? title;
-  num? numberOfLessons;
-  num? numberOfHours;
-  String? overview;
-  List<String>? whatWillYouLearn;
-  num? price;
-  String? tag;
-  String? imagePath;
 
   factory CoursesModel.fromJson(Map<String, dynamic> json) {
     print('JSON Data before parsing: $json');
@@ -38,18 +29,27 @@ class CoursesModel extends Equatable {
       imagePath: json['imagePath'] as String?,
     );
   }
+  num? id;
+  String? title;
+  num? numberOfLessons;
+  num? numberOfHours;
+  String? overview;
+  List<String>? whatWillYouLearn;
+  num? price;
+  String? tag;
+  String? imagePath;
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['numberOfLessons'] = this.numberOfLessons;
-    data['numberOfHours'] = this.numberOfHours;
-    data['overview'] = this.overview;
-    data['whatWillYouLearn'] = this.whatWillYouLearn;
-    data['price'] = this.price;
-    data['tag'] = this.tag;
-    data['imagePath'] = this.imagePath;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['title'] = title;
+    data['numberOfLessons'] = numberOfLessons;
+    data['numberOfHours'] = numberOfHours;
+    data['overview'] = overview;
+    data['whatWillYouLearn'] = whatWillYouLearn;
+    data['price'] = price;
+    data['tag'] = tag;
+    data['imagePath'] = imagePath;
     return data;
   }
 

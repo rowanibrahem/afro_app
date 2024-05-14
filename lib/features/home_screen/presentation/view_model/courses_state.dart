@@ -3,6 +3,7 @@ part of 'courses_cubit.dart';
 
 abstract class CoursesState extends Equatable{
   const CoursesState();
+  @override
   List <Object> get props =>[];
 }
 class CoursesInitial extends CoursesState{}
@@ -14,8 +15,8 @@ class CoursesFailure extends CoursesState{
 
 }
 class CoursesSuccess extends CoursesState{
-  final List<CoursesModel> courses;
 
   CoursesSuccess(this.courses);
+  final List<CoursesModel> courses;
 
 }

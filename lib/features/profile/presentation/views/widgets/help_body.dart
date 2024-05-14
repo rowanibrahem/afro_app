@@ -17,7 +17,7 @@ class HelpBody extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(child: Image.asset(AssetImages.logo , width: 150,height: 150,)),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
         Text(
           'Thank you for your interest in Afro Asian Board. ',
           style: Styles.textStyle16,
@@ -40,7 +40,7 @@ class HelpBody extends StatelessWidget {
                     TextSpan(
                       text: 'user@gmail.com',
                       style: Styles.textStyle16.copyWith(color: ColorApp.helpColor),
-                    )
+                    ),
                   ],
                 ),
               ),

@@ -3,14 +3,12 @@ import "package:afro_app/constants.dart";
 import "package:afro_app/core/functions/service_locator.dart";
 import "package:afro_app/core/nertwork/cacheNetwork.dart";
 import "package:afro_app/core/utilies/api_keys.dart";
-import "package:afro_app/features/Favourite/presentation/view_model/fav_cubit.dart";
 import "package:afro_app/features/authuntcation/presentation/view_model/log_in_cubit.dart";
 import "package:afro_app/features/authuntcation/presentation/view_model/sign_up/sign_up_cubit.dart";
 import "package:afro_app/features/course_details/presentation/view_model/course_cubit.dart";
 import "package:afro_app/features/home_screen/data/home_repo_impl.dart";
 import "package:afro_app/features/home_screen/presentation/view_model/courses_cubit.dart";
 import "package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart";
-import "package:afro_app/features/profile/presentation/views/profile_view.dart";
 import "package:afro_app/features/splash_screen/presentation/views/splash_view.dart";
 import "package:afro_app/firebase_options.dart";
 import "package:device_preview/device_preview.dart";
@@ -30,7 +28,7 @@ Future<void> main() async {
 final SharedPreferences prefs = await SharedPreferences.getInstance();
   token = await CacheNetwork.getCacheData(key: "token");
   name = await CacheNetwork.getCacheData(key: "name");
-  var isLoggedIn = (prefs.getBool('isLoggedIn') == null)
+  final isLoggedIn = (prefs.getBool('isLoggedIn') == null)
       ? false
       : prefs.getBool('isLoggedIn');
   debugPrint("Token retrieved from cache: $token");

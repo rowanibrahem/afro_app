@@ -3,13 +3,13 @@
 import 'package:dio/dio.dart';
 
 abstract class Failure {
-  final String errMessage;
 
   Failure(this.errMessage);
+  final String errMessage;
 }
 
 class ServerFailure extends Failure {
-  ServerFailure(String errMessage) : super(errMessage);
+  ServerFailure(super.errMessage);
 
   factory ServerFailure.fromDioError(DioError dioError) {
     switch (dioError.type) {
@@ -24,7 +24,7 @@ class ServerFailure extends Failure {
 
       case DioErrorType.badCertificate:
         return ServerFailure.fromResponse(
-            dioError.response!.statusCode, dioError.response!.data);
+            dioError.response!.statusCode, dioError.response!.data,);
 
       case DioErrorType.cancel:
         return ServerFailure('Request to ApiServer was canceled');

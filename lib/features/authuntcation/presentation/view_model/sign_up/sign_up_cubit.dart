@@ -55,7 +55,7 @@ class SignUpCubit extends Cubit<SignUpStates> {
            name = data['name'].toString();
           await CacheNetwork.insertToCashe(
             key: "name",
-            value: name as String,
+            value: name,
           );
         }
         emit(SignUpSuccessState());

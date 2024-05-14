@@ -17,7 +17,7 @@ Future<bool?> showLoginPopup(BuildContext context) async {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('You must log in'),
+              const Text('You must log in'),
               const SizedBox(height: 20),
               Text(
                 'Already have an account?',

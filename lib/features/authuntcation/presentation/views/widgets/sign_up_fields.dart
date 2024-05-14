@@ -132,7 +132,7 @@ class _SignUpFields extends State<SignUpFields> {
                       validate: (value) {
                               if ((value as String?)?.isEmpty ?? true) {
                                 return 'email must not be empty';
-                              }  if (!(value as String).contains('@')) {
+                              }  if (!(value!).contains('@')) {
                               return 'Enter a valid email address';
                            }
                               return null;
@@ -179,7 +179,7 @@ class _SignUpFields extends State<SignUpFields> {
                       validate: (value) {
                               if ((value as String?)?.isEmpty ?? true) {
                                 return 'Password must not be empty';
-                              } if ((value as String).length < 8) {
+                              } if ((value!).length < 8) {
                             return 'Password must be at least 8 characters long';
                           }
                               return null;

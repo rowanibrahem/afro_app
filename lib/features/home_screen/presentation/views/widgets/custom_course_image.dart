@@ -30,7 +30,7 @@ class CustomCoursesImage extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => CourseView(courseModel: courseModel!)),
+          MaterialPageRoute(builder: (context) => CourseView(courseModel: courseModel)),
         );
       },
       child: AspectRatio(
@@ -68,10 +68,10 @@ Widget _buildPlaceholderImage() {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          image: DecorationImage(
+          image: const DecorationImage(
               fit: BoxFit.fill,
               // Use NetworkImage for loading images from the network
-              image: AssetImage(AssetImages.bookDetails)
+              image: AssetImage(AssetImages.bookDetails),
           // Placeholder color
           // You can customize the placeholder appearance as needed
         ),

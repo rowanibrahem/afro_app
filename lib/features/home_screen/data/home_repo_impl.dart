@@ -19,7 +19,7 @@ class HomeRepoImpl implements HomeRepo {
 
       if (data is List) {
         final List<CoursesModel> courses = [];
-        for ( dynamic item in data) {
+        for ( final dynamic item in data) {
           if (item is Map<String, dynamic>) { 
             courses.add(CoursesModel.fromJson(item));
             CourseCache.cachedCourseData.addAll(courses);
@@ -43,11 +43,11 @@ class HomeRepoImpl implements HomeRepo {
     try {
       final data = await apiService.get(
           endPoint:
-          'v1/course'
+          'v1/course',
           );
       if (data is List) {
         final List<CoursesModel> coursesdetails = [];
-        for (dynamic item in data) {
+        for (final dynamic item in data) {
           if (item is Map<String, dynamic>) { // Check if item is of expected type
             coursesdetails.add(CoursesModel.fromJson(item));
              

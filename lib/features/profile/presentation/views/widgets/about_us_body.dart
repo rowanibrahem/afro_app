@@ -3,7 +3,6 @@ import 'package:afro_app/core/functions/url_launcher.dart';
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/core/theme/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class AboutBody extends StatelessWidget {
   const AboutBody({super.key});

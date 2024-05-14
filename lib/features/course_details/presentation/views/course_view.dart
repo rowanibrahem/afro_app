@@ -24,7 +24,7 @@ class _CourseViewState extends State<CourseView> {
   Widget build(BuildContext context) {
     return  SafeArea(
       child: Scaffold(
-        appBar: CustomAppBar(),
+        appBar: const CustomAppBar(),
         // appBar: CustomAppBar(courseId: widget.courseModel?.id.toString()),
         body: CourseBody(
           courseModel: widget.courseModel,

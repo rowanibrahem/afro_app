@@ -5,7 +5,6 @@ import 'package:afro_app/features/course_details/presentation/views/widgets/pop_
 import 'package:afro_app/features/payment/data/repos/checkout_repo_impl.dart';
 import 'package:afro_app/features/payment/presentation/manager/cubit/payment_cubit.dart';
 import 'package:afro_app/features/payment/presentation/views/widgets/pay_method_bottomsheet.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

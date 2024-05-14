@@ -5,15 +5,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FavCubit extends Cubit<FavState> {
-  final HomeRepo homeRepo;
 
   FavCubit(this.homeRepo)
       : super(
-        FavState(
+        const FavState(
           favoriteCourses: [],
           prefId: [],
           
-        ));
+        ),);
+  final HomeRepo homeRepo;
 
 Future<void> toggleFavorite(String courseId) async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -49,7 +49,7 @@ Future<void> toggleFavorite(String courseId) async {
   emit(state.copyWith(
     favoriteCourses: newFavoriteCourses,
     prefId: newPrefId,
-  ));
+  ),);
   prefs.setStringList("prefId", newPrefId);
 }
 

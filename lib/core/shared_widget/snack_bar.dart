@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 SnackBar customSnackBar({
-  required String message
+  required String message,
 }){
   return SnackBar(
     content: Container(
@@ -9,10 +9,10 @@ SnackBar customSnackBar({
         height: 40,
         child: Text(message,
           style: const TextStyle(
-              fontSize: 16
+              fontSize: 16,
 
           ),
-        )
+        ),
     ),
   );
 }
