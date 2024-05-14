@@ -121,7 +121,7 @@ class _OnboardingBodyState extends State<OnboardingBody>
                                 Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const LoginView(),
+                                    builder: (context) => const BottomNavBody(),
                                   ),
                                 );
                               },
