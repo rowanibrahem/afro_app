@@ -5,6 +5,7 @@ import 'package:afro_app/features/course_details/presentation/views/widgets/pop_
 import 'package:afro_app/features/payment/data/repos/checkout_repo_impl.dart';
 import 'package:afro_app/features/payment/presentation/manager/cubit/payment_cubit.dart';
 import 'package:afro_app/features/payment/presentation/views/widgets/pay_method_bottomsheet.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,25 +32,28 @@ Widget buildButtons(BuildContext context) {
             print('Button tapped');
             // final loggedIn = await showLoginPopup(context);
             print(token);
-            if (token != null) {
-              showModalBottomSheet(
-                context: context,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                builder: (context) {
-                  print('Building bottom sheet');
-                  return BlocProvider(
-                    create: (context) => PaymentCubit(CheckoutRepoImpl()),
-                    child: const PaymentMethodsBottomSheet(),
-                  );
-                },
-              );
-            } else {
+            // final User? user = authInstance.currentUser;
+            if (token == null) {
               final loggedIn = await showLoginPopup(context);
               if (loggedIn == true) {
-               await showLoginPopup(context);
-              }
+                await showLoginPopup(context);
+                return;
+              } 
+                showModalBottomSheet(
+                  // ignore: use_build_context_synchronously
+                  context: context,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  builder: (context) {
+                    print('Building bottom sheet');
+                    return BlocProvider(
+                      create: (context) => PaymentCubit(CheckoutRepoImpl()),
+                      child: const PaymentMethodsBottomSheet(),
+                    );
+                  },
+                );
+              
             }
           },
           width: double.infinity,
@@ -58,3 +62,30 @@ Widget buildButtons(BuildContext context) {
     ),
   );
 }
+
+
+// final authState = context.read<AuthCubit>().state;
+//   if (authState is! AuthAuthenticated) {
+//     // User is not authenticated, prompt them to log in
+//     Navigator.of(context).push(MaterialPageRoute(
+//       builder: (context) => LoginScreen(),
+//     ));
+//     return;
+//   }
+
+//   // User is authenticated, proceed with showing the bottom sheet
+//   showModalBottomSheet(
+//     context: context,
+//     shape: RoundedRectangleBorder(
+//       borderRadius: BorderRadius.circular(16),
+//     ),
+//     builder: (context) {
+//       print('Building bottom sheet');
+//       return BlocProvider(
+//         create: (context) => PaymentCubit(CheckoutRepoImpl()),
+//         child: const PaymentMethodsBottomSheet(),
+//       );
+//     },
+//   );
+
+//another solution : home: isLoggedIn ? DashboardPage() : LoginPage(),

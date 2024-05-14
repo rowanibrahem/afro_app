@@ -20,15 +20,19 @@ import "package:flutter_bloc/flutter_bloc.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:google_fonts/google_fonts.dart';
+import "package:shared_preferences/shared_preferences.dart";
 
 Future<void> main() async {
   setUp();
   Stripe.publishableKey = ApiKeys.publishableKey;
   WidgetsFlutterBinding.ensureInitialized();
   await CacheNetwork.cachInstialization();
-
+final SharedPreferences prefs = await SharedPreferences.getInstance();
   token = await CacheNetwork.getCacheData(key: "token");
   name = await CacheNetwork.getCacheData(key: "name");
+  var isLoggedIn = (prefs.getBool('isLoggedIn') == null)
+      ? false
+      : prefs.getBool('isLoggedIn');
   debugPrint("Token retrieved from cache: $token");
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
