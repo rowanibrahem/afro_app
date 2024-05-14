@@ -9,7 +9,7 @@ class FavouriteView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: ColorApp.backgroundScaffold,
-      child: FavEmptyBody()
+      child: Scaffold(body: FavEmptyBody())
       );
   }
 }

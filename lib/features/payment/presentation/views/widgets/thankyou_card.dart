@@ -21,7 +21,7 @@ class Thankyou_card extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(top: 20 , left: 22, right: 22),
+        padding: const EdgeInsets.only(top: 30 , left: 22, right: 22),
         child: SingleChildScrollView(
           child: Column(
             children: [

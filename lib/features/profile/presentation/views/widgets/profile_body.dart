@@ -3,6 +3,7 @@ import 'package:afro_app/core/constants/assets_images.dart';
 import 'package:afro_app/core/shared_widget/custom_button.dart';
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/features/Favourite/presentation/views/fav_view.dart';
+import 'package:afro_app/features/Favourite/presentation/views/favourite_empty_view.dart';
 import 'package:afro_app/features/authuntcation/presentation/views/log_in_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart';
 import 'package:afro_app/features/profile/presentation/views/about_view.dart';
@@ -19,7 +20,7 @@ class ProfileBody extends StatelessWidget {
           text: 'Saved Items',
           onTap: () {
             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const FavView(),
+                MaterialPageRoute(builder: (context) => const FavouriteView(),
                 ),
                 );
           },

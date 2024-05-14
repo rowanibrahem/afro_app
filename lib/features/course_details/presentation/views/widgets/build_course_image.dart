@@ -47,7 +47,7 @@ class BuildCourseImageAndDetails extends StatelessWidget {
             ),
             Text(
               coursedetails.overview.toString(),
-              style: Styles.textStyle12.copyWith(color: ColorApp.greyCart),
+              style: Styles.textStyle18.copyWith(color: ColorApp.greyCart),
             ),
             const SizedBox(height: 40),
             Text(

@@ -40,7 +40,7 @@ class _ThankYouBodyState extends State<ThankYouBody> {
             ),
           ),
           const Positioned(
-            top: -30,
+            top: -15,
               left: 0,
               right: 0,
               child: CustomCheckIcon(),
