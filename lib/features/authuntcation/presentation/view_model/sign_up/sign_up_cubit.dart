@@ -20,7 +20,8 @@ class SignUpCubit extends Cubit<SignUpStates> {
     emit(SignUpLoadingState());
     try {
       final url = Uri.parse(
-          '$base64Url/api/v1/auth/register',);
+          '$baseUrl/api/v1/auth/register',
+          );
 
       final jsonData = {
         'name': name,

@@ -18,7 +18,7 @@ class HomeBody extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+            padding: const EdgeInsets.fromLTRB(20, 10, 10, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children:  [
@@ -70,12 +70,12 @@ class HomeBody extends StatelessWidget {
             ),
           ),
         ),
-        const SliverFillRemaining(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30),
-            child: CoursesItemView(),
-          ),
-        ),
+        // const SliverFillRemaining(
+        //   child: Padding(
+        //     padding: EdgeInsets.symmetric(horizontal: 30),
+        //     child: CoursesItemView(),
+        //   ),
+        // ),
       ],
     );
   }

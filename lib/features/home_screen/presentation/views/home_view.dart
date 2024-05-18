@@ -10,7 +10,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ColoredBox(
       color: ColorApp.backgroundScaffold,
-      child: HomeBody(userName: name != null ? name! : ""),
+      child: HomeBody(userName: name != null ? name! : "user"),
       );
       
   }

@@ -32,12 +32,11 @@ Widget buildButtons(BuildContext context) {
             // final loggedIn = await showLoginPopup(context);
             print(token);
             // final User? user = authInstance.currentUser;
-            if (token == null) {
-              final loggedIn = await showLoginPopup(context);
-              if (loggedIn == true) {
+            if (token == null || token=='empty') {
+              // final loggedIn = await showLoginPopup(context);
                 await showLoginPopup(context);
                 return;
-              } 
+            }
                 showModalBottomSheet(
                   // ignore: use_build_context_synchronously
                   context: context,
@@ -53,8 +52,8 @@ Widget buildButtons(BuildContext context) {
                   },
                 );
               
-            }
-          },
+            },
+          
           width: double.infinity,
         ),
       ],

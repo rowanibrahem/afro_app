@@ -20,6 +20,7 @@ Future<bool?> showLoginPopup(BuildContext context) async {
               const Text('You must log in'),
               const SizedBox(height: 20),
               Text(
+      
                 'Already have an account?',
                 style: Styles.textStyle24.copyWith(fontSize: 15),
               ),

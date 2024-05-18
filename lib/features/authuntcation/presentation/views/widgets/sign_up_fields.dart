@@ -21,11 +21,11 @@ class SignUpFields extends StatefulWidget {
   @override
   State<SignUpFields> createState() => _SignUpFields();
 }
-GlobalKey<FormState> nameFormKey = GlobalKey<FormState>();
-GlobalKey<FormState> emailFormKey = GlobalKey<FormState>();
-GlobalKey<FormState> phoneFormKey = GlobalKey<FormState>();
-GlobalKey<FormState> passwordFormKey = GlobalKey<FormState>();
-GlobalKey<FormState> confirmFormKey = GlobalKey<FormState>();
+// GlobalKey<FormState> nameFormKey = GlobalKey<FormState>();
+// GlobalKey<FormState> emailFormKey = GlobalKey<FormState>();
+// GlobalKey<FormState> phoneFormKey = GlobalKey<FormState>();
+// GlobalKey<FormState> passwordFormKey = GlobalKey<FormState>();
+// GlobalKey<FormState> confirmFormKey = GlobalKey<FormState>();
 
 TextEditingController emailController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
@@ -104,118 +104,103 @@ class _SignUpFields extends State<SignUpFields> {
                     style: Styles.textStyle24.copyWith(fontWeight: FontWeight.w400),
                   ),
                   const SizedBox(height: 20,),
-                   Form(
-                    key: nameFormKey,
-                     child: defaultText(
-                        type: TextInputType.text,
-                        controller: nameController,
-                        label: 'enter your name',
-                        hint: 'your name',
-                        prefix: Icons.person,
-                        validate: (value) {
-                              if ((value as String?)?.isEmpty ?? true) {
-                                return 'Nmae must not be empty';
-                              }
-                              return null;
-                            },
-                      ),
-                   ),
-                    const SizedBox(height: 15.0),
-                  Form(
-                    key: emailFormKey,
-                    child: defaultText(
-                      type: TextInputType.emailAddress,
-                      controller: emailController,
-                      label: 'enter your email',
-                      hint: 'your email',
-                      prefix: Icons.email,
+                   defaultText(
+                      type: TextInputType.text,
+                      controller: nameController,
+                      label: 'enter your name',
+                      hint: 'your name',
+                      prefix: Icons.person,
                       validate: (value) {
-                              if ((value as String?)?.isEmpty ?? true) {
-                                return 'email must not be empty';
-                              }  if (!(value!).contains('@')) {
-                              return 'Enter a valid email address';
-                           }
-                              return null;
-                            },
+                            if ((value as String?)?.isEmpty ?? true) {
+                              return 'Nmae must not be empty';
+                            }
+                            return null;
+                          },
                     ),
+                    const SizedBox(height: 15.0),
+                  defaultText(
+                    type: TextInputType.emailAddress,
+                    controller: emailController,
+                    label: 'enter your email',
+                    hint: 'your email',
+                    prefix: Icons.email,
+                    validate: (value) {
+                            if ((value as String?)?.isEmpty ?? true) {
+                              return 'email must not be empty';
+                            }  if (!(value!).contains('@')) {
+                            return 'Enter a valid email address';
+                         }
+                            return null;
+                          },
                   ),
                   const SizedBox(height: 15.0),
-                   Form(
-                    key: phoneFormKey,
-                     child: defaultText(
-                        type: TextInputType.phone,
-                        controller: phoneController,
-                        label: 'enter your phone',
-                        hint: 'your phone',
-                        prefix: Icons.phone_android_rounded,
-                        validate: (value) {
-                              if ((value as String?)?.isEmpty ?? true) {
-                                return 'Phone must not be empty';
-                              }
-                              return null;
-                            },
-                        // onChange: (value) {
-                        //   print(value);
-                        // },
-                      ),
-                   ),
+                   defaultText(
+                      type: TextInputType.phone,
+                      controller: phoneController,
+                      label: 'enter your phone',
+                      hint: 'your phone',
+                      prefix: Icons.phone_android_rounded,
+                      validate: (value) {
+                            if ((value as String?)?.isEmpty ?? true) {
+                              return 'Phone must not be empty';
+                            }
+                            return null;
+                          },
+                      // onChange: (value) {
+                      //   print(value);
+                      // },
+                    ),
                     const SizedBox(
                       height: 15.0,
                     ),
-                  Form(
-                    key: passwordFormKey,
-                    child: defaultText(
-                      type: TextInputType.visiblePassword,
-                      controller: passwordController,
-                      hint: 'Password',
-                      label: 'enter your password',
-                      prefix: Icons.lock,
-                      suffix: isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                      pressed: () {
-                        setState(() {
-                          isPasswordVisible = !isPasswordVisible;
-                        });
-                      },
-                      validate: (value) {
-                              if ((value as String?)?.isEmpty ?? true) {
-                                return 'Password must not be empty';
-                              } if ((value!).length < 8) {
-                            return 'Password must be at least 8 characters long';
-                          }
-                              return null;
-                            },
-                      isObscure: !isPasswordVisible,
-                    ),
+                  defaultText(
+                    type: TextInputType.visiblePassword,
+                    controller: passwordController,
+                    hint: 'Password',
+                    label: 'enter your password',
+                    prefix: Icons.lock,
+                    suffix: isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                    pressed: () {
+                      setState(() {
+                        isPasswordVisible = !isPasswordVisible;
+                      });
+                    },
+                    validate: (value) {
+                            if ((value as String?)?.isEmpty ?? true) {
+                              return 'Password must not be empty';
+                            } if ((value!).length < 8) {
+                          return 'Password must be at least 8 characters long';
+                        }
+                            return null;
+                          },
+                    isObscure: !isPasswordVisible,
                   ),
                   const SizedBox(
                       height: 15.0,
                     ),
-                   Form(
-                    key: confirmFormKey,
-                     child: defaultText(
-                      type: TextInputType.visiblePassword,
-                      controller: confirmController,
-                      hint: 'Confirm Password',
-                      label: 'confirm password',
-                      prefix: Icons.lock,
-                      suffix: isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                      pressed: () {
-                        setState(() {
-                          isPasswordVisible = !isPasswordVisible;
-                        });
-                      },
-                      validate: (value) {
-                     if ((value as String?)?.isEmpty ?? true) {
-                     return 'Confirm Password must not be empty';
-                      }
-                                     if (value != passwordController.text) {
-                                       return 'Passwords do not match';
-                          }
-                       return null;
-                       },
-                      isObscure: !isPasswordVisible,
-                                       ),
-                   ),
+                   defaultText(
+                    type: TextInputType.visiblePassword,
+                    controller: confirmController,
+                    hint: 'Confirm Password',
+                    label: 'confirm password',
+                    prefix: Icons.lock,
+                    suffix: isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                    pressed: () {
+                      setState(() {
+                        isPasswordVisible = !isPasswordVisible;
+                      });
+                    },
+                    validate: (value) {
+                   if ((value as String?)?.isEmpty ?? true) {
+                   return 'Confirm Password must not be empty';
+                    }
+                                   if (value != passwordController.text) {
+                                     return 'Passwords do not match';
+                        }
+                     return null;
+                     },
+                    isObscure: !isPasswordVisible,
+                                     ),
                   Padding(
                     padding: const EdgeInsets.all(25.0),
                     child: CustomButton(

@@ -17,7 +17,8 @@ class LoginCubit extends Cubit<AuthStates> {
     emit(LogInLoadingState());
     try {
       final url = Uri.parse(
-          '$baseUrl/api/v1/auth/login',);
+          '$baseUrl/api/v1/auth/login',
+          );
 
       final jsonData = {
         'email': email,
