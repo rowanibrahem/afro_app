@@ -1,16 +1,26 @@
-# afro_app
+# Afro Asian Board App
 
-A new Flutter project.
+Educational Flutter Project
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+This educational app has these Features : 
+- Authentication
+- Home Screen that displays available courses based on their tags
+- show course details
+- Integrate with PayPal to allow payment from the course
+- Ability to Add to favorite and Add to cart 
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Using CI/CD with Faslane and firebase app distribution was amazing
+  
+Demo Video for the project :
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- https://drive.google.com/file/d/1-TeRzaO19VKidAVVDgGIploHsHLc4h9W/view?usp=drive_link
+
+  
+- Implementation document that has all the details that will you need :
+  - https://drive.google.com/file/d/1d6YP6Nmd82QgFmoRLkty85BSBEhNXy_X/view?usp=drive_link
+
+- Software Documentation of the project
+   - https://drive.google.com/file/d/1POF6pLPOVsz3nujm8KUja1LpseX2ulCL/view?usp=drive_link
