@@ -3,6 +3,7 @@ import "package:afro_app/constants.dart";
 import "package:afro_app/core/functions/service_locator.dart";
 import "package:afro_app/core/nertwork/cacheNetwork.dart";
 import "package:afro_app/core/utilies/api_keys.dart";
+import "package:afro_app/features/Favourite/presentation/view_model/fav_cubit.dart";
 import "package:afro_app/features/authuntcation/presentation/view_model/log_in_cubit.dart";
 import "package:afro_app/features/authuntcation/presentation/view_model/sign_up/sign_up_cubit.dart";
 import "package:afro_app/features/course_details/presentation/view_model/course_cubit.dart";
@@ -11,7 +12,6 @@ import "package:afro_app/features/home_screen/presentation/view_model/courses_cu
 import "package:afro_app/features/home_screen/presentation/views/widgets/bottom_nav_body,.dart";
 import "package:afro_app/features/splash_screen/presentation/views/splash_view.dart";
 import "package:afro_app/firebase_options.dart";
-import "package:device_preview/device_preview.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
@@ -31,7 +31,7 @@ final SharedPreferences prefs = await SharedPreferences.getInstance();
   final isLoggedIn = (prefs.getBool('isLoggedIn') == null)
       ? false
       : prefs.getBool('isLoggedIn');
-  debugPrint("Token retrieved from cache: $token");
+  // debugPrint("Token retrieved from cache: $token");
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -45,7 +45,7 @@ final SharedPreferences prefs = await SharedPreferences.getInstance();
 
 //remove await
 
-  debugPrint("tokeeenn : $token");
+  // debugPrint("tokeeenn : $token");
   runApp(
     const MyApp(),
   );
@@ -81,20 +81,20 @@ class MyApp extends StatelessWidget {
             )..fetchCourses(),
           ),
           BlocProvider(
-            create: (context) => CoursesDetailsCubit(
-              getIt.get<HomeRepoImpl>(),
-            )..fetchCourseDetails(),
+          create: (context) => CoursesDetailsCubit(
+            getIt.get<HomeRepoImpl>(),
           ),
-        //  BlocProvider(
-        //     create: (context) => FavCubit(getIt.get<HomeRepoImpl>()),
-        //   ),
+        ),
+         BlocProvider(
+            create: (context) => FavCubit(getIt.get<HomeRepoImpl>()),
+          ),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           // ignore: deprecated_member_use
           useInheritedMediaQuery: true,
-          locale: DevicePreview.locale(context),
-          builder: DevicePreview.appBuilder,
+          // locale: DevicePreview.locale(context),
+          // builder: DevicePreview.appBuilder,
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             textTheme: GoogleFonts.josefinSansTextTheme(),

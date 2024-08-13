@@ -5,56 +5,79 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FavCubit extends Cubit<FavState> {
-
   FavCubit(this.homeRepo)
       : super(
-        const FavState(
-          favoriteCourses: [],
-          prefId: [],
-          
-        ),);
-  final HomeRepo homeRepo;
-
-Future<void> toggleFavorite(String courseId) async {
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-
-  final isFavorite = state.favoriteCourses.any((course) => course.id == int.parse(courseId));
-  final newFavoriteCourses = List.of(state.favoriteCourses);
-  final newPrefId = List.of(state.prefId);
-
-  if (isFavorite) {
-    newFavoriteCourses.removeWhere((course) => course.id == int.parse(courseId));
-    newPrefId.remove(courseId);
-  } else {
-    // Check if course already exists in favorites
-    if (!newFavoriteCourses.any((course) => course.id == int.parse(courseId))) {
-      // Don't fetch courses again, directly add courseId to prefId
-      newPrefId.add(courseId);
-
-      // Optionally create a new CoursesModel with default values
-      final newCourse = CoursesModel(
-        id: int.parse(courseId),
-        title: 'Unknown Course',
-        numberOfLessons: 0,
-        numberOfHours: 0.0,
-        overview: '',
-        whatWillYouLearn: const [],
-        price: 0.0,
-        tag: '',
-      );
-      newFavoriteCourses.add(newCourse);
-    }
+          const FavState(
+            favoriteCourses: [],
+            prefId: [],
+          ),
+        ) {
+    _loadFavorites();
   }
 
-  emit(state.copyWith(
-    favoriteCourses: newFavoriteCourses,
-    prefId: newPrefId,
-  ),);
-  prefs.setStringList("prefId", newPrefId);
-}
+  final HomeRepo homeRepo;
 
+  Future<void> _loadFavorites() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final List<String> prefId = prefs.getStringList('prefId') ?? [];
+    
+    // Fetch the courses based on the saved IDs
+    List<CoursesModel> favoriteCourses = [];
+    for (String id in prefId) {
+      final course = await _fetchCourseDetails(id);
+      if (course != null) {
+        favoriteCourses.add(course);
+      }
+    }
 
- bool isCourseFavorite(String id) {
-    return state.favoriteCourses.any((course) => course.id == id);
+    emit(state.copyWith(
+      favoriteCourses: favoriteCourses,
+      prefId: prefId,
+    ));
+  }
+
+  Future<CoursesModel?> _fetchCourseDetails(String courseId) async {
+    final result = await homeRepo.fetchCourseDetails();
+    return result.fold(
+      (failure) => null,
+      (courseDetails) {
+        try {
+          return courseDetails.firstWhere(
+            (course) => course.id.toString() == courseId,
+          );
+        } catch (e) {
+          return null;
+        }
+      },
+    );
+  }
+
+  Future<void> toggleFavorite(String courseId) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final int id = int.parse(courseId);
+    final isFavorite = state.prefId.contains(courseId);
+    final newFavoriteCourses = List<CoursesModel>.from(state.favoriteCourses);
+    final newPrefId = List<String>.from(state.prefId);
+
+    if (isFavorite) {
+      newFavoriteCourses.removeWhere((course) => course.id == id);
+      newPrefId.remove(courseId);
+    } else {
+      final newCourse = await _fetchCourseDetails(courseId);
+      if (newCourse != null) {
+        newFavoriteCourses.add(newCourse);
+        newPrefId.add(courseId);
+      }
+    }
+
+    emit(state.copyWith(
+      favoriteCourses: newFavoriteCourses,
+      prefId: newPrefId,
+    ));
+    await prefs.setStringList("prefId", newPrefId);
+  }
+
+  bool isCourseFavorite(String id) {
+    return state.prefId.contains(id);
   }
 }

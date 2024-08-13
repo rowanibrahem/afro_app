@@ -10,9 +10,9 @@ class CoursesDetailsCubit extends Cubit<CoursesDetailsState>{
 
   final HomeRepo homeRepo;
   // ignore: type_annotate_public_apis
-  Future<void> fetchCourseDetails() async {
+  Future<void> fetchCourseDetails(String courseId) async {
   emit(CoursesDetailsLoading());
-  const String specificCourseId = '123';
+  // const String specificCourseId = '123';
   final result = await homeRepo.fetchCourseDetails();
   result.fold((failure) {
     emit(CoursesDetailsFailure(failure.errMessage));

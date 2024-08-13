@@ -56,6 +56,7 @@ class _SplashBodyState extends State<SplashBody>
   Widget build(BuildContext context) {
    return Container(
     color: ColorApp.splashColor,
+    width: double.infinity,
      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

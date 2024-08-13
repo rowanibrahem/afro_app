@@ -16,7 +16,7 @@ class HomeRepoImpl implements HomeRepo {
       final dynamic data = await apiService.get(
         endPoint: 'v1/course',
       );
-
+      
       if (data is List) {
         final List<CoursesModel> courses = [];
         for ( final dynamic item in data) {

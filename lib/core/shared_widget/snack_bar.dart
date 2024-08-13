@@ -10,7 +10,6 @@ SnackBar customSnackBar({
         child: Text(message,
           style: const TextStyle(
               fontSize: 16,
-
           ),
         ),
     ),

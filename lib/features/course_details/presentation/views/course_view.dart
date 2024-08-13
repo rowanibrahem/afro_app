@@ -16,16 +16,18 @@ class CourseView extends StatefulWidget {
 class _CourseViewState extends State<CourseView> {
 
   @override
-  void initState(){
-    BlocProvider.of<CoursesDetailsCubit>(context).fetchCourseDetails();
+  void initState() {
     super.initState();
+    if (widget.courseModel != null) {
+      BlocProvider.of<CoursesDetailsCubit>(context).fetchCourseDetails(widget.courseModel!.id.toString());
+    }
   }
   @override
   Widget build(BuildContext context) {
     return  SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(),
-        // appBar: CustomAppBar(courseId: widget.courseModel?.id.toString()),
+        // appBar: const CustomAppBar(),
+        appBar: CustomAppBar(courseId: widget.courseModel?.id.toString()),
         body: CourseBody(
           courseModel: widget.courseModel,
         ),
