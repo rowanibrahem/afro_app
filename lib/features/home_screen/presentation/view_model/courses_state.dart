@@ -9,7 +9,7 @@ abstract class CoursesState extends Equatable{
 class CoursesInitial extends CoursesState{}
 class CoursesLoading extends CoursesState{}
 class CoursesFailure extends CoursesState{
-
+a
   const CoursesFailure(this.errMessage);
   final String errMessage;
 

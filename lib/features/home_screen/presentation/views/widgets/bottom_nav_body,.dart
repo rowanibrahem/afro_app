@@ -1,5 +1,7 @@
 import 'dart:developer';
+
 import 'package:afro_app/core/theme/colors.dart';
+import 'package:afro_app/features/Favourite/presentation/view_model/fav_cubit.dart';
 import 'package:afro_app/features/Favourite/presentation/views/fav_view.dart';
 import 'package:afro_app/features/cart/presentation/views/cart_empty_view.dart';
 import 'package:afro_app/features/home_screen/presentation/views/home_view.dart';
@@ -7,7 +9,6 @@ import 'package:afro_app/features/profile/presentation/views/profile_view.dart';
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:afro_app/features/Favourite/presentation/view_model/fav_cubit.dart';
 
 class BottomNavBody extends StatefulWidget {
   const BottomNavBody({super.key});

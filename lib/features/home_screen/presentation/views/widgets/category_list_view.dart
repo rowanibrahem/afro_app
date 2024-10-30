@@ -1,8 +1,6 @@
 import 'package:afro_app/core/theme/colors.dart';
 import 'package:afro_app/features/home_screen/presentation/views/widgets/courses_item_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class CategoryListView extends StatefulWidget {
   @override

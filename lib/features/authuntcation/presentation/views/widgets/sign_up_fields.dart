@@ -207,7 +207,7 @@ class _SignUpFields extends State<SignUpFields> {
                       text: 'SignUp',
                       func: () {
                         if (formKey.currentState!.validate()) {
-                          try{
+                        try{
                     BlocProvider.of<SignUpCubit>(context).SignUp(
                       name: nameController.text,
                       phoneNum: phoneController.text,

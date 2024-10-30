@@ -1,4 +1,3 @@
-import 'package:afro_app/core/shared_widget/customization_appbar.dart';
 import 'package:afro_app/features/Favourite/presentation/views/widgets/fav_body.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +14,7 @@ class _FavViewState extends State<FavView> {
   
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return  const Scaffold(
      
       // appBar: AppBar(
       //   title: const Icon(Icons.backpack_outlined),

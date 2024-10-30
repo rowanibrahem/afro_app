@@ -22,8 +22,8 @@ class FavCubit extends Cubit<FavState> {
     final List<String> prefId = prefs.getStringList('prefId') ?? [];
     
     // Fetch the courses based on the saved IDs
-    List<CoursesModel> favoriteCourses = [];
-    for (String id in prefId) {
+    final List<CoursesModel> favoriteCourses = [];
+    for (final String id in prefId) {
       final course = await _fetchCourseDetails(id);
       if (course != null) {
         favoriteCourses.add(course);
@@ -33,7 +33,7 @@ class FavCubit extends Cubit<FavState> {
     emit(state.copyWith(
       favoriteCourses: favoriteCourses,
       prefId: prefId,
-    ));
+    ),);
   }
 
   Future<CoursesModel?> _fetchCourseDetails(String courseId) async {
@@ -73,7 +73,7 @@ class FavCubit extends Cubit<FavState> {
     emit(state.copyWith(
       favoriteCourses: newFavoriteCourses,
       prefId: newPrefId,
-    ));
+    ),);
     await prefs.setStringList("prefId", newPrefId);
   }
 
